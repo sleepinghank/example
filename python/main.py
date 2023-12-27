@@ -5,9 +5,10 @@ def parse_logs():
 
     workbook = openpyxl.load_workbook("./user_logs.xlsx")
     sheet = workbook.active
-    for idx in range(67):
-        cell = sheet.cell(row=(idx + 2), column=2)
-        cell2 = sheet.cell(row=(idx + 2), column=1)
+    print(sheet.max_row)
+    for idx in range(sheet.max_row):
+        cell = sheet.cell(row=(idx + 2), column=7)
+        cell2 = sheet.cell(row=(idx + 2), column=6)
         context = ""
         if cell.value is None:
             continue
@@ -28,7 +29,7 @@ def parse_logs():
             r = search("Hank{c1}\n\n", cell.value)
             if r is not None:
                 context = context + r['c1']
-        cell_idx = get_column_letter(3) + str(idx + 2)
+        cell_idx = get_column_letter(8) + str(idx + 2)
         print(cell2.value, context)
         sheet[cell_idx] = context
         print("----------------")
