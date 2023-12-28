@@ -8,7 +8,7 @@ set(CMAKE_C_STANDARD 11)
 #        ./functions/*.c
 #        )
 #install(FILES ${FUNCTIONS_LIB_SRC} DESTINATION ./functions)
-add_library(functions STATIC ${FUNCTIONS_LIB_SRC} functions/led.c functions/led.h functions/motor.c functions/motor.h functions/loop.c functions/loop.h)
+add_library(functions STATIC ${FUNCTIONS_LIB_SRC} main.h functions/led.c functions/led.h functions/motor.c functions/motor.h functions/loop.c functions/loop.h)
 
 add_executable(c main.c main.h)
 #add_executable(led functions/led.c functions/led.h )
