@@ -1,3 +1,6 @@
+mod crc;
+
+
 #[derive(Default, Debug, Clone)]
 #[repr(C)]
 pub struct Response{
@@ -34,11 +37,41 @@ unsafe fn any_as_u8_slice<T: Sized>(p: &T) -> &[u8] {
     )
 }
 
-fn main() {
-    let data = vec![1,2,3];
-    let resp = Response::from(data);
-    println!("{:?}",resp);
-    let v:Vec<u8> = resp.into();
-    println!("{:?}",v);
+// use crc;
+// use crc::{Algorithm, Crc};
 
+// const X25: crc::Crc<u16> = crc::Crc::<u16>::new(&crc::CRC_16_IBM_SDLC);
+
+fn main() {
+    // let data = vec![1,2,3];
+    // let resp = Response::from(data);
+    // println!("{:?}",resp);
+    // let v:Vec<u8> = resp.into();
+    // println!("{:?}",v);
+    // use custom algorithm
+    let data = vec![224, 92, 0, 32, 133, 2, 0, 16, 141, 2, 0, 16, 143, 2, 0, 16];
+
+    // const CUSTOM_ALG: Algorithm<u16> = Algorithm {
+    //     width: 16,
+    //     poly: 0xA001,
+    //     init: 0xA001,
+    //     refin: true,
+    //     refout: false,
+    //     xorout: 0x0000,
+    //     check: 0xaee7,
+    //     residue: 0x0000
+    // };
+    // let crc = Crc::<u16>::new(&CUSTOM_ALG);
+    // let mut digest = crc.digest();
+    // digest.update(data.as_slice());
+    //
+    // let checksum = digest.finalize();
+
+    // let checksum = X25.checksum(data.as_slice());
+
+    let crc = crc::crc16::chk_crc(data.as_slice());
+
+    println!("CRC: {:04X}", crc);
+
+    // println!("checksum:{:?}",checksum);
 }
