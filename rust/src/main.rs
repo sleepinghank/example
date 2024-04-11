@@ -1,77 +1,38 @@
-mod crc;
+mod port;
+mod touch;
+mod kalman;
+mod encrypt;
 
-
-#[derive(Default, Debug, Clone)]
-#[repr(C)]
-pub struct Response{
-    pub op_code:u8,
-    pub op_error:u8,
-    pub op_data:u8,
-}
-
-impl Into<Vec<u8>> for Response {
-    fn into(self) -> Vec<u8> {
-        unsafe { any_as_u8_slice(&self) }.to_vec()
-    }
-}
-
-impl From<Vec<u8>> for Response {
-    fn from(data: Vec<u8>) -> Self {
-        let len = unsafe{::core::mem::size_of::<Self>()};
-        // TODO: 判断数组长度，如果长度不够，后面自动补0
-        println!("{}",len);
-        unsafe { std::ptr::read(data.as_ptr() as *const _) }
-    }
-}
-
-
-
-pub fn deserialize_response_row(src: Vec<u8>) -> Response {
-    unsafe { std::ptr::read(src.as_ptr() as *const _) }
-}
-
-unsafe fn any_as_u8_slice<T: Sized>(p: &T) -> &[u8] {
-    ::core::slice::from_raw_parts(
-        (p as *const T) as *const u8,
-        ::core::mem::size_of::<T>(),
-    )
-}
-
-// use crc;
-// use crc::{Algorithm, Crc};
-
-// const X25: crc::Crc<u16> = crc::Crc::<u16>::new(&crc::CRC_16_IBM_SDLC);
+use std::time::{SystemTime, UNIX_EPOCH};
+use std::process::Command;
 
 fn main() {
-    // let data = vec![1,2,3];
-    // let resp = Response::from(data);
-    // println!("{:?}",resp);
-    // let v:Vec<u8> = resp.into();
-    // println!("{:?}",v);
-    // use custom algorithm
-    let data = vec![224, 92, 0, 32, 133, 2, 0, 16, 141, 2, 0, 16, 143, 2, 0, 16];
+    println!("begin-----------------------------");
+    // port::receive_data::test_receive_data();
+    // touch::touch().unwrap();
+    // let tim = SystemTime::now().duration_since(UNIX_EPOCH).unwrap().as_secs() as u32;
+    // println!("tim: {}", tim);
+    // match SystemTime::now().duration_since(UNIX_EPOCH) {
+    //     Ok(n) => println!("1970-01-01 00:00:00 UTC was {} seconds ago!", n.as_secs()),
+    //     Err(_) => panic!("SystemTime before UNIX EPOCH!"),
+    // }
 
-    // const CUSTOM_ALG: Algorithm<u16> = Algorithm {
-    //     width: 16,
-    //     poly: 0xA001,
-    //     init: 0xA001,
-    //     refin: true,
-    //     refout: false,
-    //     xorout: 0x0000,
-    //     check: 0xaee7,
-    //     residue: 0x0000
-    // };
-    // let crc = Crc::<u16>::new(&CUSTOM_ALG);
-    // let mut digest = crc.digest();
-    // digest.update(data.as_slice());
-    //
-    // let checksum = digest.finalize();
+    //     uint8_t a = 51;
+    //     uint8_t b = 172;
+    //     uint8_t c = a^b;
+    //     printf("c:%d\n",c);
 
-    // let checksum = X25.checksum(data.as_slice());
+    let output = Command::new("./FirmwareUpdateTool.exe")
+    .spawn()
+    .expect("Failed to execute command");
 
-    let crc = crc::crc16::chk_crc(data.as_slice());
-
-    println!("CRC: {:04X}", crc);
-
-    // println!("checksum:{:?}",checksum);
+    // if output.status.success() {
+    //     println!("Command executed successfully!");
+    //     let stdout = String::from_utf8_lossy(&output.stdout);
+    //     println!("Output: {}", stdout);
+    // } else {
+    //     let stderr = String::from_utf8_lossy(&output.stderr);
+    //     eprintln!("Error executing command: {}", stderr);
+    // }
+    println!("end-----------------------------");
 }

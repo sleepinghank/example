@@ -1,9 +1,16 @@
+#!C:\pythonCode
+# -*- coding: utf-8 -*-
+# @Time : 2024/2/21 11:36
+# @Author : Hank
+# @File : excel_parse.py
+# @Software: PyCharm
+
 def parse_logs():
     import openpyxl
     from openpyxl.utils import get_column_letter
     from parse import search
 
-    workbook = openpyxl.load_workbook("excel/data/user_logs.xlsx")
+    workbook = openpyxl.load_workbook("data/user_logs.xlsx")
     sheet = workbook.active
     print(sheet.max_row)
     for idx in range(sheet.max_row):
@@ -33,7 +40,7 @@ def parse_logs():
         print(cell2.value, context)
         sheet[cell_idx] = context
         print("----------------")
-    workbook.save('test.xlsx')
+    workbook.save('result.xlsx')
 
 if __name__ == '__main__':
     parse_logs()
