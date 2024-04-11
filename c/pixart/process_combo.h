@@ -56,22 +56,22 @@ typedef struct combo_t {
 } combo_t;
 
 #define COMBO(ck, event_idx,callback) \
-    { .keys = &(ck)[0], .cb[event_idx] = (callback) ,.event=(uint8_t)NONE_PRESS,.long_press_ticks= LONG_TICKS}
+    { .keys = &(ck)[0], .cb[event_idx] = (callback) ,.event=(uint8_t)NONE_PRESS,.long_press_ticks= LONG_TICKS,.state = 0}
 #define COMBO2(ck, event_idx1,callback1, event_idx2,callback2) \
     { .keys = &(ck)[0], .cb[event_idx1] = (callback1),.cb[event_idx2] = (callback2),.event=(uint8_t)NONE_PRESS ,\
-    .long_press_ticks= LONG_TICKS}
+    .long_press_ticks= LONG_TICKS,.state = 0}
 #define COMBO3(ck, event_idx1,callback1, event_idx2,callback2, event_idx3,callback3) \
     { .keys = &(ck)[0], .cb[event_idx1] = (callback1),.cb[event_idx2] = (callback2),.cb[event_idx3] = (callback3) ,\
-    .event=(uint8_t)NONE_PRESS,.long_press_ticks= LONG_TICKS}
+    .event=(uint8_t)NONE_PRESS,.long_press_ticks= LONG_TICKS,.state = 0}
 #define COMBO_LONG_TICKS(ck,long_tick, event_idx,callback) \
     { .keys = &(ck)[0], .cb[event_idx] = (callback) ,.event=(uint8_t)NONE_PRESS,\
-    .long_press_ticks=(uint16_t)(long_tick / TICKS_INTERVAL)}
+    .long_press_ticks=(uint16_t)(long_tick / TICKS_INTERVAL),.state = 0}
 #define COMBO2_LONG_TICKS(ck,long_tick, event_idx1,callback1, event_idx2,callback2) \
     { .keys = &(ck)[0], .cb[event_idx1] = (callback1),.cb[event_idx2] = (callback2),.event=(uint8_t)NONE_PRESS,\
-    .long_press_ticks=(uint16_t)(long_tick / TICKS_INTERVAL) }
+    .long_press_ticks=(uint16_t)(long_tick / TICKS_INTERVAL) ,.state = 0}
 #define COMBO3_LONG_TICKS(ck,long_tick, event_idx1,callback1, event_idx2,callback2, event_idx3,callback3) \
     { .keys = &(ck)[0], .cb[event_idx1] = (callback1),.cb[event_idx2] = (callback2),.cb[event_idx3] = (callback3) ,\
-    .event=(uint8_t)NONE_PRESS,.long_press_ticks=(uint16_t)(long_tick / TICKS_INTERVAL)}
+    .event=(uint8_t)NONE_PRESS,.long_press_ticks=(uint16_t)(long_tick / TICKS_INTERVAL),.state = 0}
 
 /**
   * @brief  处理组合键任务

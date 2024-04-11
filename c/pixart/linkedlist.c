@@ -136,22 +136,20 @@ void destroy(list_t* list)
     free(list);
 }
 
+void delete_node(node_t* node)
+{
+    if (node == NULL)
+        return;
+
+    delete_node(node->next);
+    free(node);
+}
 void del_all_child(list_t* list)
 {
-    if (list == NULL || list->head == NULL)
-        return;
-    {
-        node_t* current = list->head;
-        node_t* next = current;
-
-        while (current != NULL)
-        {
-            next = current->next;
-            free(current);
-            current = next;
-        }
-    }
-
+    // 保存头节点
+    node_t* head = list->head;
+    delete_node(head);
+    list->head = NULL;
 }
 
 void increase_cycle(list_t* list)

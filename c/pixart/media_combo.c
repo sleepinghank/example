@@ -9,8 +9,8 @@
 
 enum combos {
     AB_ESC,
-    CD_ESC,
-    EF_ESC,
+//    CD_ESC,
+//    EF_ESC,
     combos_end,
 };
 uint8_t number_of_combos = combos_end;
@@ -37,6 +37,6 @@ const uint16_t PROGMEM ef_combo[] = {KB_E, KB_F, COMBO_END};
 
 combo_t key_combos[] = {
         [AB_ESC] = COMBO(ab_combo,PRESS_DOWN,BtnCallback1),
-        [CD_ESC] = COMBO2(cd_combo,PRESS_UP,BtnCallback1,LONG_PRESS_HOLD,BtnCallback2),
-        [EF_ESC] = COMBO_LONG_TICKS(ef_combo,600,LONG_PRESS_HOLD, BtnCallback1),
+//        [CD_ESC] = COMBO2(cd_combo,PRESS_UP,BtnCallback1,LONG_PRESS_HOLD,BtnCallback2),
+//        [EF_ESC] = COMBO_LONG_TICKS(ef_combo,600,LONG_PRESS_HOLD, BtnCallback1),
 };

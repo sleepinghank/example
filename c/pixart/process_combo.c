@@ -89,7 +89,6 @@ uint8_t apply_combo(uint16_t combo_index, combo_t *combo) {
         uint16_t keycode = current->data.key_code;
         uint8_t  key_count = 0;
         uint16_t key_index = -1;
-        current ->data.is_report = 1;
         _find_key_index_and_count(combo->keys, keycode, &key_index, &key_count);
 
         if (-1 == (int16_t)key_index) {
@@ -113,19 +112,13 @@ void button_ticks(combo_t *combo, uint8_t is_active) {
 
     /*------------button debounce combo---------------*/
     if(is_active != combo->button_level) { //not equal to prev one
-        //continue read 3 times same new level change
-        if(++(combo->debounce_cnt) >= DEBOUNCE_TICKS) {
-            combo->button_level = is_active;
-            combo->debounce_cnt = 0;
-        }
-    } else { //level not change ,counter reset.
-        combo->debounce_cnt = 0;
+        combo->button_level = is_active;
     }
 
     /*-----------------State machine-------------------*/
     switch (combo->state) {
         case 0:
-            if(combo->button_level == combo->active_level) {	//start press down
+            if(combo->button_level == 1) {	//start press down
                 combo->event = (uint8_t)PRESS_DOWN;
 //                    EVENT_CB(PRESS_DOWN);
                 combo->ticks = 0;
@@ -137,7 +130,7 @@ void button_ticks(combo_t *combo, uint8_t is_active) {
             break;
 
         case 1:
-            if(combo->button_level != combo->active_level) { //released press up
+            if(combo->button_level != 1) { //released press up
                 combo->event = (uint8_t)PRESS_UP;
 //                    EVENT_CB(PRESS_UP);
                 combo->ticks = 0;
@@ -150,7 +143,7 @@ void button_ticks(combo_t *combo, uint8_t is_active) {
             break;
 
         case 2:
-            if(combo->button_level == combo->active_level) { //press down again
+            if(combo->button_level == 1) { //press down again
                 combo->event = (uint8_t)PRESS_DOWN;
 //                    EVENT_CB(PRESS_DOWN);
                 if(combo->repeat != PRESS_REPEAT_MAX_NUM) {
@@ -172,7 +165,7 @@ void button_ticks(combo_t *combo, uint8_t is_active) {
             break;
 
         case 3:
-            if(combo->button_level != combo->active_level) { //released press up
+            if(combo->button_level != 1) { //released press up
                 combo->event = (uint8_t)PRESS_UP;
 //                    EVENT_CB(PRESS_UP);
                 if(combo->ticks < SHORT_TICKS) {
@@ -187,7 +180,7 @@ void button_ticks(combo_t *combo, uint8_t is_active) {
             break;
 
         case 5:
-            if(combo->button_level == combo->active_level) {
+            if(combo->button_level == 1) {
                 //continue hold trigger
                 combo->event = (uint8_t)LONG_PRESS_HOLD;
 //                    EVENT_CB(LONG_PRESS_HOLD);
@@ -229,37 +222,28 @@ extern uint8_t number_of_combos;
 // 2. 满足函数进行按键状态机处理，判断满足状态的事件
 // 3. 满足事件后，调用回调函数，从_key_code_list中删除组合键，添加新增的键。
 void combo_task(key_update_st_t _keyUpdateSt){
-    uint8_t u8temp ;
+    uint8_t u8temp;
     uint8_t buf[10] = {0};
-    uint8_t is_active, active_event = 0;
+    uint8_t is_active;
+    if (_keyUpdateSt == GHOST_KEY){
+        return;
+    }
+    // 清空所有扩展键
     del_all_child(_key_code_list_extend);
-    if (_keyUpdateSt == NO_KEY_UPDATE || _keyUpdateSt == GHOST_KEY){
-        return;
-    }
-
-    // 判断是否触发组合键以及按键状态机处理
+    // 循环所有事件，逐个进行处理
     for (u8temp = 0; u8temp < number_of_combos; ++u8temp) {
         combo_t *combo = &key_combos[u8temp];
-        // 判断是否触发事件
+        // 判断是否触发组合
         is_active = apply_combo(u8temp, combo);
-        //  按键状态机处理
+        // 按键状态机处理
         button_ticks(combo, is_active);
+        // 判断是否执行事件
         if (combo->event < number_of_event && combo->cb[combo->event]) {
-            active_event = 1;
-        }
-    }
-    if (!active_event) {
-        return;
-    }
-    // 组合键触发事件处理
-    for (u8temp = 0; u8temp < number_of_combos; ++u8temp) {
-        combo_t *combo = &key_combos[u8temp];
-        // 判断是否存在触发事件
-        if (combo->event < number_of_event  && combo->cb[combo->event]) {
-            // 先删除组合键
+            // 先删除组合键，删除的组合键不再上报，但是还是可以组成组合键
             del_combo_keys(combo->keys);
             // 添加新的键
             add_combo_result(combo,buf);
+            // 重置事件
             RESET_COMBO_STATE(combo);
         }
     }
