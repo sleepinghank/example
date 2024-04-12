@@ -8,7 +8,6 @@
 #include <stdint.h>
 #include <stdbool.h>
 #include "keycode.h"
-#include "keyboard.h"
 
 #    define PROGMEM
 #    define pgm_read_word(address_short) *((uint16_t*)(address_short))
@@ -26,7 +25,7 @@
   * @param  uint8_t* arr: 长度为10的数组，用于记录组合键
   * @retval uint8_t: 返回新增键的个数
   */
-typedef uint8_t (*BtnCallback)(uint8_t* add_keys);
+typedef uint8_t (*BtnCallback)(uint16_t* add_keys);
 
 // 按键事件种类
 typedef enum {
@@ -47,16 +46,16 @@ typedef struct combo_t {
     bool  disabled; // 记录是否禁用
     uint16_t ticks; // 记录点击次数
     uint8_t  repeat : 4; // 记录重复次数
-    uint8_t  event : 4; // 记录激活事件
-    uint8_t  state : 6; // 记录触发的事件
+    uint8_t  event : 4; // 记录触发的事件
+    uint8_t  state : 6; // 按键状态机记录
     uint8_t  active_status : 1; // 判断组合键是否激活
     uint8_t  button_level : 1; // 记录当前电平
     uint16_t long_press_ticks; // 长按时间阈值
     BtnCallback cb[number_of_event]; // 回调函数
 } combo_t;
 
-#define COMBO(ck, event_idx,callback) { .keys = &(ck)[0], .cb[event_idx] = (callback) ,.event=(uint8_t)NONE_PRESS,.long_press_ticks= LONG_TICKS,.event=(uint8_t)NONE_PRESS,.state = 0}
-
+#define COMBO(ck, event_idx,callback) { .keys = &(ck)[0], .cb[event_idx] = (callback) ,.event=(uint8_t)NONE_PRESS,\
+        .long_press_ticks= LONG_TICKS,.event=(uint8_t)NONE_PRESS,.state = 0}
 #define COMBO2(ck, event_idx1,callback1, event_idx2,callback2) \
     { .keys = &(ck)[0], .cb[event_idx1] = (callback1),.cb[event_idx2] = (callback2),.event=(uint8_t)NONE_PRESS ,\
     .long_press_ticks= LONG_TICKS,.event=(uint8_t)NONE_PRESS,.state = 0}

@@ -5,9 +5,6 @@
 #include "process_combo.h"
 #include "linkedlist.h"
 #include <string.h>
-#include "keyboard.h"
-#include "debug.h"
-#include "debug_log.h".
 
 #    define COMBO_DISABLED(combo) (combo->disabled)
 #    define COMBO_STATE(combo) (combo->state)
@@ -52,16 +49,15 @@ void del_combo_keys(const uint16_t *keys);
 /**
   * @brief  将激活的组合键加入_key_code_list中
   * @param  combo_t *combo: 组合键对象
-  * @param  uint8_t* arr: 数组指针，全局缓存数组，防止重复申请内存
+  * @param  uint16_t* arr: 数组指针，全局缓存数组，防止重复申请内存
   */
-void add_combo_result(const combo_t *combo,uint8_t* arr);
+void add_combo_result(const combo_t *combo,uint16_t* arr);
 /**
   * @brief  判断组合键是否触发
   * @param  uint16_t combo_index: 组合键索引
   * @param  combo_t *combo: 组合键对象
-  * @retval uint8_t: 组合键是否触发 -1：触发 0：未触发 >1:按键状态
   */
-uint8_t apply_combo(uint16_t combo_index, combo_t *combo);
+void apply_combo(uint16_t combo_index, combo_t *combo);
 
 /**
   * @brief  查找键在当前组合键中索引和总计数
@@ -79,12 +75,11 @@ static void _find_key_index_and_count(const uint16_t *keys, uint16_t keycode, ui
     }
 }
 
-uint8_t apply_combo(uint16_t combo_index, combo_t *combo) {
+void apply_combo(uint16_t combo_index, combo_t *combo) {
     node_t* current = _key_code_list->head;
     uint8_t state = 0;
-
     if (COMBO_DISABLED(combo)) {
-        return 0;
+        return ;
     }
     combo -> active_status = 0;
     while (current != NULL) {
@@ -102,12 +97,10 @@ uint8_t apply_combo(uint16_t combo_index, combo_t *combo) {
         if (ALL_COMBO_KEYS_ARE_DOWN(state, key_count)) {
             // All keys are down
             combo -> active_status = 1;
-            return -1;
+            return ;
         }
         current = current->next;
     }
-    
-    return state;
 }
 
 
@@ -125,7 +118,6 @@ void button_ticks(combo_t *combo) {
         case 0:
             if(combo->button_level == 1) {	//start press down
                 combo->event = (uint8_t)PRESS_DOWN;
-//                    EVENT_CB(PRESS_DOWN);
                 combo->ticks = 0;
                 combo->repeat = 1;
                 combo->state = 1;
@@ -137,33 +129,28 @@ void button_ticks(combo_t *combo) {
         case 1:
             if(combo->button_level != 1) { //released press up
                 combo->event = (uint8_t)PRESS_UP;
-//                    EVENT_CB(PRESS_UP);
                 combo->ticks = 0;
                 combo->state = 2;
             } else if(combo->ticks > combo->long_press_ticks) { // Customize the long press duration
                 combo->event = (uint8_t)LONG_PRESS_START;
-//                    EVENT_CB(LONG_PRESS_START);
                 combo->state = 5;
             }
             break;
 
         case 2:
             if(combo->button_level == 1) { //press down again
-                combo->event = (uint8_t)PRESS_DOWN;
-//                    EVENT_CB(PRESS_DOWN);
+//                combo->event = (uint8_t)PRESS_DOWN;
                 if(combo->repeat != PRESS_REPEAT_MAX_NUM) {
                     combo->repeat++;
                 }
-//                    EVENT_CB(PRESS_REPEAT); // repeat hit
+                combo->event = (uint8_t)PRESS_REPEAT;
                 combo->ticks = 0;
                 combo->state = 3;
             } else if(combo->ticks > SHORT_TICKS) { //released timeout
                 if(combo->repeat == 1) {
                     combo->event = (uint8_t)SINGLE_CLICK;
-//                        EVENT_CB(SINGLE_CLICK);
                 } else if(combo->repeat == 2) {
                     combo->event = (uint8_t)DOUBLE_CLICK;
-//                        EVENT_CB(DOUBLE_CLICK); // repeat hit
                 }
                 combo->state = 0;
             }
@@ -172,7 +159,6 @@ void button_ticks(combo_t *combo) {
         case 3:
             if(combo->button_level != 1) { //released press up
                 combo->event = (uint8_t)PRESS_UP;
-//                    EVENT_CB(PRESS_UP);
                 if(combo->ticks < SHORT_TICKS) {
                     combo->ticks = 0;
                     combo->state = 2; //repeat press
@@ -188,10 +174,8 @@ void button_ticks(combo_t *combo) {
             if(combo->button_level == 1) {
                 //continue hold trigger
                 combo->event = (uint8_t)LONG_PRESS_HOLD;
-//                    EVENT_CB(LONG_PRESS_HOLD);
             } else { //released
                 combo->event = (uint8_t)PRESS_UP;
-//                    EVENT_CB(PRESS_UP);
                 combo->state = 0; //reset
             }
             break;
@@ -201,7 +185,7 @@ void button_ticks(combo_t *combo) {
     }
 }
 
-void add_combo_result(const combo_t *combo,uint8_t* buf) {
+void add_combo_result(const combo_t *combo,uint16_t* buf) {
     memset(buf, 0, 10);
     {
         uint8_t u8temp;
@@ -229,7 +213,7 @@ uint8_t active_event = 0;
 // 3. 满足事件后，调用回调函数，从_key_code_list中删除组合键，添加新增的键。
 void combo_task(key_update_st_t _keyUpdateSt){
     uint8_t u8temp ;
-    uint8_t buf[10] = {0};
+    uint16_t buf[10] = {0};
     
     if (_keyUpdateSt == GHOST_KEY){
         return;

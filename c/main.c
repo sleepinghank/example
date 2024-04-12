@@ -62,7 +62,7 @@ int main()
      printf("combo task befor\n");
      while (current != NULL) {
          uint16_t keycode = current->data.key_code;
-         printf("Key:%d,", keycode);
+         printf("Key:0x%02X,", keycode);
          current = current->next;
      }
      printf("\r\n");
@@ -88,7 +88,7 @@ int main()
             continue;
         }
         uint16_t keycode = curr_tmp->data.key_code;
-        printf("Key:%d,", keycode);
+        printf("0x%02X,", keycode);
     }
      printf("\r\n");
 

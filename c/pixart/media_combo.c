@@ -16,14 +16,14 @@ enum combos {
 uint8_t number_of_combos = combos_end;
 
 // 组合键触发后的回调函数，arr为触发的按键
-uint8_t BtnCallback1(uint8_t* add_keys){
+uint8_t BtnCallback1(uint16_t* add_keys){
     uint8_t idx = 0;
     add_keys[idx++] = KB_1;
     add_keys[idx++] = KB_2;
     return idx;
 }
 // 组合键触发后的回调函数，arr为触发的按键
-uint8_t BtnCallback2(uint8_t* add_keys){
+uint8_t BtnCallback2(uint16_t* add_keys){
     uint8_t idx = 0;
     add_keys[idx++] = KB_3;
     add_keys[idx++] = KB_4;
