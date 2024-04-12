@@ -8,6 +8,7 @@
 #include <stdint.h>
 #include <stdbool.h>
 #include "keycode.h"
+#include "keyboard.h"
 
 #    define PROGMEM
 #    define pgm_read_word(address_short) *((uint16_t*)(address_short))
@@ -47,31 +48,30 @@ typedef struct combo_t {
     uint16_t ticks; // 记录点击次数
     uint8_t  repeat : 4; // 记录重复次数
     uint8_t  event : 4; // 记录激活事件
-    uint8_t  state : 3; // 记录触发的事件
-    uint8_t  debounce_cnt : 3; // 记录循环次数
-    uint8_t  active_level : 1; // 记录按键电平
+    uint8_t  state : 6; // 记录触发的事件
+    uint8_t  active_status : 1; // 判断组合键是否激活
     uint8_t  button_level : 1; // 记录当前电平
     uint16_t long_press_ticks; // 长按时间阈值
     BtnCallback cb[number_of_event]; // 回调函数
 } combo_t;
 
-#define COMBO(ck, event_idx,callback) \
-    { .keys = &(ck)[0], .cb[event_idx] = (callback) ,.event=(uint8_t)NONE_PRESS,.long_press_ticks= LONG_TICKS,.state = 0}
+#define COMBO(ck, event_idx,callback) { .keys = &(ck)[0], .cb[event_idx] = (callback) ,.event=(uint8_t)NONE_PRESS,.long_press_ticks= LONG_TICKS,.event=(uint8_t)NONE_PRESS,.state = 0}
+
 #define COMBO2(ck, event_idx1,callback1, event_idx2,callback2) \
     { .keys = &(ck)[0], .cb[event_idx1] = (callback1),.cb[event_idx2] = (callback2),.event=(uint8_t)NONE_PRESS ,\
-    .long_press_ticks= LONG_TICKS,.state = 0}
+    .long_press_ticks= LONG_TICKS,.event=(uint8_t)NONE_PRESS,.state = 0}
 #define COMBO3(ck, event_idx1,callback1, event_idx2,callback2, event_idx3,callback3) \
     { .keys = &(ck)[0], .cb[event_idx1] = (callback1),.cb[event_idx2] = (callback2),.cb[event_idx3] = (callback3) ,\
-    .event=(uint8_t)NONE_PRESS,.long_press_ticks= LONG_TICKS,.state = 0}
+    .event=(uint8_t)NONE_PRESS,.long_press_ticks= LONG_TICKS,.event=(uint8_t)NONE_PRESS,.state = 0}
 #define COMBO_LONG_TICKS(ck,long_tick, event_idx,callback) \
     { .keys = &(ck)[0], .cb[event_idx] = (callback) ,.event=(uint8_t)NONE_PRESS,\
-    .long_press_ticks=(uint16_t)(long_tick / TICKS_INTERVAL),.state = 0}
+    .long_press_ticks=(uint16_t)(long_tick / TICKS_INTERVAL),.event=(uint8_t)NONE_PRESS,.state = 0}
 #define COMBO2_LONG_TICKS(ck,long_tick, event_idx1,callback1, event_idx2,callback2) \
     { .keys = &(ck)[0], .cb[event_idx1] = (callback1),.cb[event_idx2] = (callback2),.event=(uint8_t)NONE_PRESS,\
-    .long_press_ticks=(uint16_t)(long_tick / TICKS_INTERVAL) ,.state = 0}
+    .long_press_ticks=(uint16_t)(long_tick / TICKS_INTERVAL) ,.event=(uint8_t)NONE_PRESS,.state = 0}
 #define COMBO3_LONG_TICKS(ck,long_tick, event_idx1,callback1, event_idx2,callback2, event_idx3,callback3) \
     { .keys = &(ck)[0], .cb[event_idx1] = (callback1),.cb[event_idx2] = (callback2),.cb[event_idx3] = (callback3) ,\
-    .event=(uint8_t)NONE_PRESS,.long_press_ticks=(uint16_t)(long_tick / TICKS_INTERVAL),.state = 0}
+    .event=(uint8_t)NONE_PRESS,.long_press_ticks=(uint16_t)(long_tick / TICKS_INTERVAL),.event=(uint8_t)NONE_PRESS,.state = 0}
 
 /**
   * @brief  处理组合键任务

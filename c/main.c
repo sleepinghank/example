@@ -41,10 +41,12 @@ int init(void){
 
 
 extern combo_t key_combos[];
+extern uint8_t active_event;
 int main()
 {
     init();
     printf("------------------------------------------begin\n");
+
     // Start measuring time
     struct timeval begin, end;
     gettimeofday(&begin, 0);
@@ -66,13 +68,19 @@ int main()
      printf("\r\n");
 
     combo_task(KEY_UPDATE);
+
     uint8_t is_extend = 0;
     current = _key_code_list->head;
     printf("combo task end\n");
+    if (current == NULL && active_event == 1 ) {
+        current = _key_code_list_extend->head;
+        is_extend = 1;
+    }
+
     while (current != NULL) {
         curr_tmp = current;
         current = current->next;
-        if (current == NULL && is_extend == 0) {
+        if (current == NULL && active_event == 1 && is_extend == 0) {
             current = _key_code_list_extend->head;
             is_extend = 1;
         }
