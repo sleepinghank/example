@@ -21,3 +21,20 @@ tokio = { version = "1.17.0", features = ["full"] }
 ring = "0.16"
 aes="0.8.4"
 cbc="0.1.2"
+windows-hotkeys = "0.2.1"
+async-openai = "0.20.0"
+tonic = "0.8"
+tokio-stream = "0.1"
+futures-util = "0.3"
+reqwest = { version = "0.12.0", features = ["json", "stream", "multipart"],default-features = false }
+reqwest-eventsource = "0.6.0"
+futures = "0.3.26"
+secrecy = { version = "0.8.0", features=["serde"] }
+bytes = "1.5.0"
+sha2 = "0.10.8"
+digest = "0.10.7"
+#rsa = "0.9.6"
+rsa = { version = "0.9.6", features=["sha2"] }
+pem = "3.0.4"
+rand = "0.8.5"
+base64 = "0.22.0"

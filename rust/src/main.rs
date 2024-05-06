@@ -2,11 +2,33 @@ mod port;
 mod touch;
 mod kalman;
 mod encrypt;
+mod os;
+mod openai;
 
 use std::time::{SystemTime, UNIX_EPOCH};
 use std::process::Command;
+use std::io::{stdout, Write};
+pub trait Animal {
+    fn make_noise(&self) -> String;
+}
 
-fn main() {
+pub struct Dog;
+pub struct Cat;
+
+impl Animal for Dog {
+    fn make_noise(&self) -> String {
+        "Woof!".to_string()
+    }
+}
+
+impl Animal for Cat {
+    fn make_noise(&self) -> String {
+        "Meow!".to_string()
+    }
+}
+
+#[tokio::main(flavor = "multi_thread", worker_threads = 64)]
+async fn main() {
     println!("begin-----------------------------");
     // port::receive_data::test_receive_data();
     // touch::touch().unwrap();
@@ -22,9 +44,17 @@ fn main() {
     //     uint8_t c = a^b;
     //     printf("c:%d\n",c);
 
-    let output = Command::new("./FirmwareUpdateTool.exe")
-    .spawn()
-    .expect("Failed to execute command");
+
+    // let dog: Box<dyn Animal> = Box::new(Dog);
+    // let cat: Box<dyn Animal> = Box::new(Cat);
+
+    // println!("{}", dog.make_noise());  // 输出："Woof!"
+    // println!("{}", cat.make_noise());  // 输出："Meow!"
+
+    // os::hotkaey::test();
+
+    // openai::chat::test("写一篇100的日记".to_string()).await.unwrap();
+
 
     // if output.status.success() {
     //     println!("Command executed successfully!");
