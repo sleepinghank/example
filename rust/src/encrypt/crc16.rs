@@ -24,7 +24,7 @@ pub fn chk_crc(buf: &[u8]) -> u16 {
         crc = calc_crc(b, crc);
     }
 
-    let hi = crc.clone() % &256;
+    let hi = crc % &256;
     let lo = crc / &256;
     crc = (hi << 8) | lo;
 

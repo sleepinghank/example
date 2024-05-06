@@ -17,7 +17,7 @@ pub struct UnmapFinger{
 impl Finger {
     pub fn unmap(&self) -> UnmapFinger {
         let mut unmap_finger = UnmapFinger { tab: [0; 4]};
-        unmap_finger.tab[0] = (self.tip & 0b0000_0001) | (self.confidence << 1) | (self.contact_id << 2) as u8;
+        unmap_finger.tab[0] = (self.tip & 0b0000_0001) | (self.confidence << 1) | (self.contact_id << 2);
         unmap_finger.tab[1] = (self.x & 0b1111_1111) as u8;
         unmap_finger.tab[2] = ((self.x >> 8) & 0b0000_1111)as u8 | (self.y & 0b0000_1111) as u8 ;
         unmap_finger.tab[3] = (self.y >> 4) as u8;
@@ -124,7 +124,7 @@ impl UnmapReport2 {
 
 
 use std::fs::File;
-use std::io::{self, BufRead, BufWriter, Write};
+use std::io::{self, BufRead, BufWriter};
 use std::path::Path;
 
 
@@ -142,7 +142,7 @@ pub fn touch() -> Result<()>{
     let file_name = "KB09117_error_240305_1141.txt".to_string();
     let lines = read_lines(format!("./src/touch/data/{}",file_name))?;
     let file = File::create(format!("./src/touch/result/{}",file_name))?;
-    let mut file = BufWriter::new(file);
+    let _file = BufWriter::new(file);
     // 使用迭代器，返回一个（可选）字符串
     for line in lines {
         if let Ok(s) = line {

@@ -3,8 +3,8 @@ use std::fs;
 use sha2::Sha256;
 use digest::Digest;
 use anyhow::Result;
-use rsa::{pkcs1::EncodeRsaPublicKey, pkcs8::{DecodePublicKey, LineEnding}, Oaep, RsaPrivateKey, RsaPublicKey};
-use rand::rngs::OsRng;
+use rsa::{pkcs8::{DecodePublicKey}, Oaep, RsaPublicKey};
+
 use base64::{Engine as _, engine::general_purpose};
 
 /// Calculates the SHA256 digest of the given data.
@@ -47,7 +47,7 @@ pub fn rsa_encrypt(public_key_pem: &str, data: &str) -> String {
 
     // Encrypt the data using RSA-OAEP with SHA-256
     let padding = Oaep::new::<Sha256>();
-    let enc_data = pub_key.encrypt(&mut rng, padding, &a[..]).expect("failed to encrypt");
+    let enc_data = pub_key.encrypt(&mut rng, padding, a).expect("failed to encrypt");
     // Encode the encrypted data as a base64 string
     general_purpose::STANDARD.encode(enc_data.as_slice())
 }

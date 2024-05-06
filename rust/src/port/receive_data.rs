@@ -127,7 +127,7 @@ pub fn test_receive_data() {
     let (tx, rx) = mpsc::channel::<Vec<u8>>();
 
     // 在测试中调用读取串口数据的方法
-    if let Err(e) = read_from_serial_port("COM10", tx.clone()) {
+    if let Err(e) = read_from_serial_port("COM10", tx) {
         println!("Error in reading from serial port: {}", e);
         return
     }
@@ -142,7 +142,7 @@ pub fn test_receive_data() {
 mod tests {
     use super::*;
     use std::sync::mpsc;
-    use std::io::{self, Write};
+    
 
     #[test]
     fn test_read_from_serial_port() {
@@ -150,7 +150,7 @@ mod tests {
         let (tx, rx) = mpsc::channel::<Vec<u8>>();
 
         // 在测试中调用读取串口数据的方法
-        if let Err(e) = read_from_serial_port("COM20", tx.clone()) {
+        if let Err(e) = read_from_serial_port("COM20", tx) {
             panic!("Error in reading from serial port: {}", e);
         }
 

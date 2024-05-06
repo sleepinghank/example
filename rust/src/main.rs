@@ -5,9 +5,9 @@ mod encrypt;
 mod os;
 mod openai;
 
-use std::time::{SystemTime, UNIX_EPOCH};
-use std::process::Command;
-use std::io::{stdout, Write};
+
+
+
 pub trait Animal {
     fn make_noise(&self) -> String;
 }

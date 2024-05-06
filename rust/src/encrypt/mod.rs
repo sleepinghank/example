@@ -1,9 +1,8 @@
 pub mod crc16;
-pub mod hmac_sha256;
 pub mod aes128;
 
-use aes::cipher::{block_padding::NoPadding, BlockDecryptMut, BlockEncryptMut, KeyIvInit};
-use anyhow::{anyhow, Result};
+use aes::cipher::{KeyIvInit};
+
 
 type Aes128CbcDec = cbc::Decryptor<aes::Aes128>;
 type Aes128CbcEnc = cbc::Encryptor<aes::Aes128>;
@@ -78,7 +77,7 @@ impl CryptoDevice {
                     _ => continue,
                 }
     
-                iv[i] = iv[i] ^ ORIGINAL_IV[z][i];
+                iv[i] ^= ORIGINAL_IV[z][i];
             }
             aes_ivs.push(iv);
         }

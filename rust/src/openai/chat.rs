@@ -1,10 +1,10 @@
 
-use async_openai::types::{ChatCompletionRequestMessage, ChatCompletionRequestUserMessageArgs, CreateChatCompletionRequest, CreateChatCompletionRequestArgs, CreateCompletionRequestArgs, Role};
+use async_openai::types::{ChatCompletionRequestUserMessageArgs, CreateChatCompletionRequestArgs};
 use async_openai::Client;
-use async_openai::config::{AzureConfig, Config, OPENAI_ORGANIZATION_HEADER, OpenAIConfig};
+use async_openai::config::Config;
 use anyhow::Result;
 use reqwest::header::{HeaderMap, AUTHORIZATION};
-use std::error::Error;
+
 use std::io::{stdout, Write};
 use futures::StreamExt;
 use secrecy::{ExposeSecret, Secret};
