@@ -20,6 +20,7 @@
 #include "pixart/process_combo.h"
 #include "pixart/linkedlist.h"
 #include "pixart/keycode.h"
+#include "pixart/Storage1.h"
 #include <sys/time.h>
 
 LOOP_FUNCTION(Main_Init){
@@ -40,6 +41,27 @@ int init(void){
 };
 
 
+int test_1(uint8_t a){
+    if (a > 0){
+        printf("a:%d\n",a);
+    }
+    return 0;
+}
+
+static uint32_t _count_bit_set(uint8_t num)
+{
+    uint32_t count = 0;
+
+    while (num)
+    {
+        count++;
+        num &= (num - 1);
+    }
+
+    return count;
+}
+
+
 extern combo_t key_combos[];
 extern uint8_t active_event;
 int main()
@@ -47,57 +69,61 @@ int main()
     init();
     printf("------------------------------------------begin\n");
 
-    // Start measuring time
-    struct timeval begin, end;
-    gettimeofday(&begin, 0);
-//    for (int i = 0; i < 2; ++i) {
-//        combo_t *combo = &key_combos[i];
-//        printf("combo:%d,long_ticks:%d,keys:%d,%d,event:%d\n", i, combo->long_press_ticks,combo->keys[0], combo->keys[1], combo->event);
+//    // Start measuring time
+//    struct timeval begin, end;
+//    gettimeofday(&begin, 0);
+////    for (int i = 0; i < 2; ++i) {
+////        combo_t *combo = &key_combos[i];
+////        printf("combo:%d,long_ticks:%d,keys:%d,%d,event:%d\n", i, combo->long_press_ticks,combo->keys[0], combo->keys[1], combo->event);
+////    }
+////    return 0;
+//
+//     node_t* current = _key_code_list->head;
+//     node_t* curr_tmp = current;
+//
+//     printf("combo task befor\n");
+//     while (current != NULL) {
+//         uint16_t keycode = current->data.key_code;
+//         printf("Key:0x%02X,", keycode);
+//         current = current->next;
+//     }
+//     printf("\r\n");
+//
+//    combo_task(KEY_UPDATE);
+//
+//    uint8_t is_extend = 0;
+//    current = _key_code_list->head;
+//    printf("combo task end\n");
+//    if (current == NULL && active_event == 1 ) {
+//        current = _key_code_list_extend->head;
+//        is_extend = 1;
 //    }
-//    return 0;
+//
+//    while (current != NULL) {
+//        curr_tmp = current;
+//        current = current->next;
+//        if (current == NULL && active_event == 1 && is_extend == 0) {
+//            current = _key_code_list_extend->head;
+//            is_extend = 1;
+//        }
+//        if (curr_tmp->data.is_report == 0) {
+//            continue;
+//        }
+//        uint16_t keycode = curr_tmp->data.key_code;
+//        printf("0x%02X,", keycode);
+//    }
+//     printf("\r\n");
+//
+//    // Stop measuring time and calculate the elapsed time
+//    gettimeofday(&end, 0);
+//    long seconds = end.tv_sec - begin.tv_sec;
+//    long microseconds = end.tv_usec - begin.tv_usec;
+//    printf("seconds:%ld,microseconds:%ld\n", seconds, microseconds);
+//    printf("elapsed time: %ld s %ld us\n", seconds, microseconds);
+    Storage_write();
 
-     node_t* current = _key_code_list->head;
-     node_t* curr_tmp = current;
-
-     printf("combo task befor\n");
-     while (current != NULL) {
-         uint16_t keycode = current->data.key_code;
-         printf("Key:0x%02X,", keycode);
-         current = current->next;
-     }
-     printf("\r\n");
-
-    combo_task(KEY_UPDATE);
-
-    uint8_t is_extend = 0;
-    current = _key_code_list->head;
-    printf("combo task end\n");
-    if (current == NULL && active_event == 1 ) {
-        current = _key_code_list_extend->head;
-        is_extend = 1;
-    }
-
-    while (current != NULL) {
-        curr_tmp = current;
-        current = current->next;
-        if (current == NULL && active_event == 1 && is_extend == 0) {
-            current = _key_code_list_extend->head;
-            is_extend = 1;
-        }
-        if (curr_tmp->data.is_report == 0) {
-            continue;
-        }
-        uint16_t keycode = curr_tmp->data.key_code;
-        printf("0x%02X,", keycode);
-    }
-     printf("\r\n");
-
-    // Stop measuring time and calculate the elapsed time
-    gettimeofday(&end, 0);
-    long seconds = end.tv_sec - begin.tv_sec;
-    long microseconds = end.tv_usec - begin.tv_usec;
-    printf("seconds:%ld,microseconds:%ld\n", seconds, microseconds);
-
+    printf("------------------------------------------\r\n");
+    Storage_read();
     printf("------------------------------------------end\r\n");
     return 0;
 }
