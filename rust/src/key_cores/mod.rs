@@ -1,5 +1,3 @@
-
-
 /// 串口通信模块
 pub mod serial;
 /// 命令行交互模块
@@ -11,11 +9,11 @@ pub mod result;
 
 use std::collections::HashMap;
 use std::fmt::format;
-use std::thread::{self, spawn};
+use std::thread::{self, sleep, spawn};
 use std::{sync::mpsc};
-use crossterm::event;
-use anyhow::Result;
-use dialoguer::{theme::ColorfulTheme, Select,Input};
+use crossterm::{event, queue};
+use anyhow::{bail, Result};
+use dialoguer::{theme::ColorfulTheme, Select, Input};
 use regex::Regex;
 use rdev::listen as listen_event;
 use std::sync::mpsc::sync_channel;
@@ -23,9 +21,19 @@ use serde::{Deserialize, Serialize};
 use std::io;
 use std::io::Write;
 use console::Term;
+use std::sync::{Arc, RwLock};
+use std::time::Duration;
+use lazy_static::lazy_static;
+use serde_json::to_string;
+
+// 创建一个全局字符串对象
+//功能配置
+lazy_static! {
+    pub static ref BUF_STR: Arc<RwLock<String>> = Arc::new(RwLock::new("".to_string()));
+}
 
 /// 构建命令行状态机
-#[derive(Debug, Copy, Clone, PartialEq, Eq, Hash,Serialize, Deserialize)]
+#[derive(Debug, Copy, Clone, PartialEq, Eq, Hash, Serialize, Deserialize)]
 enum State {
     // 等待串口输入坐标
     WaitSerialInput,
@@ -63,18 +71,20 @@ struct KeyResult {
 }
 
 impl KeyResult {
-    fn new(port_name: String,baud_rate: u32,) -> Result<Self> {
+    fn new(port_name: String, baud_rate: u32) -> Result<Self> {
         let (serial_tx, serial_rx) = mpsc::channel();
         // 开启线程读取串口数据
-        thread::spawn(move || {
-            serial::read_from_serial_port(port_name.as_str(), baud_rate, serial_tx).unwrap();
-        });
+
+        serial::read_from_serial_port(port_name.as_str(), baud_rate, serial_tx)?;
+
         let key_map = keymap::get_keymap()?;
-        println!("{:?}", key_map);
+
         let (sync_sender, key_rx) = sync_channel(1024);
         thread::spawn(move || {
             cli::listen_keyboard(sync_sender).unwrap();
         });
+        
+
         // 开启线程监听键盘
         Ok(KeyResult {
             state: State::WaitSerialInput,
@@ -89,61 +99,72 @@ impl KeyResult {
         })
     }
 
-    fn run(&mut self) -> Result<()>{
+    fn run(&mut self) -> Result<()> {
         loop {
-            unwrapped_output(format!("{:?}",self.state).as_str());
+            unwrapped_output(format!("{:?}", self.state).as_str());
             match self.state {
                 State::WaitSerialInput => self.wait_serial_input()?,
                 State::WaitUserInput => self.wait_user_input()?,
                 State::FirstInput => self.first_input()?,
                 State::StringInput => self.string_input()?,
-                State::Exit =>  self.exit()?,
+                State::Exit => self.exit()?,
             }
         }
     }
 
     // 等待串口输入坐标
-    fn wait_serial_input(&mut self) -> Result<()>{
-        // 1.监听serial_rx 串口输入，当捕获到坐标时，进入下一个状态
-        // 2.监听cli_rx 用户输入，当捕获到ESC时，退出
+    fn wait_serial_input(&mut self) -> Result<()> {
+        {
+            BUF_STR.write().unwrap().clear();
+        }
         loop {
-            match self.serial_rx.recv() {
-                Ok(data) => {
-                    println!("{:?}", data);
-                   // 利用正则匹配“downkey:6,4” 这样的字符串，提取坐标 6 为 row 4 为 col
-                    let re = Regex::new(r"downkey:(\d+),(\d+)").unwrap();
-                    match re.captures(&data) {
-                        Some(caps) => {
-                            let row = caps.get(1).unwrap().as_str().parse::<u8>().unwrap_or(99);
-                            let col_num = caps.get(2).unwrap().as_str().parse::<u8>().unwrap_or(99);
-                            // println!("row: {}, col: {}", row, col);
-                            // 判断col 是否为2的几次方
-                            if col_num.count_ones() != 1 {
-                                continue;
+            {
+                let mut message = BUF_STR.write().unwrap();
+                if message.contains("\r\n") {
+                    // 以换行符分割字符串
+                    let messages: Vec<&str> = message.split("\r\n").collect();
+                    // 获取倒数第二个
+                    if let Some(second_last) = messages.get(messages.len() - 2) {
+                        match Self::get_row_col(second_last.to_string()) {
+                            Ok((row, col)) => {
+                                self.serial_input = Some((row, col));
+                                self.state = State::WaitUserInput;
+                                message.clear();
+                                break;
                             }
-                            let col = col_num.trailing_zeros() as u8;
-                            self.serial_input = Some((row, col));
-                            self.state = State::WaitUserInput;
-                            break;
-                        },
-                        None => {
-                            
+                            Err(_) => {}
                         }
                     }
-                },
-                Err(e) => {
-                    // eprintln!("Error reading from serial port: {}", e);
-                    // break;
-                    continue;
+                    
                 }
             }
+            sleep(Duration::from_millis(500));
         }
         while let Ok(_) = self.key_rx.try_recv() {}
         while let Ok(_) = self.serial_rx.try_recv() {}
         Ok(())
     }
 
-    fn wait_user_input(&mut self) -> Result<()>{
+    fn get_row_col(message: String) -> Result<(u8, u8)> {
+        // 利用正则匹配“downkey:6,4” 这样的字符串，提取坐标 6 为 row 4 为 col
+        let re = Regex::new(r"downkey:(\d+),(\d+)").unwrap();
+        match re.captures(&message) {
+            Some(caps) => {
+                let row = caps.get(1).unwrap().as_str().parse::<u8>().unwrap_or(99);
+                let col_num = caps.get(2).unwrap().as_str().parse::<u8>().unwrap_or(99);
+                // println!("row: {}, col: {}", row, col);
+                // 判断col 是否为2的几次方
+                if col_num.count_ones() == 1 {
+                    let col = col_num.trailing_zeros() as u8;
+                    return Ok((row, col));
+                }
+            }
+            None => {}
+        }
+        bail!("not found row and col")
+    }
+
+    fn wait_user_input(&mut self) -> Result<()> {
         if self.serial_input.is_none() {
             self.state = State::WaitSerialInput;
             return Ok(());
@@ -181,26 +202,24 @@ impl KeyResult {
                     unwrapped_output(&value);
                     self.user_input = Some(key_str.clone());
                     self.string_buffer = value.to_string();
-                },
+                }
                 Err(e) => continue,
             }
-            
         }
         Ok(())
     }
-    fn first_input(&mut self) -> Result<()>{
-
+    fn first_input(&mut self) -> Result<()> {
         Ok(())
     }
-    fn string_input(&mut self) -> Result<()>{
+    fn string_input(&mut self) -> Result<()> {
         if self.serial_input.is_none() {
             self.state = State::WaitSerialInput;
             return Ok(());
         }
         // 获取用户输入
         let input: String = Input::with_theme(&ColorfulTheme::default())
-        .with_prompt(format!("Row:{},Col:{}. KeyVal:", self.serial_input.unwrap().0, self.serial_input.unwrap().1))
-        .interact_text_on(&self.term)?;
+            .with_prompt(format!("Row:{},Col:{}. KeyVal:", self.serial_input.unwrap().0, self.serial_input.unwrap().1))
+            .interact_text_on(&self.term)?;
         self.result_map.insert((self.serial_input.unwrap().0 as u16) << 8 | self.serial_input.unwrap().1 as u16, input);
         self.save_result()?;
         self.string_buffer.clear();
@@ -209,11 +228,11 @@ impl KeyResult {
         self.state = State::WaitSerialInput;
         Ok(())
     }
-    fn exit(&mut self) -> Result<()>{
+    fn exit(&mut self) -> Result<()> {
         Ok(())
     }
 
-    fn save_result(&self) -> Result<()>{
+    fn save_result(&self) -> Result<()> {
         // 保存结果
         result::save_result(self.result_map.clone())?;
         Ok(())
@@ -229,7 +248,7 @@ fn unwrapped_output(out: &str) {
 }
 
 
-const SERIAL_PORT_BAUD_RATES: [u32; 12] = [1200  ,2400  ,4800  ,9600  ,14400 ,19200 ,38400 ,57600 ,115200,230400,460800,921600];
+const SERIAL_PORT_BAUD_RATES: [u32; 12] = [1200, 2400, 4800, 9600, 14400, 19200, 38400, 57600, 115200, 230400, 460800, 921600];
 
 pub fn start() -> Result<()> {
     // 1.获取所有可用串口
@@ -243,12 +262,12 @@ pub fn start() -> Result<()> {
         .interact()?;
     // 3.选择一个波特率
     let select_rate = Select::with_theme(&ColorfulTheme::default())
-    .with_prompt("Please select baud rate")
-    .default(8)
-    .items(&SERIAL_PORT_BAUD_RATES[..])
-    .interact()?;
+        .with_prompt("Please select baud rate")
+        .default(8)
+        .items(&SERIAL_PORT_BAUD_RATES[..])
+        .interact()?;
     // 4.开始输入监听
-    let mut key_result = KeyResult::new(ports[select_port].clone(),SERIAL_PORT_BAUD_RATES[select_rate])?;
+    let mut key_result = KeyResult::new(ports[select_port].clone(), SERIAL_PORT_BAUD_RATES[select_rate])?;
     // 5.运行状态机
     key_result.run()?;
     Ok(())

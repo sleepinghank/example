@@ -46,6 +46,6 @@ windows = "0.28.0"
 config = "0.14.0"
 crossterm = "0.28.1"
 #dialoguer = { path = "dialoguer", features=["default"] }
-dialoguer = "0.7.1"
+dialoguer = "0.11.0"
 regex = "1.5.4"
 console = "0.15.0"

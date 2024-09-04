@@ -14,30 +14,31 @@ pub fn read_from_serial_port(port_name: &str,baud_rate: u32, tx: mpsc::Sender<St
         .open()?;
     
     thread::spawn(move || {
-        let mut message = "".to_string();
+        println!("start read");
+        // let mut message = "".to_string();
         // 创建大批量缓冲区
-        let mut serial_buf: Vec<u8> = vec![0; 1000];
+        let mut serial_buf: Vec<u8> = vec![0; 10];
         loop {
             match port.read(serial_buf.as_mut_slice()) {
                 Ok(size) => {
                     if size > 0 {
                         // 转为string
                         let data = String::from_utf8_lossy(&serial_buf[..size]).to_string();
-                        // println!("{:?}", data);
-                        // 拼接字符串
-                        message.push_str(&data);
-                        // 判断是否有换行符
-                        if message.contains("\r\n") {
-                            // 以换行符分割字符串
-                            let messages: Vec<&str> = message.split("\r\n").collect();
-                            // 遍历除开最后一个字符串之前的字符
-                            // let last = messages.last().cloned().unwrap_or_default().to_string();
-                            // 发送数据
-                            tx.send(messages.get(0).unwrap().to_string()).unwrap();
-                            // 清空最后一个 换行符 之前的数据
-                            message.clear();
-                        
-                        }
+                        let mut buf = BUF_STR.write().unwrap(); // 获取写锁
+                        buf.push_str(&data);
+                        // // 拼接字符串
+                        // message.push_str(&data);
+                        // // 判断是否有换行符
+                        // if message.contains("\r\n") {
+                        //     // 以换行符分割字符串
+                        //     let messages: Vec<&str> = message.split("\r\n").collect();
+                        //     // 遍历除开最后一个字符串之前的字符
+                        //     // let last = messages.last().cloned().unwrap_or_default().to_string();
+                        //     // 发送数据
+                        //     tx.send(messages.get(0).unwrap().to_string()).unwrap();
+                        //     // 清空最后一个 换行符 之前的数据
+                        //     message.clear();
+                        // }
                     }
                 },
                 Err(e) => {
@@ -55,9 +56,11 @@ pub fn read_from_serial_port(port_name: &str,baud_rate: u32, tx: mpsc::Sender<St
 use std::time::Duration;
 
 use thread::sleep;
+use crate::key_cores::BUF_STR;
+
 pub fn test_read_from_serial_port() {
     let (tx, rx) = mpsc::channel();
-    read_from_serial_port("COM6", 115200, tx).unwrap();
+    read_from_serial_port("COM7", 921600, tx).unwrap();
     loop {
         // 无限循环，等待数据
         match rx.recv() {
