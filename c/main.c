@@ -22,6 +22,7 @@
 #include "pixart/keycode.h"
 #include "pixart/Storage1.h"
 #include <sys/time.h>
+#include "touchpad_online_update/touchpad_update.h"
 
 LOOP_FUNCTION(Main_Init){
     printf("main Module loop\n");
@@ -64,66 +65,52 @@ static uint32_t _count_bit_set(uint8_t num)
 
 extern combo_t key_combos[];
 extern uint8_t active_event;
+
+
+/*Backlight power down*/
+#define BACKLIGHT_POWER_DOWN_INTERVAL               (25 * 1000) /*1 min to ms*/
+#define KEYBOARD_INTERVAL                           4
+uint32_t _BAKC_LIGHT_POWER_DOWN_cnt_th = BACKLIGHT_POWER_DOWN_INTERVAL / KEYBOARD_INTERVAL;
 int main()
 {
     init();
     printf("------------------------------------------begin\n");
 
-//    // Start measuring time
-//    struct timeval begin, end;
-//    gettimeofday(&begin, 0);
-////    for (int i = 0; i < 2; ++i) {
-////        combo_t *combo = &key_combos[i];
-////        printf("combo:%d,long_ticks:%d,keys:%d,%d,event:%d\n", i, combo->long_press_ticks,combo->keys[0], combo->keys[1], combo->event);
-////    }
-////    return 0;
-//
-//     node_t* current = _key_code_list->head;
-//     node_t* curr_tmp = current;
-//
-//     printf("combo task befor\n");
-//     while (current != NULL) {
-//         uint16_t keycode = current->data.key_code;
-//         printf("Key:0x%02X,", keycode);
-//         current = current->next;
-//     }
-//     printf("\r\n");
-//
-//    combo_task(KEY_UPDATE);
-//
-//    uint8_t is_extend = 0;
-//    current = _key_code_list->head;
-//    printf("combo task end\n");
-//    if (current == NULL && active_event == 1 ) {
-//        current = _key_code_list_extend->head;
-//        is_extend = 1;
-//    }
-//
-//    while (current != NULL) {
-//        curr_tmp = current;
-//        current = current->next;
-//        if (current == NULL && active_event == 1 && is_extend == 0) {
-//            current = _key_code_list_extend->head;
-//            is_extend = 1;
-//        }
-//        if (curr_tmp->data.is_report == 0) {
-//            continue;
-//        }
-//        uint16_t keycode = curr_tmp->data.key_code;
-//        printf("0x%02X,", keycode);
-//    }
-//     printf("\r\n");
-//
-//    // Stop measuring time and calculate the elapsed time
-//    gettimeofday(&end, 0);
-//    long seconds = end.tv_sec - begin.tv_sec;
-//    long microseconds = end.tv_usec - begin.tv_usec;
-//    printf("seconds:%ld,microseconds:%ld\n", seconds, microseconds);
-//    printf("elapsed time: %ld s %ld us\n", seconds, microseconds);
-    Storage_write();
-
     printf("------------------------------------------\r\n");
-    Storage_read();
+//    start_update();
+    float vat = 3450;
+    uint16_t  bat_level_temp = 0;
+
+//  x < 2750 y = 0
+//  2750 < x < 3350 y=32*x/25 - 3529
+//  3350 < x < 3650 y=1697*x/100 - 56070
+//  3650 < x < 4050 y=191*x/20 - 28997
+//  4050 < x < 4150 y=16*x/5 - 3280
+//  4150 < x  y=10000
+//    if(vat <= 2750)
+//    {
+//        bat_level_temp = 0;
+//    }
+//    else if(vat <= 3350)
+//    {
+//        bat_level_temp = vat*32/25 - 3529;
+//    }
+//    else if(vat <= 3650)
+//    {
+//        bat_level_temp = vat*1697/100 - 56070;
+//    }
+//    else if(vat <= 4050)
+//    {
+//        bat_level_temp = vat*191/20 - 28997;
+//    }
+//    else if(vat <= 4150)
+//    {
+//        bat_level_temp = vat*16/5 - 3280;
+//    }
+//    else
+//        bat_level_temp = 10000;
+    uint8_t bat_level = ((630000 * 100) / 900000 );
+    printf("bat_level:%d\n",bat_level);
     printf("------------------------------------------end\r\n");
     return 0;
 }

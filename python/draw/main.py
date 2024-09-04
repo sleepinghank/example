@@ -10,8 +10,7 @@ import numpy as np
 
 import matplotlib
 
-matplotlib.use('TkAgg')
-if __name__ == '__main__':
+def com_pol():
     # 创建实时绘制横纵轴变量
     arr_x = []
     arr_y = []
@@ -53,3 +52,36 @@ if __name__ == '__main__':
             plt.plot(arr_x, arr_filter_y, color='red', linestyle='-', marker='', markersize=0)
             plt.pause(0.001)  # 暂停一段时间，不然画的太快会卡住显示不出来
             plt.ioff()  # 关闭画图窗口
+
+# 定义一个自定义函数来生成数据点
+def custom_function(x):
+    # x < 2750 y = 0
+    # 2750 < x < 3350 y=32*x/25 - 3529
+    # 3350 < x < 3650 y=1697*x/100 - 56070
+    # 3650 < x < 4050 y=191*x/20 - 28997
+    # 4050 < x < 4150 y=16*x/5 - 3280
+    # 4150 < x  y=100
+    y = np.piecewise(x, [x < 2750, (x >= 2750) & (x < 3350), (x >= 3350) & (x < 3650), (x >= 3650) & (x < 4050), (x >= 4050) & (x < 4150), x >= 4150],
+                     [0, lambda x: (32 * x / 25 - 3529)/100, lambda x: (1697 * x / 100 - 56070)/100, lambda x: (191 * x / 20 - 28997)/100, lambda x: (16 * x / 5 - 3280)/100, 100])
+    return y
+
+matplotlib.use('TkAgg')
+if __name__ == '__main__':
+    # 根据函数绘制折线图
+    # 生成数据点
+    x = np.linspace(2750, 4250, 10000)
+    y = custom_function(x)
+
+    # y 轴反转
+
+    # 绘制折线图
+    plt.plot(y, x, label='sin(x) * exp(-x / 5)')
+    plt.xlabel('X轴')
+    plt.ylabel('Y轴')
+    plt.title('自定义函数的折线图')
+    plt.legend()
+    plt.grid(True)
+
+    # 显示图形
+    plt.show()
+    

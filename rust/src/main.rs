@@ -1,11 +1,19 @@
+
+use std::env;
+use tokio::process::Command;
+use tokio::sync::mpsc;
+use tokio::time::sleep;
+use crate::os::WINDOW_SENDER;
+
 mod port;
 mod touch;
 mod kalman;
 mod encrypt;
 mod os;
 mod openai;
-
-
+mod file_test;
+mod serial; 
+mod key_cores;
 
 
 pub trait Animal {
@@ -27,42 +35,57 @@ impl Animal for Cat {
     }
 }
 
-#[tokio::main(flavor = "multi_thread", worker_threads = 64)]
-async fn main() {
-    println!("begin-----------------------------");
-    // port::receive_data::test_receive_data();
-    // touch::touch().unwrap();
-    // let tim = SystemTime::now().duration_since(UNIX_EPOCH).unwrap().as_secs() as u32;
-    // println!("tim: {}", tim);
-    // match SystemTime::now().duration_since(UNIX_EPOCH) {
-    //     Ok(n) => println!("1970-01-01 00:00:00 UTC was {} seconds ago!", n.as_secs()),
-    //     Err(_) => panic!("SystemTime before UNIX EPOCH!"),
-    // }
-
-    //     uint8_t a = 51;
-    //     uint8_t b = 172;
-    //     uint8_t c = a^b;
-    //     printf("c:%d\n",c);
-
-
-    // let dog: Box<dyn Animal> = Box::new(Dog);
-    // let cat: Box<dyn Animal> = Box::new(Cat);
-
-    // println!("{}", dog.make_noise());  // 输出："Woof!"
-    // println!("{}", cat.make_noise());  // 输出："Meow!"
-
-    // os::hotkaey::test();
-
-    // openai::chat::test("写一篇100的日记".to_string()).await.unwrap();
-
-
-    // if output.status.success() {
-    //     println!("Command executed successfully!");
-    //     let stdout = String::from_utf8_lossy(&output.stdout);
-    //     println!("Output: {}", stdout);
-    // } else {
-    //     let stderr = String::from_utf8_lossy(&output.stderr);
-    //     eprintln!("Error executing command: {}", stderr);
-    // }
-    println!("end-----------------------------");
+// 假设有一个简单的对话记录结构体
+struct Dialogue {
+    speaker: String,
+    message: String,
 }
+
+// 实现一个函数，将对话记录转换为特定的字符串格式
+fn format_dialogues(dialogues: Vec<Dialogue>) -> Option<String> {
+    if dialogues.is_empty() {
+        return None;
+    }
+    let mut formatted_string = "[".to_owned();
+    for dialogue in dialogues {
+        // 对每个对话进行格式化，并追加到结果字符串中
+        formatted_string.push_str(&format!(
+            "(\"{}\", \"{}\"),",
+            dialogue.speaker, dialogue.message
+        ));
+    }
+    // 移除最后一个逗号
+    formatted_string.pop();
+    formatted_string.push(']');
+    Some(formatted_string)
+}
+
+use rdev::{listen, Event, EventType};
+
+fn callback(event: Event) {
+    match event.event_type {
+        EventType::MouseMove { x, y } => {
+            println!("Mouse moved to: ({}, {})", x, y);
+        }
+        EventType::ButtonPress(button) => {
+            println!("Mouse button {:?} pressed", button);
+        }
+        EventType::ButtonRelease(button) => {
+            println!("Mouse button {:?} released", button);
+        }
+        _ => (),
+    }
+
+
+    
+}
+
+#[tokio::main]
+async fn main() -> Result<(), Box<dyn std::error::Error>> {
+    // key_cores::serial::test_read_from_serial_port();
+    // key_cores::cli::test_read_command();
+    key_cores::start().unwrap();
+    Ok(())
+}
+
+

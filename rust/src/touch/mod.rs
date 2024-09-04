@@ -104,14 +104,14 @@ pub struct Report2{
 #[derive(Default,Debug,Clone)]
 #[repr(C)]
 pub struct UnmapReport2{
-    tab:[u8; 20],
+    tab:[u8; 19],
 }
 impl UnmapReport2 {
     pub fn map(&self) -> Report2 {
-        let  finger1 = UnmapFinger { tab: [self.tab[4],self.tab[5],self.tab[6],self.tab[7]] }.map();
-        let  finger2 = UnmapFinger { tab: [self.tab[8],self.tab[9],self.tab[10],self.tab[11]] }.map();
-        let  finger3 = UnmapFinger { tab: [self.tab[12],self.tab[13],self.tab[14],self.tab[15]] }.map();
-        let  finger4 = UnmapFinger { tab: [self.tab[16],self.tab[17],self.tab[18],self.tab[19]] }.map();
+        let  finger1 = UnmapFinger { tab: [self.tab[3],self.tab[4],self.tab[5],self.tab[6]] }.map();
+        let  finger2 = UnmapFinger { tab: [self.tab[7],self.tab[8],self.tab[9],self.tab[10]] }.map();
+        let  finger3 = UnmapFinger { tab: [self.tab[11],self.tab[12],self.tab[13],self.tab[14]] }.map();
+        let  finger4 = UnmapFinger { tab: [self.tab[15],self.tab[16],self.tab[17],self.tab[18]] }.map();
 
         Report2{
             scan_time: self.tab[0] as u16  +  ((self.tab[1] as u16) << 8),
@@ -124,7 +124,7 @@ impl UnmapReport2 {
 
 
 use std::fs::File;
-use std::io::{self, BufRead, BufWriter};
+use std::io::{self, BufRead, BufWriter, Write};
 use std::path::Path;
 
 
@@ -139,10 +139,10 @@ fn read_lines<P>(filename: P) -> io::Result<io::Lines<io::BufReader<File>>>
 }
 
 pub fn touch() -> Result<()>{
-    let file_name = "KB09117_error_240305_1141.txt".to_string();
+    let file_name = "base_touch_data.txt".to_string();
     let lines = read_lines(format!("./src/touch/data/{}",file_name))?;
-    let file = File::create(format!("./src/touch/result/{}",file_name))?;
-    let _file = BufWriter::new(file);
+    let mut file = File::create(format!("./src/touch/result/{}",file_name))?;
+    // let _file = BufWriter::new(file);
     // 使用迭代器，返回一个（可选）字符串
     for line in lines {
         if let Ok(s) = line {
@@ -150,13 +150,14 @@ pub fn touch() -> Result<()>{
             //     continue;
             // }
             // let s = &s[2..42];
+            // let decoded = <[u8; 19]>::from_hex(s).expect("Decoding failed");
+            // let report = UnmapReportLc { tab: decoded }.map();
             let decoded = <[u8; 19]>::from_hex(s).expect("Decoding failed");
             let report = UnmapReportLc { tab: decoded }.map();
-            // let decoded = <[u8; 20]>::from_hex(s).expect("Decoding failed");
-            // let report = UnmapReport2 { tab: decoded }.map();
 
-            println!("button:{},button2:{},scan_time:{},count:{}", report.button,report.button2,report.scan_time,report.count);
-            // file.write(format!("button:{},button2:{},scan_time:{}\r\n", report.button,report.button2,report.scan_time).as_bytes()).unwrap();
+            // println!("button:{},button2:{},scan_time:{},count:{}", report.button,report.button2,report.scan_time,report.count);
+            println!("button:{},button2:{},scan_time:{}", report.button,report.button2,report.scan_time);
+            file.write(format!("button:{},button2:{},scan_time:{}\r\n", report.button,report.button2,report.scan_time).as_bytes()).unwrap();
             // if report.fingers[0].confidence == 0 || report.fingers[1].confidence == 0{
             //     continue;
             // }
@@ -174,13 +175,14 @@ pub fn touch() -> Result<()>{
                 //     continue;
                 // }
                 println!("contact_id:{},tip:{},confidence:{},x:{},y:{}", finger.contact_id,finger.tip,finger.confidence,finger.x,finger.y);
-                // file.write(format!("contact_id:{},tip:{},confidence:{},x:{},y:{}\r\n", finger.contact_id,finger.tip,finger.confidence,finger.x,finger.y).as_bytes()).unwrap();
+                file.write(format!("contact_id:{},tip:{},confidence:{},x:{},y:{}\r\n", finger.contact_id,finger.tip,finger.confidence,finger.x,finger.y).as_bytes()).unwrap();
                 // file.write(format!("{},{}\r\n",dis,finger.y).as_bytes()).unwrap();
             }
             println!("----------------------------");
-            // file.write(format!("----------------------------\r\n").as_bytes()).unwrap();
+            file.write(format!("----------------------------\r\n").as_bytes()).unwrap();
         }
     }
+    file.flush().unwrap();
     Ok(())
 }
 
