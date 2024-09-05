@@ -6,11 +6,6 @@ use anyhow::Result;
 pub const RESULT_FILE: &str = "result.txt";
 
 pub fn save_result(result_map: HashMap<u16, String>) -> Result<()> {
-    // 判断文件是否存在，如果存在则清空文件
-    // if std::path::Path::new(RESULT_FILE).exists() {
-    //     std::fs::remove_file(RESULT_FILE)?;
-    // }
-
     let mut max_row = 0;
     let mut max_col = 0;
     // 1.循环result_map 中的key value

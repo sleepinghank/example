@@ -1,10 +1,10 @@
 
-use std::io;
+
 
 use crossterm::event::{self, Event, KeyCode, KeyEvent};
 use anyhow::{anyhow, Result};
 
-use std::sync::mpsc::SyncSender;
+use std::{sync::mpsc::SyncSender, thread};
 
 use rdev::listen as listen_event;
 
@@ -27,45 +27,49 @@ fn callback(event: rdev::Event, sender: SyncSender<rdev::Key>) {
     }
 }
 
-pub fn read_input() -> io::Result<KeyEvent> {
-    loop {
-        if let Event::Key(key_event) = event::read()?
-        {
-            return Ok(key_event);
-        }
-    }
-}
+use std::{io, sync::mpsc::sync_channel};
+use super::keymap;
 
-pub fn read_char() -> io::Result<char> {
+pub fn test_listen_keyboard() {
+    let (sync_sender, key_rx) = sync_channel(1024);
+    thread::spawn(move || {
+        listen_keyboard(sync_sender).unwrap();
+    });
+    let key_map = keymap::get_keymap().unwrap();
     loop {
-        if let Event::Key(KeyEvent {
-            code: KeyCode::Char(c),
-            ..
-        }) = event::read()?
-        {
-            return Ok(c);
-        }
-    }
-}
-
-pub fn read_line() -> io::Result<String> {
-    let mut line = String::new();
-    while let Event::Key(KeyEvent { code, .. }) = event::read()? {
-        match code {
-            KeyCode::Enter => {
+        match key_rx.recv() {
+            Ok(key) => {
+                let key_str = format!("{:?}", key);
+                let value = key_map.get(&key_str.to_lowercase()).cloned().unwrap_or_default();
+                println!("key:{:?},value:{:?}", key_str,value);
+            }
+            Err(e) => {
+                eprintln!("Error reading from serial port: {}", e);
                 break;
             }
-            KeyCode::Char(c) => {
-                line.push(c);
-            }
-            _ => {}
         }
     }
-
-    Ok(line)
 }
 
-pub fn test_read_command() -> Result<()>{
-    // listen_keyboard();
-    Ok(())
+#[cfg(test)]
+mod tests {
+    use super::*;
+    use std::{io, sync::mpsc::sync_channel};
+
+    #[test]
+    fn test_listen_keyboard() {
+        let (sync_sender, key_rx) = sync_channel(1024);
+        listen_keyboard(sync_sender).unwrap();
+        loop {
+            match key_rx.recv() {
+                Ok(key) => {
+                    println!("{:?}", key);
+                }
+                Err(e) => {
+                    eprintln!("Error reading from serial port: {}", e);
+                    break;
+                }
+            }
+        }
+    }
 }

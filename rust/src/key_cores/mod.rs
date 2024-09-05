@@ -164,6 +164,7 @@ impl KeyResult {
         bail!("not found row and col")
     }
 
+    /// 等待用户输入
     fn wait_user_input(&mut self) -> Result<()> {
         if self.serial_input.is_none() {
             self.state = State::WaitSerialInput;
@@ -183,7 +184,7 @@ impl KeyResult {
                             self.term.read_line()?;
                             while let Ok(_) = self.key_rx.try_recv() {}
                             while let Ok(_) = self.serial_rx.try_recv() {}
-                            return Ok(());
+                            break;
                         }
                         if key == rdev::Key::KeyI {
                             if key_str == "KeyI" {
@@ -191,13 +192,16 @@ impl KeyResult {
                                 self.string_buffer.clear();
                                 self.state = State::StringInput;
                                 println!();
-                                return Ok(());
+                                break;
                             }
                         }
                     }
                     // 将 key 转换为字符串 在key_map中查找对应的值。如果找不到就展示原有值
                     let key_str = format!("{:?}", key);
-                    let value = self.key_map.get(&key_str.to_lowercase()).unwrap_or(&key_str);
+                    let mut value = self.key_map.get(&key_str.to_lowercase()).unwrap_or(&key_str);
+                    if value.is_empty() {
+                        value = &key_str;
+                    }
                     // println!("Row:{},Col:{}. KeyVal:{}", self.serial_input.unwrap().0, self.serial_input.unwrap().1,value);
                     unwrapped_output(&value);
                     self.user_input = Some(key_str.clone());
@@ -208,6 +212,7 @@ impl KeyResult {
         }
         Ok(())
     }
+
     fn first_input(&mut self) -> Result<()> {
         Ok(())
     }

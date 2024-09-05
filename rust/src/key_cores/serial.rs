@@ -17,13 +17,14 @@ pub fn read_from_serial_port(port_name: &str,baud_rate: u32, tx: mpsc::Sender<St
         println!("start read");
         // let mut message = "".to_string();
         // 创建大批量缓冲区
-        let mut serial_buf: Vec<u8> = vec![0; 10];
+        let mut serial_buf: Vec<u8> = vec![0; 200];
         loop {
             match port.read(serial_buf.as_mut_slice()) {
                 Ok(size) => {
                     if size > 0 {
                         // 转为string
                         let data = String::from_utf8_lossy(&serial_buf[..size]).to_string();
+                        // println!("{:?}", data);
                         let mut buf = BUF_STR.write().unwrap(); // 获取写锁
                         buf.push_str(&data);
                         // // 拼接字符串

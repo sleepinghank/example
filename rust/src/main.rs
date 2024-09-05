@@ -1,4 +1,5 @@
 
+
 use std::env;
 use tokio::process::Command;
 use tokio::sync::mpsc;
@@ -83,8 +84,9 @@ fn callback(event: Event) {
 #[tokio::main]
 async fn main() -> Result<(), Box<dyn std::error::Error>> {
     // key_cores::serial::test_read_from_serial_port();
-    // key_cores::cli::test_read_command();
+    // key_cores::cli::test_listen_keyboard();
     key_cores::start().unwrap();
+
     Ok(())
 }
 
