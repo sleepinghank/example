@@ -19,10 +19,24 @@ pub fn listen_keyboard(sender: SyncSender<rdev::Key>) -> Result<()>{
 
 fn callback(event: rdev::Event, sender: SyncSender<rdev::Key>) {
     let event_type = event.event_type;
+    let name = event.name;
+    let time = event.time;
     match event_type {
         rdev::EventType::KeyPress(key) => {
             sender.send(key).unwrap();
         }
+        // rdev::EventType::ButtonPress(b) => {
+        //     println!("ButtonPress: {:?},name:{:?},time:{:?}", b,name,time);
+        // },
+        // rdev::EventType::ButtonRelease(b) => {
+        //     println!("ButtonPress: {:?},name:{:?},time:{:?}", b,name,time);
+        // },
+        // rdev::EventType::MouseMove {x,y  } => {
+        //     // println!("MouseMove: {:?}{:?}", x,y);
+        // },
+        // rdev::EventType::Wheel {delta_x,delta_y} => {
+        //     println!("Wheel: {:?}{:?}", delta_x,delta_y);
+        // },
         _ => {}
     }
 }
@@ -35,13 +49,14 @@ pub fn test_listen_keyboard() {
     thread::spawn(move || {
         listen_keyboard(sync_sender).unwrap();
     });
-    let key_map = keymap::get_keymap().unwrap();
+    // let key_map = keymap::get_keymap().unwrap();
     loop {
         match key_rx.recv() {
             Ok(key) => {
-                let key_str = format!("{:?}", key);
-                let value = key_map.get(&key_str.to_lowercase()).cloned().unwrap_or_default();
-                println!("key:{:?},value:{:?}", key_str,value);
+                // let key_str = format!("{:?}", key);
+                // let value = key_map.get(&key_str.to_lowercase()).cloned().unwrap_or_default();
+                // println!("key:{:?},value:{:?}", key_str,value);
+                println!("{:?}", key);
             }
             Err(e) => {
                 eprintln!("Error reading from serial port: {}", e);

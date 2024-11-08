@@ -10,8 +10,8 @@ pub fn get_available_serialport() -> Result<Vec<String>>{
 
 /// 读取给定串口号数据，以换行为间隔，读取每行数据，返回mpsc管道
 pub fn read_from_serial_port(port_name: &str,baud_rate: u32, tx: mpsc::Sender<String>) -> Result<()> {
-    let mut port = serialport::new(port_name, baud_rate)
-        .open()?;
+    let mut port = serialport::new(port_name, baud_rate).timeout(std::time::Duration::from_millis(10)).open()?;
+
     
     thread::spawn(move || {
         println!("start read");
@@ -43,8 +43,8 @@ pub fn read_from_serial_port(port_name: &str,baud_rate: u32, tx: mpsc::Sender<St
                     }
                 },
                 Err(e) => {
-                    eprintln!("Error reading from serial port: {}", e);
-                    break;
+                    // eprintln!("Error reading from serial port: {}", e);
+                    // break;
                 }
             }
             // 休眠100ms

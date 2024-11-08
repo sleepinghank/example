@@ -32,8 +32,8 @@
     } while (0)
 #define PRESS_REPEAT_MAX_NUM  15 /*!< The maximum value of the repeat counter */
 
-extern list_t* _key_code_list;          // current press key
-extern list_t* _key_code_list_extend;          // current press key
+list_t* _key_code_list;          // current press key
+list_t* _key_code_list_extend;          // current press key
 extern combo_t key_combos[];
 
 /**

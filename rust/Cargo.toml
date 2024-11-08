@@ -18,7 +18,7 @@ hex = "0.4.3"
 strum = "0.24.0"
 strum_macros = "0.24.0"
 num_enum = "0.5.7"
-tokio = { version = "1.17.0", features = ["full"] }
+tokio = { version = "1.23", features = ["full"] }
 ring = "0.16"
 aes="0.8.4"
 cbc="0.1.2"
@@ -42,10 +42,32 @@ base64 = "0.22.0"
 lazy_static = "1.4.0"
 sysinfo = "0.30.12"
 rdev = "0.5.3"
-windows = "0.28.0"
+windows = { version = "0.38.0", features = ["Win32_Foundation",
+    "Win32_Networking_WinSock", "Win32_NetworkManagement_IpHelper",
+    "alloc", "implement", "Win32_System_Com", "Data_Xml_Dom",
+    "Win32_Graphics_Gdi", "Win32_Graphics_Imaging", "Win32_Storage_FileSystem",
+    "Win32_System_Com_Marshal", "Win32_System_Com_StructuredStorage",
+    "Win32_System_DataExchange", "Win32_System_LibraryLoader", "Win32_System_Memory",
+    "Win32_System_Ole", "Win32_System_SystemServices", "Win32_System_Threading",
+    "Win32_UI_Accessibility", "Win32_UI_HiDpi", "Win32_UI_Input_KeyboardAndMouse",
+    "Win32_UI_Shell", "Win32_UI_TextServices", "Win32_UI_WindowsAndMessaging",
+    "Win32_Security", "Win32_System_StationsAndDesktops", "Win32_System_Pipes",
+    "Win32_System_WindowsProgramming", "Win32_System_IO", "Win32_Networking_NetworkListManager",
+    "Devices_Bluetooth", "Devices_Enumeration", "Devices_Bluetooth_GenericAttributeProfile",
+    "Devices_Bluetooth_Advertisement", "Devices_Radios", "Foundation_Collections",
+    "Win32", "Foundation", "Storage_Streams", "Win32_System_SystemInformation","Win32_System_Diagnostics_Debug"
+] }
 config = "0.14.0"
 crossterm = "0.28.1"
 #dialoguer = { path = "dialoguer", features=["default"] }
 dialoguer = "0.11.0"
 regex = "1.5.4"
 console = "0.15.0"
+winreg = "0.52"
+downloader = { version = "0.2.8", features = ["verify"] }
+sha3 = "0.10.0"
+num_cpus = "1.16.0"# used in examples
+rustacuda = "0.1.3"
+uuid = "1.11.0"
+get-selected-text = {path = "get-selected-text"}
+winapi = "0.3"

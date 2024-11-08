@@ -12,7 +12,7 @@ use std::fmt::format;
 use std::thread::{self, sleep, spawn};
 use std::{sync::mpsc};
 use crossterm::{event, queue};
-use anyhow::{bail, Result};
+use anyhow::{anyhow, bail, Result};
 use dialoguer::{theme::ColorfulTheme, Select, Input};
 use regex::Regex;
 use rdev::listen as listen_event;
@@ -101,7 +101,8 @@ impl KeyResult {
 
     fn run(&mut self) -> Result<()> {
         loop {
-            unwrapped_output(format!("{:?}", self.state).as_str());
+            println!("state: {:?}", self.state);
+            unwrapped_output(format!("{:?}\r\n", self.state).as_str());
             match self.state {
                 State::WaitSerialInput => self.wait_serial_input()?,
                 State::WaitUserInput => self.wait_user_input()?,
@@ -117,9 +118,10 @@ impl KeyResult {
         {
             BUF_STR.write().unwrap().clear();
         }
+        println!("Please press a key on the keyboard");
         loop {
             {
-                let mut message = BUF_STR.write().unwrap();
+                let mut message = BUF_STR.write().map_err(|e| anyhow!("lock error:{:?}",e))?;
                 if message.contains("\r\n") {
                     // 以换行符分割字符串
                     let messages: Vec<&str> = message.split("\r\n").collect();

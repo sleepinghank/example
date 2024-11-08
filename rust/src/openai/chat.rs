@@ -2,7 +2,7 @@
 use async_openai::types::{ChatCompletionRequestUserMessageArgs, CreateChatCompletionRequestArgs};
 use async_openai::Client;
 use async_openai::config::Config;
-use anyhow::Result;
+use anyhow::{Result,anyhow};
 use reqwest::header::{HeaderMap, AUTHORIZATION};
 
 use std::io::{stdout, Write};
@@ -53,14 +53,36 @@ impl Config for ApiConfig {
     }
 }
 
-
+/// 获取本地 AI 服务的健康状态 请求http://127.0.0.1:8080/health
+/// 分三种情况：
+/// 1. 服务正常，返回 200 OK
+/// 2. 服务未准备完成，返回 500 Internal Server Error
+/// 3. 服务不可用，返回 503 Service Unavailable
+pub async fn local_ai_health() -> Result<bool>{
+    let client = reqwest::Client::new();
+    let result = client
+        .get("http://127.0.0.1:8080/health")
+        .send()
+        .await;
+    
+    match result {
+        Ok(response) => {
+            // 检查响应状态
+            match response.status().as_u16() {
+                200 => Ok(true),
+                _ => Ok(false),
+            }
+        }
+        Err(_) => Err(anyhow!("Local ai service is unavailable"))
+    }
+}
 
 pub async fn test(req:String) -> Result<()>{
-    let config = ApiConfig::new(r"http://rx4090.inateck.top:8080", "inateck.com");
+    let config = ApiConfig::new(r"http://127.0.0.1:8080", "");
     let client = Client::with_config(config);
 
     let request = CreateChatCompletionRequestArgs::default()
-        .model("inateckai")
+        // .model("inateckai")
         .max_tokens(512u16)
         .messages([ChatCompletionRequestUserMessageArgs::default()
             .content(req)
@@ -76,7 +98,6 @@ pub async fn test(req:String) -> Result<()>{
         match result {
             Ok(response) => {
                 count += 1;
-                // write!(lock, "{}: ", count).unwrap();
                 response.choices.iter().for_each(|chat_choice| {
                     if let Some(ref content) = chat_choice.delta.content {
                         write!(lock, "{}", content).unwrap();

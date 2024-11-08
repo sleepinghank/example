@@ -16,7 +16,7 @@ fn read_from_serial_port(port_name: &str, tx: mpsc::Sender<Vec<u8>>) -> Result<(
         .open()?;
 
     thread::spawn(move || {
-        let mut buf = [0u8; 10]; // 缓冲区大小可根据需要调整
+        let mut buf = [0u8; 2]; // 缓冲区大小可根据需要调整
 
         loop {
             match port.read(&mut buf) {
@@ -121,20 +121,27 @@ fn print_device_info(port_type: SerialPortType) {
         }
     }
 }
+use std::str;
 
+fn vec_u8_to_string(bytes: Vec<u8>) -> Result<String, str::Utf8Error> {
+    str::from_utf8(&bytes).map(|s| s.to_string())
+}
 pub fn test_receive_data() {
     // 创建一个新的通道用于测试
     let (tx, rx) = mpsc::channel::<Vec<u8>>();
 
     // 在测试中调用读取串口数据的方法
-    if let Err(e) = read_from_serial_port("COM10", tx) {
+    if let Err(e) = read_from_serial_port("COM3", tx) {
         println!("Error in reading from serial port: {}", e);
         return
     }
-    
+    // let mut all_data = "".to_string();
     loop {
         let received_data = rx.recv().unwrap();
-        io::stdout().write_all(&received_data).unwrap();
+
+        let data = vec_u8_to_string(received_data).unwrap_or("error".to_string());
+        println!("{:?}", data);
+        // io::stdout().write_all(&received_data).unwrap();
     }
 }
 
@@ -150,7 +157,7 @@ mod tests {
         let (tx, rx) = mpsc::channel::<Vec<u8>>();
 
         // 在测试中调用读取串口数据的方法
-        if let Err(e) = read_from_serial_port("COM20", tx) {
+        if let Err(e) = read_from_serial_port("COM6", tx) {
             panic!("Error in reading from serial port: {}", e);
         }
 
