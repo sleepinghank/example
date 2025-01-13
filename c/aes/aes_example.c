@@ -70,7 +70,7 @@ uint8_t Send_EncryptedData(uint8_t command_code, uint8_t error_code, uint8_t num
     uint8_t buf[64], buf_len = 0, i = 0;
     uint16_t crc = 0;
 
-    crc = GetQuickCRC16(encrypt_buf, encrypt_len);//计算CRC
+//    crc = GetQuickCRC16(encrypt_buf, encrypt_len);//计算CRC
     printf("crc:%d\n", crc);
     buf_len = 0;
 

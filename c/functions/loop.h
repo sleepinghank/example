@@ -7,17 +7,17 @@
 
 void callInitFunctions();
 
-typedef void (*LoopFunction)();
-
-#define MAX_INIT_FUNCTIONS 10
-extern LoopFunction loopFunctions[];
-extern int loopFunctionCount;
-
-#define LOOP_FUNCTION(name) \
-    void name(); \
-    void __attribute__((constructor)) init_##name() { \
-          loopFunctions[loopFunctionCount++] = &name; \
-    } \
-    void name()
-
-#endif //C_LOOP_H
+//typedef void (*LoopFunction)();
+//
+//#define MAX_INIT_FUNCTIONS 10
+//extern LoopFunction loopFunctions[];
+//extern int loopFunctionCount;
+//
+//#define LOOP_FUNCTION(name) \
+//    void name(); \
+//    void __attribute__((constructor)) init_##name() { \
+//          loopFunctions[loopFunctionCount++] = &name; \
+//    } \
+//    void name()
+//
+//#endif //C_LOOP_H

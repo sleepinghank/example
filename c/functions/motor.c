@@ -7,9 +7,9 @@
 
 #include <stdio.h>
 
-LOOP_FUNCTION(Motor_Init){
-        printf("Motor Module loop\n");
-}
+//LOOP_FUNCTION(Motor_Init){
+//        printf("Motor Module loop\n");
+//}
 
 int motor_test(){
     printf("motor test\n");
