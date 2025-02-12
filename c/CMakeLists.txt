@@ -23,6 +23,8 @@ add_library(functions STATIC ${FUNCTIONS_LIB_SRC} main.c main.h
         battery/battery_level.h
         preset_gesture/preset_gesture.c
         preset_gesture/preset_gesture.h
+        preset_gesture/mcs_gesture.c
+        preset_gesture/mcs_gesture.h
         #        knn/knn.c
 #        knn/knn.h
         )
@@ -34,6 +36,8 @@ add_executable(c main.c main.h touchpad_online_update/touchpad_update.c touchpad
         battery/battery_level.h
         preset_gesture/preset_gesture.c
         preset_gesture/preset_gesture.h
+        preset_gesture/mcs_gesture.c
+        preset_gesture/mcs_gesture.h
         #        knn/knn.c knn/knn.h
         )
 

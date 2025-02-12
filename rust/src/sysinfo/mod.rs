@@ -401,6 +401,18 @@ pub async fn check_env() -> anyhow::Result<()>{
     }
     Ok(())
 }
+// 根据 use sysinfo::Disks; 检测剩余容量 转化为容量大小为G， 例如传入盘符C。返回剩余容量大小 5g
+pub fn get_disk_space(disk_name: &str) -> anyhow::Result<u64>{
+    use sysinfo::Disks;
+    let disks = Disks::new_with_refreshed_list();
+    for disk in disks.list() {
+        if disk.mount_point().to_str().unwrap().contains(disk_name) {
+            return Ok(disk.available_space()/1024/1024/1024);
+        }
+    }
+    Err(anyhow!("No match found"))
+}
+
 
 #[cfg(test)]
 mod tests {
@@ -436,5 +448,11 @@ mod tests {
     fn test_detect_cuda(){
         let result = NvidiaInfo::detect_cuda();
         println!("detect_cuda: {:?}", result);
+    }
+
+    #[test]
+    fn test_get_disk_space(){
+        let result = get_disk_space("C").unwrap();
+        println!("get_disk_space: {:?}", result);
     }
 }

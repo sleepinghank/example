@@ -25,6 +25,7 @@
 //#include "timer_task/timer_task.h"
 #include "battery/battery_level.h"
 #include "preset_gesture/preset_gesture.h"
+#include "preset_gesture/mcs_gesture.h"
 // LOOP_FUNCTION(Main_Init){
 //     printf("main Module loop\n");
 // }
@@ -44,9 +45,10 @@ int main(void)
 //    for (int i = 0; i < 1000; ++i) {
 //        battery_level_detection(1);
 //    }
-    preset_gesture_init();
+//    preset_gesture_init();
 
-
+    int result = mcs_test();
+    printf("result:%d",result);
     printf("------------------------------------------end\r\n");
     return 0;
 }

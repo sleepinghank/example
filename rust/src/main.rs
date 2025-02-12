@@ -31,30 +31,31 @@ mod select_text;
 async fn main() -> Result<(), Box<dyn std::error::Error>> {
     // get_device_info().await;
     // info!("start pair 00000000000");
-    let handler: TypedEventHandler<DeviceWatcher, DeviceInformation> =
-        TypedEventHandler::new(move |_sender, args: &Option<DeviceInformation>| {
-            println!("DeviceWatcher 11111: {:?}", args);
-            if let Some(args) = args {
-                // on_connected(args);
-            }
-            Ok(())
-        });
-    let handler_update: TypedEventHandler<DeviceWatcher, DeviceInformationUpdate> =
-        TypedEventHandler::new(move |_sender, args: &Option<DeviceInformationUpdate>| {
-            println!("DeviceWatcher 2222: {:?}", args);
-            if let Some(args) = args {
-                // on_removed(args);
-            }
-            Ok(())
-        });
+    // let handler: TypedEventHandler<DeviceWatcher, DeviceInformation> =
+    //     TypedEventHandler::new(move |_sender, args: &Option<DeviceInformation>| {
+    //         println!("DeviceWatcher 11111: {:?}", args);
+    //         if let Some(args) = args {
+    //             // on_connected(args);
+    //         }
+    //         Ok(())
+    //     });
+    // let handler_update: TypedEventHandler<DeviceWatcher, DeviceInformationUpdate> =
+    //     TypedEventHandler::new(move |_sender, args: &Option<DeviceInformationUpdate>| {
+    //         println!("DeviceWatcher 2222: {:?}", args);
+    //         if let Some(args) = args {
+    //             // on_removed(args);
+    //         }
+    //         Ok(())
+    //     });
+    //
+    // let pair= BluetoothLEDevice::GetDeviceSelectorFromConnectionStatus(
+    //     BluetoothConnectionStatus::Connected)?;
+    // let watcher = DeviceInformation::CreateWatcherAqsFilter(&pair).unwrap();
+    // watcher.Added(&handler).unwrap();
+    // watcher.Updated(&handler_update).unwrap();
+    // watcher.Removed(&handler_update).unwrap();
+    // watcher.Start()?;
 
-    let pair= BluetoothLEDevice::GetDeviceSelectorFromConnectionStatus(
-        BluetoothConnectionStatus::Connected)?;
-    let watcher = DeviceInformation::CreateWatcherAqsFilter(&pair).unwrap();
-    watcher.Added(&handler).unwrap();
-    watcher.Updated(&handler_update).unwrap();
-    watcher.Removed(&handler_update).unwrap();
-    watcher.Start()?;
     // {
     //     let mut write_lock = self.token.write().unwrap();
     //     *write_lock = Some(token);
@@ -63,8 +64,9 @@ async fn main() -> Result<(), Box<dyn std::error::Error>> {
     //     let mut removed_lock = self.removed_token.write().unwrap();
     //     *removed_lock = Some(removed);
     // }
-    loop {
-        tokio::time::sleep(std::time::Duration::from_secs(1)).await;
-    }
+    // loop {
+    //     tokio::time::sleep(std::time::Duration::from_secs(1)).await;
+    // }
+    Ok(())
 }
 
