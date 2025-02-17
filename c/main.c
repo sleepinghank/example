@@ -36,6 +36,9 @@
 
 #define INTERVAL_CNT(interval)                      (32768 * interval / (KEYBOARD_TIMER))
 
+extern void test_gesture_recognition() ;
+extern void select_best_gestures() ;
+extern void generate_all_gesture_features();
 
 int main(void)
 {
@@ -46,9 +49,12 @@ int main(void)
 //        battery_level_detection(1);
 //    }
 //    preset_gesture_init();
-
-    int result = mcs_test();
-    printf("result:%d",result);
+    test_gesture_recognition();
+//
+//    select_best_gestures();
+//    generate_all_gesture_features();
+    // int result = mcs_test();
+    // printf("result:%d",result);
     printf("------------------------------------------end\r\n");
     return 0;
 }
