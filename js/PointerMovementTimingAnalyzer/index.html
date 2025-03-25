@@ -1,0 +1,54 @@
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=1080, initial-scale=1" />
+<meta name="color-scheme" content="dark light" />
+<meta name="keywords" content="mouse, pointer, movement, timing, analyzer" />
+<meta name="description" content="Visualizes mouse/touch/pen pointermove events" />
+<title>Pointer Movement Timing Analyzer</title>
+<style>
+html {min-width: 1080px;}
+@media (prefers-color-scheme: dark) {
+  html {background-color: #121212;}
+}
+@media (scripting: none) {
+  body>*:not(noscript) { display: none; }
+}
+</style>
+<link rel="stylesheet" href="./index.css" />
+</head>
+<body>
+<div id="layers">
+  <canvas id="axesCanvas" width="1036" height="640"></canvas>
+  <canvas id="dataCanvas" width="1036" height="640"></canvas>
+</div>
+
+<div>
+  Legend:
+  <ul class="legend">
+    <li class="red-dot">movementX</li>
+    <li class="green-dot">movementY</li>
+    <li class="white-bar">time reveiced</li>
+  </ul>
+</div>
+
+<h2 hidden="">Options</h2>
+<form autocomplete="off">
+  <input type="checkbox" id="showUncoalescedPoints" checked="" /> <label for="showUncoalescedPoints">Show rawupdate/uncoalesced points</label><br/>
+  <input type="checkbox" id="showMergedPoints" checked="" /> <label for="showMergedPoints">Show vsync'ed / keyframe points</label><br/>
+  <input type="checkbox" id="showPointGuideline" checked="" /> <label for="showPointGuideline">Show point guideline</label><br/>
+</form>
+
+<script src="./error-reportor.js"></script>
+<script>
+if (location.protocol === 'file:') {
+  document.body.append(Object.assign(document.createElement('script'), {src: './index.nomodule.js'}));
+} else {
+  import('./index.js');
+}
+</script>
+<noscript><p>This page doesn't work in Preview Mode</p></noscript>
+</body>
+</html>

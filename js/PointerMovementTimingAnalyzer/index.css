@@ -1,0 +1,47 @@
+#layers {
+    position: relative;
+  }
+  #axesCanvas {
+    background-color: #000000;
+  }
+  #dataCanvas {
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    z-index: 1;
+    touch-action: none;
+    user-select: none;
+    -webkit-user-select: none;
+  }
+  input[type="range"] {
+    vertical-align: middle;
+  }
+  input[type="checkbox"] {
+    position: relative;
+    top: 1px;
+  }
+  
+  .legend {
+    list-style-type: none;
+    padding-left: 0px;
+    display: inline-block;
+  }
+  .legend>li {
+    margin-left: 1em;
+    display: inline-block;
+  }
+  .legend>li::before {
+    content: "\2022";
+    display: inline-block;
+    width: 1em;
+    font-weight: bold;
+  }
+  .red-dot::before {
+    color: #ff0000;
+  }
+  .green-dot::before {
+    color: #00ff00;
+  }
+  .white-dot::before {
+    color: #ffffff;
+  }

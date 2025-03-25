@@ -2,11 +2,11 @@
 // Created by hank on 2025/1/27.
 //
 
-#include "mcs_gesture.h"
+#include "mcs_gesture_test.h"
 #include <stdio.h>
 #include <stdlib.h>
 #include <math.h>
-
+#include "mcs_gesture.h"
 
 Point arr_circle_p[] = {{1125,1321},{1104,1311},{1081,1297},{1056,1281},{1031,1262},{1003,1239},{974,1212},{944,1180},{912,1146},{879,1106},{848,1064},{821,1025},{797,985},{776,943},{757,901},{739,856},{724,806},{710,756},{701,704},{696,654},{695,610},{699,568},{706,528},{718,491},{732,460},{749,430},{769,401},{794,374},{824,350},{854,329},{886,311},{921,297},{955,283},{989,269},{1024,252},{1060,235},{1096,217},{1131,201},{1167,188},{1204,180},{1239,177},{1275,178},{1314,184},{1351,197},{1389,215},{1428,236},{1467,264},{1505,301},{1542,342},{1577,391},{1610,442},{1639,496},{1664,554},{1684,610},{1699,669},{1707,724},{1708,779},{1705,832},{1698,879},{1687,922},{1671,963},{1651,1002},{1626,1039},{1597,1074},{1565,1109},{1531,1143},{1494,1175},{1458,1203},{1422,1226},{1385,1242},{1350,1253},{1317,1259},{1285,1263},{1255,1266},{1227,1270},{1201,1274},{1176,1281},{1153,1290},{1134,1300},{1119,1309},{1110,1316},{1105,1320},{1107,1324},{1107,1324}};
 Point arr_circle_p2[] = {{855,1254},{841,1257},{824,1259},{805,1257},{782,1252},{755,1242},{725,1228},{692,1209},{656,1187},{617,1161},{578,1133},{539,1100},{499,1062},{461,1022},{423,977},{387,927},{354,873},{327,815},{305,756},{291,696},{284,638},{283,581},{289,525},{302,471},{320,418},{342,368},{367,320},{396,273},{430,226},{465,183},{504,144},{546,112},{590,87},{639,71},{688,68},{739,77},{792,99},{845,134},{901,177},{954,225},{1009,279},{1062,334},{1113,395},{1161,453},{1205,513},{1241,573},{1270,635},{1292,699},{1306,765},{1311,832},{1308,899},{1296,964},{1276,1025},{1248,1083},{1211,1139},{1168,1190},{1117,1233},{1063,1266},{1006,1290},{950,1304},{896,1310},{844,1310},{798,1305},{759,1299},{730,1293},{710,1287},{697,1277},{691,1262},{691,1262}};
@@ -20,11 +20,20 @@ Point arr_s_3[]  = {{622,70},{622,70},{622,70},{622,70},{621,69},{621,67},{619,6
 Point arr_s_4[] = {{346,67},{346,67},{345,66},{342,65},{337,65},{332,64},{326,64},{320,64},{313,65},{306,66},{298,67},{291,65},{283,64},{274,64},{264,63},{255,64},{244,66},{233,70},{221,77},{210,87},{200,97},{190,108},{178,121},{168,136},{158,151},{151,166},{146,180},{141,194},{139,208},{138,222},{140,236},{142,249},{147,261},{153,272},{160,283},{169,293},{180,302},{192,310},{205,318},{218,325},{230,332},{243,340},{254,349},{264,359},{273,371},{280,383},{285,396},{289,408},{292,420},{293,431},{294,442},{293,453},{291,464},{288,475},{285,486},{281,497},{277,507},{273,516},{269,524},{264,530},{258,534},{251,538},{243,541},{232,542},{219,544},{204,545},{187,545},{170,546},{154,545},{138,544},{123,541},{110,536},{97,528},{86,516},{74,503},{62,490},{50,479},{40,469},};
 Point arr_s_5[] = {{777,166},{776,165},{776,165},{776,165},{776,165},{775,163},{770,160},{759,155},{743,150},{702,149},{665,150},{640,153},{600,167},{565,179},{548,188},{528,202},{519,210},{515,217},{515,223},{516,228},{522,238},{534,251},{553,266},{577,283},{602,299},{626,313},{648,325},{667,336},{682,345},{694,355},{702,367},{706,381},{705,397},{698,416},{683,435},{662,453},{635,471},{601,485},{562,495},{517,501},};
 
+Point arr_mistake_s_1[] = {{571,28},{571,28},{570,31},{567,37},{564,45},{561,54},{558,65},{554,76},{551,87},{547,99},{543,112},{538,125},{532,138},{526,151},{520,164},{513,177},{506,190},{499,202},{492,214},{484,226},{475,238},{466,250},{457,261},{448,273},{438,284},{427,296},{417,307},{406,318},{396,329},{384,341},{371,352},{358,363},{344,374},{330,385},{315,396},{301,407},{287,417},{273,426},{258,436},{243,445},{228,454},{214,462},{198,469},{183,476},{168,482},{154,487},{140,493},{126,498},{113,503},{101,507},{90,512},{79,516},{69,521},{60,524},{53,527},{48,529},{43,530},{41,531},{39,532},{38,532},{37,532},{36,533},{35,534},{33,536},{30,539},{27,542},{23,547},{20,551},{18,555},{18,559},{18,561},};
+
 Point arr_z_1[] = {{490,117},{494,117},{494,117},{502,116},{519,114},{539,113},{562,111},{586,110},{602,110},{616,111},{637,111},{653,112},{667,112},{676,113},{681,113},{689,114},{691,114},{696,115},{696,115},{696,115},{696,115},{696,115},{696,115},{695,118},{689,126},{678,137},{664,150},{646,166},{614,191},{584,211},{564,225},{545,239},{523,256},{499,274},{474,292},{449,311},{425,330},{401,348},{379,366},{358,382},{339,398},{322,412},{306,425},{293,436},{282,446},{275,453},{270,457},{266,460},{265,462},{265,462},{265,462},{266,463},{269,466},{277,469},{288,472},{302,475},{319,478},{338,481},{358,483},{380,485},{402,487},{426,490},{449,493},{472,496},{496,499},{520,502},{544,505},{568,507},{592,510},{616,511},{638,513},{659,513},{678,513},{695,513},{711,512},{723,511},{732,509},{739,509},{743,508},{746,508},{748,508},{749,508},{750,509},};
 Point arr_z_2[] = {{345,107},{346,106},{350,107},{358,107},{369,105},{383,102},{401,100},{413,99},{434,100},{457,101},{479,105},{498,108},{525,115},{551,122},{567,128},{583,132},{591,134},{597,136},{599,136},{600,137},{600,137},{601,137},{601,137},{601,137},{601,140},{600,147},{592,163},{579,185},{566,203},{551,221},{533,244},{511,270},{489,297},{467,323},{447,349},{428,373},{413,393},{401,410},{392,424},{387,434},{385,443},{386,450},{393,458},{408,467},{430,476},{458,484},{490,490},{524,494},{556,496},{586,496},{611,495},{632,492},{648,490},{659,488},{665,486},{668,485},};
 Point arr_z_3[] = {{80,104},{80,104},{80,104},{80,104},{80,104},{80,104},{80,104},{80,104},{80,104},{80,104},{80,104},{83,104},{94,105},{102,105},{122,109},{137,111},{154,114},{169,116},{187,120},{207,122},{228,126},{247,129},{265,133},{281,137},{293,140},{300,142},{303,143},{303,143},{304,143},{304,143},{305,144},{305,149},{301,161},{296,173},{288,188},{266,223},{246,256},{232,278},{218,301},{203,326},{188,352},{173,377},{159,401},{147,422},{137,440},{129,455},{124,467},{120,476},{117,483},{116,488},{115,491},{115,492},{116,492},{118,494},{126,495},{138,496},{154,495},{173,495},{195,494},{217,494},{241,495},{263,496},{283,498},{301,500},{317,501},{330,502},};
 Point arr_z_4[] = {{617,127},{617,127},{617,127},{617,127},{617,127},{625,124},{636,121},{658,117},{670,114},{699,116},{717,117},{731,118},{747,120},{765,124},{783,128},{800,132},{817,138},{832,143},{842,149},{852,154},{859,158},{863,161},{867,165},{869,169},{871,175},{871,184},{862,203},{850,225},{840,242},{828,262},{813,285},{796,309},{779,333},{763,356},{748,376},{737,393},{728,406},{722,416},{718,425},{717,433},{718,440},{724,448},{736,455},{753,462},{775,468},{800,471},{825,473},{850,473},{875,472},{898,471},{917,470},{932,470},{943,469},{951,470},{957,470},{958,470},};
 Point arr_z_5[] = {{216,119},{216,119},{216,118},{217,115},{218,112},{222,109},{231,106},{243,102},{261,98},{283,96},{310,97},{340,96},{372,95},{406,95},{441,96},{475,100},{504,103},{527,108},{553,112},{572,116},{584,119},{594,122},{599,124},{602,125},{604,125},{604,125},{604,125},{604,125},{604,125},{600,131},{585,148},{573,161},{558,176},{527,208},{499,237},{481,258},{462,280},{441,305},{419,332},{397,361},{376,389},{357,414},{341,435},{329,452},{321,465},{315,474},{312,479},{311,482},{311,483},{315,486},{326,489},{345,490},{371,491},{401,490},{434,487},{468,485},{501,481},{534,478},{563,475},{588,473},{611,471},{629,471},{642,470},};
+Point arr_z_6[] = {{370.000000,74.000000},{370.000000,73.000000},{372.000000,73.000000},{376.000000,72.000000},{382.000000,72.000000},{390.000000,71.000000},{400.000000,72.000000},{411.000000,73.000000},{423.000000,74.000000},{437.000000,75.000000},{453.000000,76.000000},{470.000000,77.000000},{487.000000,77.000000},{505.000000,78.000000},{524.000000,78.000000},{543.000000,77.000000},{561.000000,77.000000},{581.000000,77.000000},{600.000000,76.000000},{618.000000,76.000000},{636.000000,76.000000},{652.000000,76.000000},{667.000000,76.000000},{681.000000,77.000000},{693.000000,79.000000},{703.000000,81.000000},{712.000000,83.000000},{718.000000,85.000000},{722.000000,87.000000},{726.000000,89.000000},{727.000000,91.000000},{726.000000,94.000000},{723.000000,99.000000},{717.000000,105.000000},{707.000000,113.000000},{694.000000,124.000000},{677.000000,136.000000},{658.000000,151.000000},{636.000000,167.000000},{613.000000,185.000000},{588.000000,205.000000},{563.000000,226.000000},{537.000000,248.000000},{510.000000,270.000000},{485.000000,292.000000},{460.000000,313.000000},{437.000000,334.000000},{415.000000,354.000000},{396.000000,373.000000},{378.000000,390.000000},{364.000000,405.000000},{352.000000,419.000000},{343.000000,430.000000},{337.000000,440.000000},{333.000000,448.000000},{330.000000,457.000000},{330.000000,465.000000},{332.000000,472.000000},{335.000000,479.000000},{342.000000,486.000000},{351.000000,491.000000},{362.000000,494.000000},{378.000000,496.000000},{395.000000,497.000000},{416.000000,496.000000},{439.000000,494.000000},{464.000000,492.000000},{488.000000,490.000000},{513.000000,489.000000},{537.000000,488.000000},{561.000000,487.000000},{582.000000,487.000000},{603.000000,487.000000},{621.000000,488.000000},{638.000000,488.000000},{653.000000,487.000000},{667.000000,486.000000},{667.000000,486.000000},};
+
+Point arr_mistake_z_1[] = {{437,0},{436,0},{435,4},{434,9},{432,15},{431,22},{431,30},{432,40},{435,50},{439,61},{445,72},{452,85},{460,100},{468,116},{476,134},{485,152},{495,172},{507,193},{519,214},{532,235},{546,255},{561,274},{577,292},{593,310},{610,327},{628,343},{646,360},{664,375},{683,391},{703,407},{722,421},{742,434},{761,447},{779,458},{797,467},{814,475},{830,482},{846,488},{861,492},{875,497},{888,501},{899,505},{910,510},{921,515},{930,521},{937,525},{942,529},{946,531},{948,533},{950,533},{951,534},{951,534},{948,530},};
+Point arr_mistake_z_2[] ={{422,8},{422,8},{422,10},{422,14},{421,19},{421,25},{422,34},{423,44},{424,56},{427,69},{431,84},{436,99},{442,116},{450,133},{461,150},{473,167},{483,177},{499,194},{511,208},{525,222},{540,237},{558,255},{577,275},{597,294},{619,315},{641,335},{665,355},{688,376},{712,395},{735,413},{757,430},{779,444},{799,458},{819,470},{838,480},{855,490},{871,498},{885,506},{899,513},{911,519},{920,524},{928,529},{935,532},{940,536},{944,539},{948,544},{951,551},{951,557},};
+Point arr_mistake_z_3[] = {{497,0},{497,0},{497,0},{497,2},{498,9},{500,17},{503,25},{507,35},{514,45},{523,54},{533,64},{546,73},{561,82},{577,93},{597,103},{616,114},{636,126},{657,139},{677,153},{697,167},{718,183},{739,200},{759,217},{779,233},{798,250},{816,265},{835,280},{853,295},{870,307},{885,318},{900,327},{915,334},{927,340},{939,344},{950,348},{960,352},{969,355},{976,358},{981,360},{984,361},{985,361},{986,361},{987,361},{987,361},};
+Point arr_mistake_z_4[] = {{457,25},{457,26},{458,31},{461,39},{465,48},{471,58},{480,70},{492,83},{507,98},{521,113},{537,129},{555,147},{573,166},{592,186},{610,206},{629,227},{649,249},{667,272},{685,294},{703,317},{721,338},{739,359},{758,379},{776,397},{795,414},{813,429},{831,444},{848,457},{865,469},{880,479},{893,489},{905,497},{917,504},{927,511},{935,517},{941,523},{946,527},{950,529},{952,531},{954,532},{956,531},{957,527},};
+Point arr_mistake_z_5[] ={{460,0},{459,0},{457,0},{453,4},{450,9},{447,15},{445,22},{443,30},{443,40},{443,52},{444,67},{445,84},{447,103},{450,124},{455,145},{460,168},{467,190},{475,212},{486,234},{497,255},{509,276},{522,298},{534,319},{546,340},{559,360},{571,379},{584,398},{596,417},{610,434},{622,451},{635,467},{647,481},{658,495},{669,506},{678,516},{685,524},{690,530},{694,535},{697,539},{700,542},{702,545},{704,548},{705,550},{705,552},{705,552},{706,551},{706,544},};
 
 Point arr_n_1[] = {{100,577},{100,577},{100,577},{100,577},{100,577},{99,573},{98,569},{97,564},{97,558},{96,551},{95,543},{95,531},{95,518},{95,503},{96,487},{96,469},{97,449},{98,428},{99,405},{99,382},{99,357},{98,331},{97,306},{96,289},{95,273},{93,261},{92,248},{92,236},{91,224},{91,212},{91,201},{92,191},{92,182},{93,167},{94,159},{95,154},{96,149},{97,143},{97,137},{99,126},{99,124},{99,123},{99,122},{100,120},{100,120},{100,119},{100,119},{100,119},{100,118},{100,118},{100,118},{100,118},{100,118},{100,118},{100,118},{100,118},{100,118},{100,118},{100,118},{102,120},{108,128},{115,141},{125,160},{137,182},{149,208},{162,238},{175,269},{188,301},{201,331},{212,361},{223,388},{232,412},{240,432},{246,448},{251,460},{254,467},{257,473},{258,476},{260,479},{261,480},{261,482},{262,483},{263,485},{263,486},{264,487},{264,488},{264,488},{265,488},{266,484},{269,474},{273,457},{279,432},{286,400},{294,364},{302,326},{310,289},{314,252},{320,223},{323,205},{324,193},{326,182},{327,175},{327,169},{328,165},{328,161},{329,158},{329,157},{329,155},{329,152},{329,147},{330,143},{330,141},{330,141},{330,141},{330,141},{330,141},{330,141},{330,141},{330,141},{330,141},{330,141},{330,141},{330,141},{330,141},{330,141},{330,141},{330,141},{330,141},{330,141},{330,141},{330,141},{330,141},};
 Point arr_n_2[] = {{383,564},{383,562},{384,558},{385,553},{386,546},{387,538},{389,527},{391,515},{394,500},{399,482},{406,461},{413,436},{421,408},{428,376},{435,344},{441,314},{445,288},{448,266},{451,240},{453,221},{453,208},{454,187},{453,173},{453,162},{453,153},{453,143},{453,134},{453,126},{454,117},{454,117},{454,115},{454,113},{454,113},{454,113},{454,113},{454,113},{454,113},{454,113},{454,113},{454,113},{454,113},{455,116},{457,125},{461,141},{466,161},{471,188},{477,218},{483,251},{491,287},{499,322},{507,356},{514,386},{521,412},{527,434},{533,452},{539,467},{545,479},{550,491},{556,502},{560,512},{565,520},{568,526},{570,530},{572,533},{573,534},{574,534},{577,532},{580,526},{584,515},{588,501},{593,483},{598,462},{603,436},{609,407},{616,374},{623,339},{630,302},{636,264},{642,229},{647,195},{652,164},{655,140},{658,119},{659,118},{659,118},{659,118},{659,118},{659,118},{659,117},{659,117},{659,117},{659,117},{659,116},{659,113},{660,110},{660,108},{660,108},{660,108},{660,108},};
@@ -49,236 +58,236 @@ Point arr_w_5[] = {{119,14},{119,14},{119,13},{119,13},{119,13},{119,12},{119,12
 
 // 特征向量
 // 0：s 1：z 2：n 3：w
-double feature[4][2*FIXED_LENGTH] = {
-        {0.209695,-0.410035,0.115704,-0.413453,-0.077406,-0.317753,-0.120130,-0.059703,0.084943,0.109482,0.098614,0.324808,-0.062026,0.406837,-0.313239,0.276957},
-        {-0.290850,-0.294864,-0.134953,-0.307812,0.150944,-0.246955,0.173215,-0.237374,-0.007024,0.021591,-0.215750,0.302568,0.041920,0.407190,0.294670,0.390357},
-        {-0.237456,0.462379,-0.149550,0.090468,-0.117430,-0.293277,-0.112359,-0.279753,0.036406,0.318686,0.117550,0.325448,0.229123,-0.291587,0.230814,-0.308492},
-        {-0.354507,-0.297767,-0.303648,-0.152327,-0.160529,0.334493,-0.026332,-0.036333,0.040053,-0.197297,0.090198,0.332708,0.353773,-0.069882,0.412484,-0.266537},
-};
-
-/* 函数声明 */
-void load_gesture_data(Point* input, int len, GestureData* data);
-void translation_invariance(GestureData* data);
-void temporal_invariance(GestureData* data);
-void signal_fusion_normalization(GestureData* data);
-double cosine_similarity(const double* vec1, const double* vec2, int dim);
-int gesture_match(GestureData* test, GestureData* train, int train_size, double threshold);
-
-//arr_z_5
-//arr_s_1
-//arr_n_1
-//arr_w_1
-
-
-/* 主函数示例 */
-int mcs_test() {
-    // 示例数据初始化
-    int data_len = sizeof(arr_w_5)/sizeof(Point);
-    GestureData test_gesture;
-    load_gesture_data(arr_w_5, data_len, &test_gesture);
-    // 处理流程
-    translation_invariance(&test_gesture);
-    temporal_invariance(&test_gesture);
-    signal_fusion_normalization(&test_gesture);
-
-    data_len = sizeof(arr_z_5)/sizeof(Point);
-    GestureData train_set[4];
-    load_gesture_data(arr_z_5, data_len, &train_set[0]);
-    translation_invariance(&train_set[0]);
-    temporal_invariance(&train_set[0]);
-    signal_fusion_normalization(&train_set[0]);
-
-    data_len = sizeof(arr_s_1)/sizeof(Point);
-    load_gesture_data(arr_s_1, data_len, &train_set[1]);
-    translation_invariance(&train_set[1]);
-    temporal_invariance(&train_set[1]);
-    signal_fusion_normalization(&train_set[1]);
-
-    data_len = sizeof(arr_n_1)/sizeof(Point);
-    load_gesture_data(arr_n_1, data_len, &train_set[2]);
-    translation_invariance(&train_set[2]);
-    temporal_invariance(&train_set[2]);
-    signal_fusion_normalization(&train_set[2]);
-
-    data_len = sizeof(arr_w_1)/sizeof(Point);
-    load_gesture_data(arr_w_1, data_len, &train_set[3]);
-    translation_invariance(&train_set[3]);
-    temporal_invariance(&train_set[3]);
-    signal_fusion_normalization(&train_set[3]);
-
-//    // 训练数据匹配示例
-//    GestureData train_set[5]; // 假设有5个训练样本
-    double threshold = 0.7;
-    int result = gesture_match(&test_gesture, train_set, 4, threshold);
-
-    return result;
-}
-
-
-
-
-
-/* 加载原始数据 */
-void load_gesture_data(Point* input, int len, GestureData* data) {
-    data->points = (Point*)malloc(len * sizeof(Point));
-    data->length = len;
-    for(int i=0; i<len; i++) {
-        data->points[i] = input[i];
-    }
-}
-
-/* 平移不变性处理 */
-void translation_invariance(GestureData* data) {
-    double sum_x = 0, sum_y = 0;
-
-    // 计算均值
-    for(int i=0; i<data->length; i++) {
-        sum_x += data->points[i].x;
-        sum_y += data->points[i].y;
-    }
-    double mean_x = sum_x / data->length;
-    double mean_y = sum_y / data->length;
-
-    // 减去均值
-    for(int i=0; i<data->length; i++) {
-        data->inv_points[i].x = data->points[i].x - mean_x;
-        data->inv_points[i].y = data->points[i].y - mean_y;
-    }
-}
-
-/* 时间长度不变性处理（线性插值） */
-void temporal_invariance(GestureData* data) {
-    double step = (double)(data->length - 1) / (FIXED_LENGTH - 1);
-
-    for(int i=0; i<FIXED_LENGTH; i++) {
-        double pos = i * step;
-        int idx = (int)pos;
-        double frac = pos - idx; // 插值系数
-
-        if(idx == data->length - 1) {
-            data->resampled[i] = data->inv_points[idx];
-        } else {
-            data->resampled[i].x = data->inv_points[idx].x * (1-frac) + data->inv_points[idx+1].x * frac;
-            data->resampled[i].y = data->inv_points[idx].y * (1-frac) + data->inv_points[idx+1].y * frac;
-        }
-    }
-}
-
-/* 信号融合与归一化 */
-void signal_fusion_normalization(GestureData* data) {
-    double sum_sq = 0.0;
-
-    // 交替存储x,y坐标
-    for(int i=0; i<FIXED_LENGTH; i++) {
-        data->feature[2*i] = data->resampled[i].x;
-        data->feature[2*i+1] = data->resampled[i].y;
-    }
-
-
-    // 计算L2范数
-    for(int i=0; i<2*FIXED_LENGTH; i++) {
-        sum_sq += data->feature[i] * data->feature[i];
-    }
-    double norm = sqrt(sum_sq);
-//    printf("norm:%f\n",norm);
-    // 归一化
-    if(norm > 1e-6) {
-        for(int i=0; i<2*FIXED_LENGTH; i++) {
-            data->feature[i] /= norm;
-        }
-    }
-//    printf("feature:%f,%f\n",data->feature[0],data->feature[1]);
-}
-
-/* 余弦相似度计算 */
-double cosine_similarity(const double* vec1, const double* vec2, int dim) {
-    double dot = 0.0, norm1 = 0.0, norm2 = 0.0;
-
-    for(int i=0; i<dim; i++) {
-        dot += vec1[i] * vec2[i];
-        norm1 += vec1[i] * vec1[i];
-        norm2 += vec2[i] * vec2[i];
-    }
-    return dot / (sqrt(norm1) * sqrt(norm2));
-}
-
-/* 手势匹配与阈值拒识 */
-int gesture_match(GestureData* test, GestureData* train, int train_size, double threshold) {
-    double max_sim = -1.0;
-    int best_match = -1;
-
-    for(int i=0; i<train_size; i++) {
-        double sim = cosine_similarity(test->feature, train[i].feature, 2*FIXED_LENGTH);
-        printf("idx:%d,sim:%f\n",i,sim);
-        if(sim > max_sim) {
-            max_sim = sim;
-            best_match = i;
-        }
-    }
-    return (max_sim >= threshold) ? best_match : -1;
-}
-
-// 计算两组点数据的相似度
-double calculate_similarity(Point* points1, int len1, Point* points2, int len2) {
-    // 先将两组数据处理成特征向量
-    GestureData data1, data2;
-    
-    load_gesture_data(points1, len1, &data1);
-    load_gesture_data(points2, len2, &data2);
-    
-    // 进行标准化处理
-    translation_invariance(&data1);
-    temporal_invariance(&data1);
-    signal_fusion_normalization(&data1);
-
-//    输出data1.feature
-//    printf("{");
-//    for(int i=0; i<2*FIXED_LENGTH; i++) {
-//        printf("%f,",data1.feature[i]);
+//double feature[4][2*FIXED_LENGTH] = {
+//        {0.209695,-0.410035,0.115704,-0.413453,-0.077406,-0.317753,-0.120130,-0.059703,0.084943,0.109482,0.098614,0.324808,-0.062026,0.406837,-0.313239,0.276957},
+//        {-0.290850,-0.294864,-0.134953,-0.307812,0.150944,-0.246955,0.173215,-0.237374,-0.007024,0.021591,-0.215750,0.302568,0.041920,0.407190,0.294670,0.390357},
+//        {-0.237456,0.462379,-0.149550,0.090468,-0.117430,-0.293277,-0.112359,-0.279753,0.036406,0.318686,0.117550,0.325448,0.229123,-0.291587,0.230814,-0.308492},
+//        {-0.354507,-0.297767,-0.303648,-0.152327,-0.160529,0.334493,-0.026332,-0.036333,0.040053,-0.197297,0.090198,0.332708,0.353773,-0.069882,0.412484,-0.266537},
+//};
+//
+///* 函数声明 */
+//void load_gesture_data(Point* input, int len, GestureData* data);
+//void translation_invariance(GestureData* data);
+//void temporal_invariance(GestureData* data);
+//void signal_fusion_normalization(GestureData* data);
+//double cosine_similarity(const double* vec1, const double* vec2, int dim);
+//int gesture_match(GestureData* test, GestureData* train, int train_size, double threshold);
+//
+////arr_z_5
+////arr_s_1
+////arr_n_1
+////arr_w_1
+//
+//
+///* 主函数示例 */
+//int mcs_test() {
+//    // 示例数据初始化
+//    int data_len = sizeof(arr_w_5)/sizeof(Point);
+//    GestureData test_gesture;
+//    load_gesture_data(arr_w_5, data_len, &test_gesture);
+//    // 处理流程
+//    translation_invariance(&test_gesture);
+//    temporal_invariance(&test_gesture);
+//    signal_fusion_normalization(&test_gesture);
+//
+//    data_len = sizeof(arr_z_5)/sizeof(Point);
+//    GestureData train_set[4];
+//    load_gesture_data(arr_z_5, data_len, &train_set[0]);
+//    translation_invariance(&train_set[0]);
+//    temporal_invariance(&train_set[0]);
+//    signal_fusion_normalization(&train_set[0]);
+//
+//    data_len = sizeof(arr_s_1)/sizeof(Point);
+//    load_gesture_data(arr_s_1, data_len, &train_set[1]);
+//    translation_invariance(&train_set[1]);
+//    temporal_invariance(&train_set[1]);
+//    signal_fusion_normalization(&train_set[1]);
+//
+//    data_len = sizeof(arr_n_1)/sizeof(Point);
+//    load_gesture_data(arr_n_1, data_len, &train_set[2]);
+//    translation_invariance(&train_set[2]);
+//    temporal_invariance(&train_set[2]);
+//    signal_fusion_normalization(&train_set[2]);
+//
+//    data_len = sizeof(arr_w_1)/sizeof(Point);
+//    load_gesture_data(arr_w_1, data_len, &train_set[3]);
+//    translation_invariance(&train_set[3]);
+//    temporal_invariance(&train_set[3]);
+//    signal_fusion_normalization(&train_set[3]);
+//
+////    // 训练数据匹配示例
+////    GestureData train_set[5]; // 假设有5个训练样本
+//    double threshold = 0.7;
+//    int result = gesture_match(&test_gesture, train_set, 4, threshold);
+//
+//    return result;
+//}
+//
+//
+//
+//
+//
+///* 加载原始数据 */
+//void load_gesture_data(Point* input, int len, GestureData* data) {
+//    data->points = (Point*)malloc(len * sizeof(Point));
+//    data->length = len;
+//    for(int i=0; i<len; i++) {
+//        data->points[i] = input[i];
 //    }
-//    printf("},\n");
-    translation_invariance(&data2);
-    temporal_invariance(&data2);
-    signal_fusion_normalization(&data2);
-    
-    // 计算余弦相似度
-    return cosine_similarity(data1.feature, data2.feature, 2*FIXED_LENGTH);
-}
+//}
+//
+///* 平移不变性处理 */
+//void translation_invariance(GestureData* data) {
+//    double sum_x = 0, sum_y = 0;
+//
+//    // 计算均值
+//    for(int i=0; i<data->length; i++) {
+//        sum_x += data->points[i].x;
+//        sum_y += data->points[i].y;
+//    }
+//    double mean_x = sum_x / data->length;
+//    double mean_y = sum_y / data->length;
+//
+//    // 减去均值
+//    for(int i=0; i<data->length; i++) {
+//        data->inv_points[i].x = data->points[i].x - mean_x;
+//        data->inv_points[i].y = data->points[i].y - mean_y;
+//    }
+//}
+//
+///* 时间长度不变性处理（线性插值） */
+//void temporal_invariance(GestureData* data) {
+//    double step = (double)(data->length - 1) / (FIXED_LENGTH - 1);
+//
+//    for(int i=0; i<FIXED_LENGTH; i++) {
+//        double pos = i * step;
+//        int idx = (int)pos;
+//        double frac = pos - idx; // 插值系数
+//
+//        if(idx == data->length - 1) {
+//            data->resampled[i] = data->inv_points[idx];
+//        } else {
+//            data->resampled[i].x = data->inv_points[idx].x * (1-frac) + data->inv_points[idx+1].x * frac;
+//            data->resampled[i].y = data->inv_points[idx].y * (1-frac) + data->inv_points[idx+1].y * frac;
+//        }
+//    }
+//}
+//
+///* 信号融合与归一化 */
+//void signal_fusion_normalization(GestureData* data) {
+//    double sum_sq = 0.0;
+//
+//    // 交替存储x,y坐标
+//    for(int i=0; i<FIXED_LENGTH; i++) {
+//        data->feature[2*i] = data->resampled[i].x;
+//        data->feature[2*i+1] = data->resampled[i].y;
+//    }
+//
+//
+//    // 计算L2范数
+//    for(int i=0; i<2*FIXED_LENGTH; i++) {
+//        sum_sq += data->feature[i] * data->feature[i];
+//    }
+//    double norm = sqrt(sum_sq);
+////    printf("norm:%f\n",norm);
+//    // 归一化
+//    if(norm > 1e-6) {
+//        for(int i=0; i<2*FIXED_LENGTH; i++) {
+//            data->feature[i] /= norm;
+//        }
+//    }
+////    printf("feature:%f,%f\n",data->feature[0],data->feature[1]);
+//}
+//
+///* 余弦相似度计算 */
+//double cosine_similarity(const double* vec1, const double* vec2, int dim) {
+//    double dot = 0.0, norm1 = 0.0, norm2 = 0.0;
+//
+//    for(int i=0; i<dim; i++) {
+//        dot += vec1[i] * vec2[i];
+//        norm1 += vec1[i] * vec1[i];
+//        norm2 += vec2[i] * vec2[i];
+//    }
+//    return dot / (sqrt(norm1) * sqrt(norm2));
+//}
+//
+///* 手势匹配与阈值拒识 */
+//int gesture_match(GestureData* test, GestureData* train, int train_size, double threshold) {
+//    double max_sim = -1.0;
+//    int best_match = -1;
+//
+//    for(int i=0; i<train_size; i++) {
+//        double sim = cosine_similarity(test->feature, train[i].feature, 2*FIXED_LENGTH);
+//        printf("idx:%d,sim:%f\n",i,sim);
+//        if(sim > max_sim) {
+//            max_sim = sim;
+//            best_match = i;
+//        }
+//    }
+//    return (max_sim >= threshold) ? best_match : -1;
+//}
+//
+//// 计算两组点数据的相似度
+//double calculate_similarity(Point* points1, int len1, Point* points2, int len2) {
+//    // 先将两组数据处理成特征向量
+//    GestureData data1, data2;
+//
+//    load_gesture_data(points1, len1, &data1);
+//    load_gesture_data(points2, len2, &data2);
+//
+//    // 进行标准化处理
+//    translation_invariance(&data1);
+//    temporal_invariance(&data1);
+//    signal_fusion_normalization(&data1);
+//
+////    输出data1.feature
+////    printf("{");
+////    for(int i=0; i<2*FIXED_LENGTH; i++) {
+////        printf("%f,",data1.feature[i]);
+////    }
+////    printf("},\n");
+//    translation_invariance(&data2);
+//    temporal_invariance(&data2);
+//    signal_fusion_normalization(&data2);
+//
+//    // 计算余弦相似度
+//    return cosine_similarity(data1.feature, data2.feature, 2*FIXED_LENGTH);
+//}
 
-// 找出最具代表性的手势数据
-int find_representative_gesture(Point* gestures[], int gesture_lengths[], int group_count) {
-    double max_total_similarity = -1.0;
-    int best_index = 0;
-    
-    // 遍历每组数据
-    for(int i = 0; i < group_count; i++) {
-        double total_similarity = 0.0;
-        
-        // 计算当前组与其他组的相似度总和
-        for(int j = 0; j < group_count; j++) {
-            if(i != j) {
-                double sim = calculate_similarity(
-                    gestures[i], 
-                    gesture_lengths[i],
-                    gestures[j], 
-                    gesture_lengths[j]
-                );
-                total_similarity += sim;
-                printf("i:%d,sim:%f\n",i,sim);
-            }
-        }
+//// 找出最具代表性的手势数据
+//int find_representative_gesture(Point* gestures[], int gesture_lengths[], int group_count) {
+//    double max_total_similarity = -1.0;
+//    int best_index = 0;
+//
+//    // 遍历每组数据
+//    for(int i = 0; i < group_count; i++) {
+//        double total_similarity = 0.0;
+//
+//        // 计算当前组与其他组的相似度总和
+//        for(int j = 0; j < group_count; j++) {
+//            if(i != j) {
+//                double sim = calculate_similarity(
+//                    gestures[i],
+//                    gesture_lengths[i],
+//                    gestures[j],
+//                    gesture_lengths[j]
+//                );
+//                total_similarity += sim;
+//                printf("i:%d,sim:%f\n",i,sim);
+//            }
+//        }
+//
+//        // 更新最大相似度
+//        if(total_similarity > max_total_similarity) {
+//            max_total_similarity = total_similarity;
+//            best_index = i;
+//        }
+//    }
+//
+//    return best_index;
+//}
 
-        // 更新最大相似度
-        if(total_similarity > max_total_similarity) {
-            max_total_similarity = total_similarity;
-            best_index = i;
-        }
-    }
-    
-    return best_index;
-}
-
-// 使用示例
+//// 使用示例
 void select_best_gestures() {
     // S手势
     Point* s_gestures[] = {arr_s_1, arr_s_2, arr_s_3, arr_s_4, arr_s_5};
@@ -290,8 +299,13 @@ void select_best_gestures() {
         sizeof(arr_s_5)/sizeof(Point)
     };
     printf("s\n");
-    int best_s = find_representative_gesture(s_gestures, s_lengths, 5);
-    
+//    int best_s = find_representative_gesture(s_gestures, s_lengths, 5);
+    for (int i = 0; i < 5; ++i) {
+        // 识别手势
+        GestureType result = recognize_gesture(s_gestures[i], s_lengths[i]);
+        printf("result:%d\n",result);
+    }
+
     // Z手势
     Point* z_gestures[] = {arr_z_1, arr_z_2, arr_z_3, arr_z_4, arr_z_5};
     int z_lengths[] = {
@@ -302,8 +316,12 @@ void select_best_gestures() {
         sizeof(arr_z_5)/sizeof(Point)
     };
     printf("z\n");
-    int best_z = find_representative_gesture(z_gestures, z_lengths, 5);
-    
+//    int best_z = find_representative_gesture(z_gestures, z_lengths, 5);
+    for (int i = 0; i < 5; ++i) {
+        // 识别手势
+        GestureType result = recognize_gesture(z_gestures[i], z_lengths[i]);
+        printf("result:%d\n",result);
+    }
     // N手势
     Point* n_gestures[] = {arr_n_1, arr_n_2, arr_n_3, arr_n_4, arr_n_5};
     int n_lengths[] = {
@@ -314,8 +332,12 @@ void select_best_gestures() {
         sizeof(arr_n_5)/sizeof(Point)
     };
     printf("n\n");
-    int best_n = find_representative_gesture(n_gestures, n_lengths, 5);
-    
+//    int best_n = find_representative_gesture(n_gestures, n_lengths, 5);
+    for (int i = 0; i < 5; ++i) {
+        // 识别手势
+        GestureType result = recognize_gesture(n_gestures[i], n_lengths[i]);
+        printf("result:%d\n",result);
+    }
     // W手势
     Point* w_gestures[] = {arr_w_1, arr_w_2, arr_w_3, arr_w_4, arr_w_5};
     int w_lengths[] = {
@@ -326,110 +348,107 @@ void select_best_gestures() {
         sizeof(arr_w_5)/sizeof(Point)
     };
     printf("w\n");
-    int best_w = find_representative_gesture(w_gestures, w_lengths, 5);
-    
-    printf("Best gesture indices:\n");
-    printf("S: %d\n", best_s);
-    printf("Z: %d\n", best_z);
-    printf("N: %d\n", best_n);
-    printf("W: %d\n", best_w);
-}
-
-
-/**
- * 将手势坐标转换为特征向量并格式化输出
- * @param points 手势坐标点数组
- * @param point_count 坐标点数量
- */
-void generate_gesture_feature(Point* points, int point_count) {
-    // 处理手势数据
-    GestureData data;
-    load_gesture_data(points, point_count, &data);
-    
-    // 标准化处理
-    translation_invariance(&data);
-    temporal_invariance(&data);
-    signal_fusion_normalization(&data);
-    
-    // 输出特征向量
-    printf("Feature vector:\n{");
-    for(int i = 0; i < 2*FIXED_LENGTH; i++) {
-        printf("%f", data.feature[i]);
-        if(i < 2*FIXED_LENGTH - 1) {
-            printf(",");
-        }
+//    int best_w = find_representative_gesture(w_gestures, w_lengths, 5);
+    for (int i = 0; i < 5; ++i) {
+        // 识别手势
+        GestureType result = recognize_gesture(w_gestures[i], w_lengths[i]);
+        printf("result:%d\n",result);
     }
-    printf("}\n");
+//    printf("Best gesture indices:\n");
+//    printf("S: %d\n", best_s);
+//    printf("Z: %d\n", best_z);
+//    printf("N: %d\n", best_n);
+//    printf("W: %d\n", best_w);
 }
+//
+//
+///**
+// * 将手势坐标转换为特征向量并格式化输出
+// * @param points 手势坐标点数组
+// * @param point_count 坐标点数量
+// */
+//void generate_gesture_feature(Point* points, int point_count) {
+//    // 处理手势数据
+//    GestureData data;
+//    load_gesture_data(points, point_count, &data);
+//
+//    // 标准化处理
+//    translation_invariance(&data);
+//    temporal_invariance(&data);
+//    signal_fusion_normalization(&data);
+//
+//    // 输出特征向量
+//    printf("Feature vector:\n{");
+//    for(int i = 0; i < 2*FIXED_LENGTH; i++) {
+//        printf("%f", data.feature[i]);
+//        if(i < 2*FIXED_LENGTH - 1) {
+//            printf(",");
+//        }
+//    }
+//    printf("}\n");
+//}
+//
+//// 生成所有最优手势的特征向量
+//void generate_all_gesture_features() {
+//    printf("// S gesture feature\n");
+//    generate_gesture_feature(arr_s_4, sizeof(arr_s_4)/sizeof(Point));
+//
+//    printf("\n// Z gesture feature\n");
+//    generate_gesture_feature(arr_z_2, sizeof(arr_z_2)/sizeof(Point));
+//
+//    printf("\n// N gesture feature\n");
+//    generate_gesture_feature(arr_n_2, sizeof(arr_n_2)/sizeof(Point));
+//
+//    printf("\n// W gesture feature\n");
+//    generate_gesture_feature(arr_w_3, sizeof(arr_w_3)/sizeof(Point));
+//}
 
-// 生成所有最优手势的特征向量
-void generate_all_gesture_features() {
-    printf("// S gesture feature\n");
-    generate_gesture_feature(arr_s_4, sizeof(arr_s_4)/sizeof(Point));
-    
-    printf("\n// Z gesture feature\n");
-    generate_gesture_feature(arr_z_2, sizeof(arr_z_2)/sizeof(Point));
-    
-    printf("\n// N gesture feature\n");
-    generate_gesture_feature(arr_n_2, sizeof(arr_n_2)/sizeof(Point));
-    
-    printf("\n// W gesture feature\n");
-    generate_gesture_feature(arr_w_3, sizeof(arr_w_3)/sizeof(Point));
-}
 
-// 手势类型枚举
-typedef enum {
-    GESTURE_S = 0,
-    GESTURE_Z = 1,
-    GESTURE_N = 2,
-    GESTURE_W = 3,
-    GESTURE_UNKNOWN = -1
-} GestureType;
-
-/**
- * 识别手势类型
- * @param input_points 输入的手势坐标点数组
- * @param point_count 坐标点数量
- * @param threshold 相似度阈值，低于此阈值视为无法识别
- * @return 识别出的手势类型
- */
-GestureType recognize_gesture(Point* input_points, int point_count, double threshold) {
-    // 处理输入的手势数据
-    GestureData input_data;
-    load_gesture_data(input_points, point_count, &input_data);
-    
-    // 标准化处理
-    translation_invariance(&input_data);
-    temporal_invariance(&input_data);
-    signal_fusion_normalization(&input_data);
-    
-    // 找出最匹配的手势
-    double max_similarity = -1.0;
-    GestureType best_match = GESTURE_UNKNOWN;
-    
-    // 与每个模板计算相似度
-    for(int i = 0; i < 4; i++) {
-        // 输出feature[i]
-        printf("{");
-        for(int j=0; j<2*FIXED_LENGTH; j++) {
-            printf("%f,",feature[i][j]);
-        }
-        printf("},\n");
-        double similarity = cosine_similarity(input_data.feature, feature[i], 2*FIXED_LENGTH);
-        printf("i:%d,sim:%f\n",i,similarity);
-        if(similarity > max_similarity) {
-            max_similarity = similarity;
-            best_match = (GestureType)i;
-        }
-    }
-    
-    // 如果最大相似度低于阈值，返回未知手势
-    if(max_similarity < threshold) {
-        return GESTURE_UNKNOWN;
-    }
-    
-    return best_match;
-}
+//
+///**
+// * 识别手势类型
+// * @param input_points 输入的手势坐标点数组
+// * @param point_count 坐标点数量
+// * @param threshold 相似度阈值，低于此阈值视为无法识别
+// * @return 识别出的手势类型
+// */
+//GestureType recognize_gesture(Point* input_points, int point_count, double threshold) {
+//    // 处理输入的手势数据
+//    GestureData input_data;
+//    load_gesture_data(input_points, point_count, &input_data);
+//
+//    // 标准化处理
+//    translation_invariance(&input_data);
+//    temporal_invariance(&input_data);
+//    signal_fusion_normalization(&input_data);
+//
+//    // 找出最匹配的手势
+//    double max_similarity = -1.0;
+//    GestureType best_match = GESTURE_UNKNOWN;
+//
+//    // 与每个模板计算相似度
+//    for(int i = 0; i < 4; i++) {
+//        // 输出feature[i]
+//        printf("{");
+//        for(int j=0; j<2*FIXED_LENGTH; j++) {
+//            printf("%f,",feature[i][j]);
+//        }
+//        printf("},\n");
+//        double similarity = cosine_similarity(input_data.feature, feature[i], 2*FIXED_LENGTH);
+//        printf("i:%d,sim:%f\n",i,similarity);
+//        if(similarity > max_similarity) {
+//            max_similarity = similarity;
+//            best_match = (GestureType)i;
+//        }
+//    }
+//
+//    // 如果最大相似度低于阈值，返回未知手势
+//    if(max_similarity < threshold) {
+//        return GESTURE_UNKNOWN;
+//    }
+//
+//    return best_match;
+//}
 
 // 获取手势类型的字符串表示
 const char* get_gesture_name(GestureType type) {
@@ -446,14 +465,35 @@ const char* get_gesture_name(GestureType type) {
 void test_gesture_recognition() {
     // 示例：使用一组测试数据
 
-    int point_count = sizeof(arr_w_5) / sizeof(Point);
-    
-    // 设置相似度阈值（可以根据实际需求调整）
-    double threshold = 0.7;
-    
+    int point_count = sizeof(arr_mistake_z_3) / sizeof(Point);
+
     // 识别手势
-    GestureType result = recognize_gesture(arr_w_5, point_count, threshold);
-    
+    GestureType result = recognize_gesture(arr_mistake_z_3, point_count);
+
     // 输出结果
     printf("Recognized gesture: %s\n", get_gesture_name(result));
+
+
+
+//    point_count = sizeof(arr_s_5) / sizeof(Point);
+//
+//    // 识别手势
+//    result = recognize_gesture(arr_s_5, point_count);
+//
+//    // 输出结果
+//    printf("Recognized gesture: %s\n", get_gesture_name(result));
+//
+//
+//    point_count = sizeof(arr_z_6) / sizeof(Point);
+//
+//    // 识别手势
+//    result = recognize_gesture(arr_z_6, point_count);
+//
+//    // 输出结果
+//    printf("Recognized gesture: %s\n", get_gesture_name(result));
+}
+
+void test_mcs(void){
+//    select_best_gestures();
+    test_gesture_recognition();
 }
