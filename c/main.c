@@ -25,7 +25,7 @@
 //#include "timer_task/timer_task.h"
 #include "battery/battery_level.h"
 #include "preset_gesture/preset_gesture.h"
-#include "preset_gesture/mcs_gesture.h"
+#include "preset_gesture/mcs_gesture_test.h"
 // LOOP_FUNCTION(Main_Init){
 //     printf("main Module loop\n");
 // }
@@ -37,6 +37,9 @@
 #define INTERVAL_CNT(interval)                      (32768 * interval / (KEYBOARD_TIMER))
 
 
+extern void test_mcs(void);
+extern void test_battery(void);
+
 int main(void)
 {
     printf("------------------------------------------begin\n");
@@ -45,10 +48,13 @@ int main(void)
 //    for (int i = 0; i < 1000; ++i) {
 //        battery_level_detection(1);
 //    }
-//    preset_gesture_init();
-
-    int result = mcs_test();
-    printf("result:%d",result);
+    test_battery();
+//    test_main();
+//
+//    select_best_gestures();
+//    generate_all_gesture_features();
+    // int result = mcs_test();
+    // printf("result:%d",result);
     printf("------------------------------------------end\r\n");
     return 0;
 }

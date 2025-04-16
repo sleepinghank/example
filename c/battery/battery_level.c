@@ -41,29 +41,27 @@ static uint32_t adc_idx  = 0;
 int rand_test(void){
     int a;
     srand(adc_idx);
-    a = rand() % 4;
+    a = rand() % 10;
     return a;
 }
 // 满电：575 0%： 410
 #define ADC_LEVEL 575
-static uint16_t adc_buf[] = {ADC_LEVEL,ADC_LEVEL-1,ADC_LEVEL-2,ADC_LEVEL-10,ADC_LEVEL-15,ADC_LEVEL-17,ADC_LEVEL-20,ADC_LEVEL-30,ADC_LEVEL-34,ADC_LEVEL-36,
-                             ADC_LEVEL-47,ADC_LEVEL-58,ADC_LEVEL-60,ADC_LEVEL-70,ADC_LEVEL-80,ADC_LEVEL-90,ADC_LEVEL-100,ADC_LEVEL-110,ADC_LEVEL-120,ADC_LEVEL-130};
-
+static uint16_t adc_buf[] = {521,521,519,516,520,521,519,517,521,522};
+#define FILTER_N 10
 uint16_t gpadc_get_value(){
     uint16_t voltage = 0;
-//    if(adc_idx >= FILTER_N)adc_idx = 0;
-    int randint = rand_test();
-    voltage = 0x226 - (adc_idx/10)*2 + randint;
-
-
+   if(adc_idx >= FILTER_N)adc_idx = 0;
+    // int randint = rand_test();
+    // voltage = 0x226 - (adc_idx/10)*2 + randint;
+    
 //    if (adc_idx > 100) {
 //        voltage = 561;
 //    } else {
-        adc_idx++;
+//         adc_idx++;
 //    }
 
-    printf("adc_idx=%d,----------------voltage = %d \r\n",adc_idx,voltage);
-    return voltage;
+    // printf("adc_idx=%d,----------------voltage = %d \r\n",adc_idx,voltage);
+    return adc_buf[adc_idx];
 }
 
 // 添加卡尔曼滤波相关结构体
@@ -163,8 +161,7 @@ static const uint16_t VOLTAGE_TO_CAPACITY_TABLE[11]={420,402,391,385,379,375,370
  * 300 0%
  */
 
-#define FILTER_N 10
-uint16_t voltage_buf[FILTER_N];
+
 uint8_t power_st = 0;
 
 KeyboardConfig_t KeyboardConfig;
@@ -187,22 +184,60 @@ uint8_t get_batter_level(void){
     return batteryState.percentageRemaining;
 }
 
-uint16_t filter(uint16_t *voltage_buf, uint8_t length) {
-    uint16_t sum = 0;
-    for (int i = 0; i < length; i++) {
-        sum += voltage_buf[i];
+// uint16_t filter(uint16_t *voltage_buf, uint8_t length) {
+//     uint16_t sum = 0;
+//     for (int i = 0; i < length; i++) {
+//         sum += voltage_buf[i];
+//     }
+//     return sum / length;
+// }
+// 冒泡排序辅助函数
+void bubble_sort(uint16_t arr[], uint8_t len) {
+    uint8_t i, j;
+    uint16_t temp;
+    for (i = 0; i < len - 1; i++) {
+        for (j = 0; j < len - 1 - i; j++) {
+            if (arr[j] > arr[j + 1]) {
+                temp = arr[j];
+                arr[j] = arr[j + 1];
+                arr[j + 1] = temp;
+            }
+        }
     }
-    return sum / length;
 }
 
+// 中位值平均滤波
+uint16_t filter(uint16_t *buf, uint8_t length) {
+    if (length < 3) return buf[0];  // 数据太少时直接返回
 
+    // 创建临时数组，避免修改原始数据
+    uint16_t temp[FILTER_N];
+    memcpy(temp, buf, length * sizeof(uint16_t));
+    
+    // 排序
+    bubble_sort(temp, length);
+    
+    // 去除最高和最低的若干个值，取中间值的平均
+    uint8_t remove_count = length / 6;  // 去除首尾的数据量
+    if (remove_count < 1) remove_count = 1;
+    
+    uint32_t sum = 0;
+    uint8_t valid_count = 0;
+    
+    // 计算中间值的平均值
+    for (uint8_t i = remove_count; i < length - remove_count; i++) {
+        sum += temp[i];
+        valid_count++;
+    }
+    
+    return (uint16_t)((sum + (valid_count >> 1)) / valid_count);
+}
 
+static uint16_t voltage_buf[FILTER_N];
+static uint8_t voltage_buf_idx = 0xff;
+static uint16_t last_voltage = 0xffff;
 uint16_t get_battery_voltage(void){
     uint16_t voltage = 0;
-    static uint16_t voltage_buf[FILTER_N];
-    static uint8_t voltage_buf_idx = 0xff;
-    static uint16_t last_voltage = 0xffff;
-
 //    gpadc_start();
     if(voltage_buf_idx == 0xff){
         voltage_buf_idx = 0;
@@ -222,18 +257,18 @@ uint16_t get_battery_voltage(void){
     }
 
     voltage = filter(voltage_buf,FILTER_N);
-
-    voltage = (voltage * 360) / VOLTAGE_DIVIDER_RATIO; // ADC转换为电压
-
+    printf("voltage = %d \r\n",voltage);
+    voltage = (uint16_t)((uint32_t)voltage * 360 / VOLTAGE_DIVIDER_RATIO); // ADC转换为电压
+    printf("cal voltage = %d \r\n",voltage);
     if(GET_DIFFERENCE(last_voltage, voltage) > 2)
     {
-        uint8_t the_unit = 0;
+        // uint8_t the_unit = 0;
         last_voltage = voltage;
 
-        the_unit = (last_voltage % 10);
-        // 四舍五入
-        if(the_unit >= 5) last_voltage = (last_voltage - the_unit) + 10;
-        else last_voltage = last_voltage - the_unit;
+        // the_unit = (last_voltage % 10);
+        // // 四舍五入
+        // if(the_unit >= 5) last_voltage = (last_voltage - the_unit) + 10;
+        // else last_voltage = last_voltage - the_unit;
     }
     return last_voltage;
 }
@@ -295,6 +330,29 @@ uint16_t calculate_voltage(uint32_t remaining_capacity){
     return voltage;
 }
 
+// 添加最小二乘法计算斜率的函数
+float calculate_voltage_slope(uint16_t *buf, uint8_t length) {
+    float sum_x = 0;    // Σx
+    float sum_y = 0;    // Σy
+    float sum_xy = 0;   // Σ(xy)
+    float sum_xx = 0;   // Σ(x²)
+    
+    // 计算各项和
+    for (uint8_t i = 0; i < length; i++) {
+        sum_x += i;
+        sum_y += buf[i];
+        sum_xy += i * buf[i];
+        sum_xx += i * i;
+    }
+    
+    // 计算斜率 k = (n*Σ(xy) - Σx*Σy) / (n*Σ(x²) - (Σx)²)
+    float n = length;
+    float slope = (n * sum_xy - sum_x * sum_y) / (n * sum_xx - sum_x * sum_x);
+    
+    return slope;
+}
+
+
 uint8_t calculate_charging_state(void){
     static uint8_t ChargingDetection = 0;
 
@@ -348,17 +406,52 @@ uint8_t calculate_charging_state(void){
         // last_voltages[2] = battery_voltage;
         //  DBG("battery_voltage = %d last_voltages[0] = %d last_voltages[1] = %d last_voltages[2] = %d \r\n",battery_voltage,last_voltages[0],last_voltages[1],last_voltages[2]);
 
-        // 检测电池电压突然上升并达到充电电压
-        if ((batteryState.voltageMv >= FULL_BATTERY_VOLTAGE - CHARGING_VOLTAGE_THRESHOLD) &&
-            (batteryState.voltageMv - last_voltages[0] >= VOLTAGE_RISE_THRESHOLD)) {
-            ChargingDetection = 1; // 充电
-            power_st = 0xBB;
-            printf("Charging detected. Battery voltage: %d mV\r\n", batteryState.voltageMv);
-        } else if (batteryState.voltageMv < last_voltages[0]) {
+        // 计算电压变化趋势
+        float voltage_slope = calculate_voltage_slope(voltage_buf, FILTER_N);
+        printf("voltage_slope = %f\r\n", voltage_slope);    
+
+
+        // 设定斜率阈值，根据实际情况调整
+        const float CHARGING_SLOPE_THRESHOLD = 0.5;    // 充电斜率阈值
+        const float DISCHARGING_SLOPE_THRESHOLD = -0.3; // 放电斜率阈值
+        
+        printf("Voltage slope: %.2f\n", voltage_slope);
+        
+        // 根据斜率判断充放电状态
+        if (voltage_slope > CHARGING_SLOPE_THRESHOLD) {
+
+            uint16_t  a = calculate_voltage(batteryState.remainingCapacityMas);
+            int16_t diff = a - batteryState.voltageMv;
+            printf("a=%d,diff = %d \r\n",a,diff);
+            if (diff >= 100)
+            {
+                ChargingDetection = 1; // 充电
+                power_st = 0xBB;
+                printf("Charging detected (slope analysis). Slope: %.2f\n", voltage_slope);
+            }
+        } else if (voltage_slope < DISCHARGING_SLOPE_THRESHOLD) {
             ChargingDetection = 0; // 放电
             power_st = 0xAF;
-            printf("Discharging detected. Battery voltage: %d mV\r\n", batteryState.voltageMv);
+            printf("Discharging detected (slope analysis). Slope: %.2f\n", voltage_slope);
         }
+        // 如果斜率在阈值之间，保持当前状态
+
+
+        // 检测电池电压突然上升并达到充电电压
+        // if ((batteryState.voltageMv >= FULL_BATTERY_VOLTAGE - CHARGING_VOLTAGE_THRESHOLD) &&
+        //     (batteryState.voltageMv - last_voltages[0] >= VOLTAGE_RISE_THRESHOLD)) {
+        //     ChargingDetection = 1; // 充电
+        //     power_st = 0xBB;
+        //     printf("Charging detected. Battery voltage: %d mV\r\n", batteryState.voltageMv);
+        // } else if (batteryState.voltageMv < last_voltages[0]) {
+        //     ChargingDetection = 0; // 放电
+        //     power_st = 0xAF;
+        //     printf("Discharging detected. Battery voltage: %d mV\r\n", batteryState.voltageMv);
+        // }
+
+
+
+
 
         // 更新电压历史记录
         last_voltages[0] = last_voltages[1];
@@ -532,6 +625,20 @@ void battery_init(void){
         }
     }
 }
+void battery_reset(void) {
+    batteryState.voltageMv = get_battery_voltage();
+    uint8_t currentLevel = convert_voltage_to_percentage(batteryState.voltageMv);
+    batteryState.remainingCapacityMas = (uint32_t)((uint64_t)BATTERY_CAPACITY_MAS * currentLevel / 100);
+    batteryState.percentageRemaining = (uint8_t)currentLevel;
+    KeyboardConfig.remaining_capacity_mas = batteryState.remainingCapacityMas;
+    #ifdef BATTERY_LEVEL_IDX
+        if(ble_is_connected() && ble_check_notify_enabled()) {
+            uint8_t newPercentageLevel = get_batter_level();
+            ble_tx_data(BATTERY_LEVEL_IDX, 1, &newPercentageLevel);
+        }
+    #endif
+}
+
 
 void battery_level_detection(uint16_t threshold){
 
@@ -623,3 +730,13 @@ uint8_t Bat_num(void)
     return Num;
 }
 
+void test_battery(void){
+    // uint16_t voltage_buf[FILTER_N];
+    // for(uint8_t i = 0; i < FILTER_N; i++){
+    //     voltage_buf[i] = gpadc_get_value() - i*5;
+    //     printf("voltage_buf[%d] = %d\r\n", i, voltage_buf[i]);
+    // }
+    // float slope = calculate_voltage_slope(voltage_buf, FILTER_N);
+    // printf("slope = %f\r\n", slope);
+    battery_init();
+}
