@@ -218,7 +218,75 @@ def plot_pressure_data(filename, start_percent=0.2, end_percent=0.8):
     }
     
     return analysis_results
-
+def calculate_performance_score(time_data, movement_x, movement_y):
+    """
+    计算触控板性能得分
+    Args:
+        time_data: 时间序列数据
+        movement_x: X轴移动距离
+        movement_y: Y轴移动距离
+    Returns:
+        得分（0-10分）和详细分析数据
+    """
+    # 1. 计算基础指标
+    time_intervals = np.diff(time_data)  # 时间间隔
+    dx = np.diff(movement_x)  # X轴位移
+    dy = np.diff(movement_y)  # Y轴位移
+    
+    # 计算位移和速度
+    displacements = np.sqrt(dx**2 + dy**2)  # 位移大小
+    velocities = np.where(time_intervals > 0, displacements / time_intervals, 0)  # 速度
+    
+    # 2. 计算统计指标
+    avg_velocity = np.mean(velocities)
+    std_velocity = np.std(velocities)
+    cv = std_velocity / avg_velocity if avg_velocity > 0 else float('inf')  # 变异系数
+    
+    # 3. 检测异常事件
+    # 定义阈值
+    STALL_TIME_THRESHOLD = 50  # ms，停顿时间阈值
+    STALL_DISPLACEMENT_THRESHOLD = 0.1  # 停顿位移阈值
+    JUMP_VELOCITY_THRESHOLD = avg_velocity + 2 * std_velocity  # 突跳速度阈值
+    
+    # 检测停顿
+    stalls = np.sum((time_intervals > STALL_TIME_THRESHOLD) & 
+                    (displacements < STALL_DISPLACEMENT_THRESHOLD))
+    
+    # 检测突跳
+    jumps = np.sum(velocities > JUMP_VELOCITY_THRESHOLD)
+    
+    # 计算异常事件比例
+    total_points = len(time_intervals)
+    abnormal_ratio = (stalls + jumps) / total_points
+    
+    # 4. 计算得分
+    # 速度稳定性得分 (60%)
+    CV_MAX = 1.0
+    stability_score = 10 * max(0, 1 - cv / CV_MAX)
+    
+    # 异常事件得分 (40%)
+    abnormal_score = 10 * (1 - min(1, abnormal_ratio))
+    
+    # 最终得分
+    final_score = 0.6 * stability_score + 0.4 * abnormal_score
+    
+    # 准备详细分析结果
+    analysis_results = {
+        'final_score': round(final_score, 2),
+        'stability_score': round(stability_score, 2),
+        'abnormal_score': round(abnormal_score, 2),
+        'metrics': {
+            'cv': round(cv, 3),
+            'avg_velocity': round(avg_velocity, 3),
+            'std_velocity': round(std_velocity, 3),
+            'stall_count': int(stalls),
+            'jump_count': int(jumps),
+            'abnormal_ratio': round(abnormal_ratio, 3),
+            'total_points': total_points
+        }
+    }
+    
+    return analysis_results
 
 def analysis_pressure_data(filename, start_percent=0.2, time_window=5000):
     """
@@ -257,38 +325,61 @@ def analysis_pressure_data(filename, start_percent=0.2, time_window=5000):
     movement_x = [point['movement_x'] for point in selected_data]
     movement_y = [point['movement_y'] for point in selected_data]
     
-    # 创建图形和坐标轴
-    plt.figure(figsize=(12, 8))
+    # 计算性能得分
+    performance_score = calculate_performance_score(time_data, movement_x, movement_y)
+    print(performance_score)
 
-    # 绘制movement_x的散点和垂直线
-    plt.scatter(time_data, movement_x, color='red', label='Movement X', zorder=3)
+     # 创建图形和坐标轴
+    fig, (ax1, ax2) = plt.subplots(2, 1, figsize=(12, 12))
+    
+    # 上半部分：移动轨迹图
+    ax1.scatter(time_data, movement_x, color='red', label='Movement X', zorder=3)
+    ax1.scatter(time_data, movement_y, color='green', label='Movement Y', zorder=3)
     for x, y in zip(time_data, movement_x):
-        plt.vlines(x=x, ymin=0, ymax=y, colors='gray', linestyles='--', alpha=0.3, zorder=1)
-
-    # 绘制movement_y的散点和垂直线
-    plt.scatter(time_data, movement_y, color='green', label='Movement Y', zorder=3)
+        ax1.vlines(x=x, ymin=0, ymax=y, colors='gray', linestyles='--', alpha=0.3, zorder=1)
     for x, y in zip(time_data, movement_y):
-        plt.vlines(x=x, ymin=0, ymax=y, colors='gray', linestyles='--', alpha=0.3, zorder=1)
-
-    # 添加水平参考线 y=0
-    plt.axhline(y=0, color='black', linestyle='-', alpha=0.3, zorder=2)
-
-    # 设置图表属性
-    plt.xlabel('相对时间 (ms)')
-    plt.ylabel('移动距离')
-    plt.title(f'移动轨迹分析 (时间窗口: {time_window}ms)')
-    plt.legend()
-    plt.grid(True, alpha=0.3)
-
+        ax1.vlines(x=x, ymin=0, ymax=y, colors='gray', linestyles='--', alpha=0.3, zorder=1)
+    ax1.axhline(y=0, color='black', linestyle='-', alpha=0.3, zorder=2)
+    ax1.set_xlabel('相对时间 (ms)')
+    ax1.set_ylabel('移动距离')
+    ax1.set_title(f'移动轨迹分析 (时间窗口: {time_window}ms)')
+    ax1.legend()
+    ax1.grid(True, alpha=0.3)
+    
+    # 下半部分：性能评分信息
+    score_text = f"""
+    触控板性能评分: {performance_score['final_score']}/10
+    
+    详细评分:
+    - 速度稳定性得分: {performance_score['stability_score']}/10
+    - 异常事件得分: {performance_score['abnormal_score']}/10
+    
+    关键指标:
+    - 变异系数 (CV): {performance_score['metrics']['cv']}
+    - 平均速度: {performance_score['metrics']['avg_velocity']}
+    - 速度标准差: {performance_score['metrics']['std_velocity']}
+    - 停顿次数: {performance_score['metrics']['stall_count']}
+    - 突跳次数: {performance_score['metrics']['jump_count']}
+    - 异常事件比例: {performance_score['metrics']['abnormal_ratio']}
+    - 总采样点数: {performance_score['metrics']['total_points']}
+    """
+    ax2.text(0.05, 0.95, score_text, 
+             transform=ax2.transAxes,
+             verticalalignment='top',
+             fontsize=10,
+             family='monospace')
+    ax2.axis('off')
+    
     # 保存图表
     output_filename = f'movement_analysis_{datetime.now().strftime("%Y%m%d_%H%M%S")}.png'
     save_path = result_dir / output_filename
-    plt.savefig(save_path, bbox_inches='tight')
+    plt.savefig(save_path, bbox_inches='tight', dpi=100)
     plt.close()
-
+    
     # 返回分析结果
     return {
         'filename': output_filename,
+        'performance_score': performance_score,
         'analysis': {
             'start_time': start_time,
             'end_time': end_time,
@@ -296,6 +387,7 @@ def analysis_pressure_data(filename, start_percent=0.2, time_window=5000):
             'data_points': len(selected_data)
         }
     }
+
 
 @app.route('/touch', methods=['POST'])
 def handle_touch():
@@ -325,13 +417,19 @@ def handle_touch():
         logger.error(f"Error processing request: {str(e)}")
         return jsonify({"error": str(e)}), 500
 
+
+
+
 if __name__ == '__main__':
     print('start')
-    # app.run(host='0.0.0.0', port=5000, debug=True)
+    app.run(host='0.0.0.0', port=5000, debug=True)
     # 使用默认范围（中间60%的数据）
-    # results = plot_pressure_data("movement_plot_20250325_170558.png",0.5,0.7)
+    # results = plot_pressure_data("inateck-base",0.6,0.7)
     # print(results)
 
 
-    analysis_pressure_data("jup_kb04122",0.5,1000)
+    # result = analysis_pressure_data("baseus",0.6,3000)
+    #
+    # print(result)
+
     print('end')

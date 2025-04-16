@@ -71,3 +71,8 @@ rustacuda = "0.1.3"
 uuid = "1.11.0"
 get-selected-text = {path = "get-selected-text"}
 winapi = "0.3"
+criterion = "0.3"
+
+[[bench]]
+name = "letcode"
+harness = false

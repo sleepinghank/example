@@ -27,6 +27,8 @@ mod registry;
 mod sysinfo;
 mod downloader;
 mod select_text;
+mod letcode;
+
 #[tokio::main]
 async fn main() -> Result<(), Box<dyn std::error::Error>> {
     // get_device_info().await;
