@@ -3,6 +3,7 @@
 
 use std::fs::File;
 use std::io::{self, Read};
+use std::path::Path;
 
 pub fn split_fw() -> io::Result<()> {
     let mut file = File::open("./resources/PIX_fw.txt")?;
@@ -46,6 +47,22 @@ pub fn split_fw() -> io::Result<()> {
     Ok(())
 }
 
+
+fn file_save() -> anyhow::Result<()> {
+    let data_path = Path::new(r"C:\Users\hank\Downloads\TP_12581-2860-uptpdata.bin");
+    if data_path.exists() {
+        println!("file exists, size:{}", data_path.metadata()?.len());
+        let mut file = File::open(data_path)?;
+        let mut buffer = Vec::new();
+        file.read_to_end(&mut buffer)?;
+        println!("file size:{}", buffer.len());
+    } else {
+        println!("file not exists");
+    }
+    Ok(())
+}
+
+
 #[cfg(test)]
 mod tests {
     use super::*;
@@ -53,6 +70,12 @@ mod tests {
     #[test]
     fn test_split_fw() {
         split_fw().unwrap();
+        assert_eq!(1, 1);
+    }
+
+    #[test]
+    fn test_file_save() {
+        file_save().unwrap();
         assert_eq!(1, 1);
     }
 }

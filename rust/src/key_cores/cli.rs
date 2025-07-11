@@ -23,20 +23,25 @@ fn callback(event: rdev::Event, sender: SyncSender<rdev::Key>) {
     let time = event.time;
     match event_type {
         rdev::EventType::KeyPress(key) => {
-            sender.send(key).unwrap();
+            // sender.send(key).unwrap();
+            // println!("KeyPress: {:?},name:{:?},time:{:?}", key,name,time);
         }
-        // rdev::EventType::ButtonPress(b) => {
-        //     println!("ButtonPress: {:?},name:{:?},time:{:?}", b,name,time);
-        // },
-        // rdev::EventType::ButtonRelease(b) => {
-        //     println!("ButtonPress: {:?},name:{:?},time:{:?}", b,name,time);
-        // },
-        // rdev::EventType::MouseMove {x,y  } => {
-        //     // println!("MouseMove: {:?}{:?}", x,y);
-        // },
-        // rdev::EventType::Wheel {delta_x,delta_y} => {
-        //     println!("Wheel: {:?}{:?}", delta_x,delta_y);
-        // },
+        rdev::EventType::KeyRelease(key) => {
+            // sender.send(key).unwrap();
+            // println!("KeyPress: {:?},name:{:?},time:{:?}", key,name,time);
+        }
+        rdev::EventType::ButtonPress(b) => {
+            // println!("ButtonPress: {:?},name:{:?},time:{:?}", b,name,time);
+        },
+        rdev::EventType::ButtonRelease(b) => {
+            // println!("ButtonPress: {:?},name:{:?},time:{:?}", b,name,time);
+        },
+        rdev::EventType::MouseMove {x,y  } => {
+            // println!("MouseMove: {:?}{:?}", x,y);
+        },
+        rdev::EventType::Wheel {delta_x,delta_y} => {
+            // println!("Wheel: {:?}{:?}", delta_x,delta_y);
+        },
         _ => {}
     }
 }

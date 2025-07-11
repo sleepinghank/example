@@ -331,7 +331,7 @@ def analysis_pressure_data(filename, start_percent=0.2, time_window=5000):
 
      # 创建图形和坐标轴
     fig, (ax1, ax2) = plt.subplots(2, 1, figsize=(12, 12))
-    
+
     # 上半部分：移动轨迹图
     ax1.scatter(time_data, movement_x, color='red', label='Movement X', zorder=3)
     ax1.scatter(time_data, movement_y, color='green', label='Movement Y', zorder=3)
@@ -345,15 +345,15 @@ def analysis_pressure_data(filename, start_percent=0.2, time_window=5000):
     ax1.set_title(f'移动轨迹分析 (时间窗口: {time_window}ms)')
     ax1.legend()
     ax1.grid(True, alpha=0.3)
-    
+
     # 下半部分：性能评分信息
     score_text = f"""
     触控板性能评分: {performance_score['final_score']}/10
-    
+
     详细评分:
     - 速度稳定性得分: {performance_score['stability_score']}/10
     - 异常事件得分: {performance_score['abnormal_score']}/10
-    
+
     关键指标:
     - 变异系数 (CV): {performance_score['metrics']['cv']}
     - 平均速度: {performance_score['metrics']['avg_velocity']}
@@ -363,13 +363,13 @@ def analysis_pressure_data(filename, start_percent=0.2, time_window=5000):
     - 异常事件比例: {performance_score['metrics']['abnormal_ratio']}
     - 总采样点数: {performance_score['metrics']['total_points']}
     """
-    ax2.text(0.05, 0.95, score_text, 
+    ax2.text(0.05, 0.95, score_text,
              transform=ax2.transAxes,
              verticalalignment='top',
              fontsize=10,
              family='monospace')
     ax2.axis('off')
-    
+
     # 保存图表
     output_filename = f'movement_analysis_{datetime.now().strftime("%Y%m%d_%H%M%S")}.png'
     save_path = result_dir / output_filename
@@ -423,13 +423,13 @@ def handle_touch():
 if __name__ == '__main__':
     print('start')
     app.run(host='0.0.0.0', port=5000, debug=True)
+
     # 使用默认范围（中间60%的数据）
-    # results = plot_pressure_data("inateck-base",0.6,0.7)
+    # results = plot_pressure_data("movement_plot_20250513_183932.png",0.7,0.8)
     # print(results)
-
-
-    # result = analysis_pressure_data("baseus",0.6,3000)
     #
+    #
+    # result = analysis_pressure_data("movement_plot_20250513_183932.png",0.7,3000)
     # print(result)
 
     print('end')

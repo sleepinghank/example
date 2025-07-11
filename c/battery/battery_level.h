@@ -134,16 +134,12 @@ void battery_level_detection(uint16_t threshold);
 //键盘配置结构体
 typedef struct
 {
-    uint8_t backlight_color;//背光板颜色
-    uint8_t backlight_brightness;//背光板亮度
-    uint8_t FN_Lock_flag;//FN锁 1：默认功能键 0：第二排功能键
-    uint8_t SystemType[3];//系统类型
-    uint32_t remaining_capacity_mas; //
-#ifdef CONFIG_ENABLE_TOUCH
-    uint8_t touch_flag;//触摸开关
-#endif
-    // uint8_t Index_Addr[3];//索引地址
-    // uint8_t ORIGIN_UUID[16];//ORIGIN UUID
+    uint8_t backlight_color;//背光板颜色 1
+    uint8_t backlight_brightness;//背光板亮度 1
+    // uint8_t FN_Lock_flag[3];//FN锁
+    uint8_t SystemType[3];//系统类型 3
+    uint32_t remaining_capacity_mas; //4
+    uint8_t sys_power_state;//系统电源   1:开机  2:关机  3:休眠 1
 }KeyboardConfig_t;
 
 

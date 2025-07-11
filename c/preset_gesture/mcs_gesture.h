@@ -39,6 +39,6 @@ typedef enum {
  * @param point_count 坐标点数量
  * @return 识别出的手势类型
  */
-GestureType recognize_gesture(Point* input_points, uint8_t point_count);
+GestureType recognize_gesture(Point* input_points, uint16_t point_count);
 
 #endif //C_MCS_GESTURE_H

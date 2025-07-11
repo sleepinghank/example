@@ -6,12 +6,12 @@ Estimator:
     https://scikit-learn.org/stable/modules/generated/sklearn.naive_bayes.GaussianNB.html
 
 Environment:
-    scikit-learn v0.22.1
+    scikit-learn v0.22
     sklearn-porter v1.0.0
 
 Usage:
     1. Execute a prediction:
-        $ node GaussianNB.js feature_1 ... feature_3
+        $ node GaussianNB.js feature_1 ... feature_5
 */
 var GaussianNB = function(priors, sigmas, thetas) {
 
@@ -73,12 +73,12 @@ var GaussianNB = function(priors, sigmas, thetas) {
 
 var main = function () {
     if (typeof process !== 'undefined' && typeof process.argv !== 'undefined') {
-        if (process.argv.length - 2 !== 3) {
+        if (process.argv.length - 2 !== 5) {
             var IllegalArgumentException = function(message) {
                 this.message = message;
                 this.name = "IllegalArgumentException";
             }
-            throw new IllegalArgumentException("You have to pass 3 features.");
+            throw new IllegalArgumentException("You have to pass 5 features.");
         }
     }
 
@@ -89,9 +89,9 @@ var main = function () {
     }
 
     // Model data:
-    var priors = [0.49234303215926495, 0.5076569678407351];
-    var sigmas = [[515651.7807407694, 15.666230878170639, 17285.51380095335], [77433.92874074832, 6.585970898738418, 25420.928911370058]];
-    var thetas = [[1958.7620528771383, 6.852255054432348, 240.21617418351477], [752.867269984917, 8.30316742081448, 85.7526395173454]];
+    var priors = [0.4939106901217862, 0.5060893098782138];
+    var sigmas = [[209672.5458046464, 46273.3704997112, 4.629272464034061, 1916.1953599100862, 1520.0326276901556], [241136.3079324748, 46298.57549088368, 7.322438179891191, 81691.8801249882, 100694.46098231901]];
+    var thetas = [[939.6821917808219, 355.7287671232877, 8.6, 36.26575342465753, 8.378082191780821], [787.7219251336899, 356.20588235294116, 9.109625668449198, 216.63101604278074, 254.2620320855615]];
 
     // Estimator:
     var clf = new GaussianNB(priors, sigmas, thetas);
