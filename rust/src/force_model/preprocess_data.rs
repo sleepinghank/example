@@ -1,4 +1,5 @@
 use std::{sync::atomic::Ordering, thread::sleep};
+use std::ops::Deref;
 use std::sync::mpsc::SyncSender;
 use std::thread;
 use std::time::Duration;
@@ -95,6 +96,12 @@ impl VibrationBuffer {
         self.reset(); // 重置状态以应用新配置
     }
 }
+// 10 size: 13.2
+// 11 size:15.9
+// 15 size:37
+// change size:121.4
+
+
 pub fn pre_data() -> Result<()>{
     let mut force_l_avg = 0.0;
     let mut force_r_avg = 0.0;
@@ -124,7 +131,7 @@ pub fn pre_data() -> Result<()>{
     });
     let (tx, rx) = std::sync::mpsc::channel();
     let (tx2, rx2) = std::sync::mpsc::channel();
-    let port_name = "COM8";
+    let port_name = "COM9";
     if let Err(e) = crate::force_model::uart_data::read_from_serial_port(&port_name, tx,rx2) {
         eprintln!("Error reading from serial port: {}", e);
         return Ok(())
@@ -138,25 +145,28 @@ pub fn pre_data() -> Result<()>{
                 if let Some(data) = parser.parse_byte(data) {
                     let data = RawData::from(data.to_vec());
                     let training_data = TrainingData::new(data, SYS_KEY_STATUS.load(Ordering::Relaxed));
-                    // data_array.push(training_data.clone());
-                    // println!("Received data: {:?}", training_data);
-                    if training_data.raw_data.x == 0 && training_data.raw_data.y == 0{
-                        force_l_avg += training_data.raw_data.force_l as f64;
-                        force_r_avg += training_data.raw_data.force_r as f64;
-                        base_count +=1;
-                        continue;
-                    } else {
-                        if base_count > 0 {
-                            force_l_avg /= base_count as f64;
-                            force_r_avg /= base_count as f64;
-                        }
-                        base_count = 0;
+                    if SYS_KEY_STATUS.load(Ordering::Relaxed) {
+                        data_array.push(training_data.clone());
+                        println!("Received data: {:?}", training_data);
                     }
-                    let features:Vec<f64> = vec![training_data.raw_data.x as f64,
-                                                 training_data.raw_data.y as f64, training_data.raw_data.size as f64, training_data.raw_data.force_l as f64 - force_l_avg, training_data.raw_data.force_r as f64 - force_r_avg];
-                    // Get class prediction:
-                    let prediction = clf.predict(features.as_slice());
-                    println!("Predicted class: #{}", prediction);
+
+                    // if training_data.raw_data.x == 0 && training_data.raw_data.y == 0{
+                    //     force_l_avg += training_data.raw_data.force_l as f64;
+                    //     force_r_avg += training_data.raw_data.force_r as f64;
+                    //     base_count +=1;
+                    //     continue;
+                    // } else {
+                    //     if base_count > 0 {
+                    //         force_l_avg /= base_count as f64;
+                    //         force_r_avg /= base_count as f64;
+                    //     }
+                    //     base_count = 0;
+                    // }
+                    // let features:Vec<f64> = vec![training_data.raw_data.x as f64,
+                    //                              training_data.raw_data.y as f64, training_data.raw_data.size as f64, training_data.raw_data.force_l as f64 - force_l_avg, training_data.raw_data.force_r as f64 - force_r_avg];
+                    // // Get class prediction:
+                    // let prediction = clf.predict(features.as_slice());
+                    // println!("Predicted class: #{}", prediction);
                     // // 使用震动缓冲器更新状态
                     // let should_vibrate = vibration_buffer.update(prediction);
                     
@@ -180,20 +190,20 @@ pub fn pre_data() -> Result<()>{
                 thread::sleep(std::time::Duration::from_millis(100));
             }
         }
-        // 使用震动缓冲器更新状态
-        let should_vibrate = vibration_buffer.update(SYS_KEY_QUIT.load(Ordering::Relaxed) as usize);
-
-        // 检查是否应该触发震动
-        if should_vibrate {
-            // 发送震动指令
-            tx2.send(0x01).expect("TODO: panic message");
-            println!("*** VIBRATION TRIGGERED ***");
-        }
-        // if SYS_KEY_QUIT.load(Ordering::Relaxed) {
-        //     println!("Keyboard quit signal received, exiting...");
-        //     break;
+        // // 使用震动缓冲器更新状态
+        // let should_vibrate = vibration_buffer.update(SYS_KEY_QUIT.load(Ordering::Relaxed) as usize);
+        //
+        // // 检查是否应该触发震动
+        // if should_vibrate {
+        //     // 发送震动指令
+        //     tx2.send(0x01).expect("TODO: panic message");
+        //     println!("*** VIBRATION TRIGGERED ***");
         // }
-        sleep(Duration::from_millis(2));
+        if SYS_KEY_QUIT.load(Ordering::Relaxed) {
+            println!("Keyboard quit signal received, exiting...");
+            break;
+        }
+        sleep(Duration::from_millis(1));
     }
     // 保存数据到文件
 
