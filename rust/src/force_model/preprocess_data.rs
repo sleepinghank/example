@@ -131,7 +131,7 @@ pub fn pre_data() -> Result<()>{
     });
     let (tx, rx) = std::sync::mpsc::channel();
     let (tx2, rx2) = std::sync::mpsc::channel();
-    let port_name = "COM9";
+    let port_name = "COM10";
     if let Err(e) = crate::force_model::uart_data::read_from_serial_port(&port_name, tx,rx2) {
         eprintln!("Error reading from serial port: {}", e);
         return Ok(())
@@ -145,10 +145,12 @@ pub fn pre_data() -> Result<()>{
                 if let Some(data) = parser.parse_byte(data) {
                     let data = RawData::from(data.to_vec());
                     let training_data = TrainingData::new(data, SYS_KEY_STATUS.load(Ordering::Relaxed));
-                    if SYS_KEY_STATUS.load(Ordering::Relaxed) {
-                        data_array.push(training_data.clone());
-                        println!("Received data: {:?}", training_data);
-                    }
+                    data_array.push(training_data.clone());
+                    println!("Received data: {:?}", training_data);
+                    // if SYS_KEY_STATUS.load(Ordering::Relaxed) {
+                    //
+                    //     println!("Received data: {:?}", training_data);
+                    // }
 
                     // if training_data.raw_data.x == 0 && training_data.raw_data.y == 0{
                     //     force_l_avg += training_data.raw_data.force_l as f64;

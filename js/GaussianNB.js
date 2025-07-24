@@ -11,7 +11,7 @@ Environment:
 
 Usage:
     1. Execute a prediction:
-        $ node GaussianNB.js feature_1 ... feature_5
+        $ node GaussianNB.js feature_1 ... feature_2
 */
 var GaussianNB = function(priors, sigmas, thetas) {
 
@@ -73,12 +73,12 @@ var GaussianNB = function(priors, sigmas, thetas) {
 
 var main = function () {
     if (typeof process !== 'undefined' && typeof process.argv !== 'undefined') {
-        if (process.argv.length - 2 !== 5) {
+        if (process.argv.length - 2 !== 2) {
             var IllegalArgumentException = function(message) {
                 this.message = message;
                 this.name = "IllegalArgumentException";
             }
-            throw new IllegalArgumentException("You have to pass 5 features.");
+            throw new IllegalArgumentException("You have to pass 2 features.");
         }
     }
 
@@ -89,9 +89,9 @@ var main = function () {
     }
 
     // Model data:
-    var priors = [0.4939106901217862, 0.5060893098782138];
-    var sigmas = [[209672.5458046464, 46273.3704997112, 4.629272464034061, 1916.1953599100862, 1520.0326276901556], [241136.3079324748, 46298.57549088368, 7.322438179891191, 81691.8801249882, 100694.46098231901]];
-    var thetas = [[939.6821917808219, 355.7287671232877, 8.6, 36.26575342465753, 8.378082191780821], [787.7219251336899, 356.20588235294116, 9.109625668449198, 216.63101604278074, 254.2620320855615]];
+    var priors = [0.5064102564102564, 0.4935897435897436];
+    var sigmas = [[2.5501543778634055, 9119.17918017501], [5.153356434600118, 27503.576404166088]];
+    var thetas = [[9.80379746835443, 48.18987341772152], [10.831168831168831, 358.2012987012987]];
 
     // Estimator:
     var clf = new GaussianNB(priors, sigmas, thetas);

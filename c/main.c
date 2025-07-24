@@ -78,10 +78,15 @@ uint8_t key_output_io[NUM_OF_COLS] = {0, 1, 3, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14
 uint8_t key_input_io[NUM_OF_ROWS] = {25, 26, 27, 28, 29, 30, 31, 2};
 #define U32BIT(s)			((uint32_t)1<<(s))
 #define BIT(s)				((uint8_t)1<<(s))
+extern void test_filters(void);
+
+#define KEYBOARD_TIMER                              255UL       /* 6ms, unit 30.5us */
+#define KEYBOARD_INTERVAL                           ((KEYBOARD_TIMER + 1) * 1000 / 32768)
+#define KEYBOARD_CNT(interval)                      (32768 * interval / (KEYBOARD_TIMER))
+#define KEYBOARD_CNT_MS(interval)                      ((interval * 128) / 1000)
 int main(void)
 {
-    double data[5] = {960,53,8,407,176};
-    predictProba(data);
-    printf("Predicted class: %d\n", predict(data));
+    uint8_t  a = KEYBOARD_CNT_MS(1000);
+    printf("Keyboard count for 1 second: %d\n", a);
     return 0;
 }

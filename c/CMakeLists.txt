@@ -2,7 +2,11 @@ cmake_minimum_required(VERSION 3.23)
 project(c C)
 #include_directories(${Sophus_INCLUDE_DIRS} "./functions/led.h" "functions/motor.h" "functions/loop.h" "main.h")#添加头文件目录
 set(CMAKE_C_STANDARD 99)
-
+if(MSVC)
+        add_compile_options(/utf-8)
+elseif(MINGW)
+        add_compile_options(-finput-charset=UTF-8 -fexec-charset=UTF-8)
+endif()
 #add_compile_definitions(VALUE_MACRO=0x10)
 #file(GLOB_RECURSE FUNCTIONS_LIB_SRC
 #        ./functions/*.c
@@ -44,8 +48,10 @@ add_library(functions STATIC ${FUNCTIONS_LIB_SRC}
 #        sklearn/bayes/bayes.h
 #        sklearn/bayes/bayes.c
         bit/bit.c bit/bit.h
-        kalman/filter.c kalman/filter.h
-        timer_task/timer_task.c timer_task/timer_task.h
+        kalman/kalman.c 
+        kalman/kalman.h
+        timer_task/timer_task.c 
+        timer_task/timer_task.h
         battery/battery_level.c
         battery/battery_level.h
         preset_gesture/preset_gesture.c
@@ -62,6 +68,9 @@ add_library(functions STATIC ${FUNCTIONS_LIB_SRC}
         cmd_uart/cmd_uart.c
         algorithmic/algorithmic_filtering.c
         algorithmic/algorithmic_filtering.h
+        filtering/filtering.c
+        filtering/filtering.h
+        filtering/test_filters.c
         )
 
 add_executable(c main.c main.h
@@ -91,8 +100,8 @@ add_executable(c main.c main.h
 #        sklearn/bayes/bayes.c
         bit/bit.c
         bit/bit.h
-        kalman/filter.c
-        kalman/filter.h
+        kalman/kalman.c
+        kalman/kalman.h
         hmac_sha256/hmac_c_example.c
         hmac_sha256/hmac_c_example.h
         aes/aes_example.c
@@ -119,6 +128,9 @@ add_executable(c main.c main.h
         cmd_uart/cmd_uart.c
         algorithmic/algorithmic_filtering.c
         algorithmic/algorithmic_filtering.h
+        filtering/filtering.c
+        filtering/filtering.h
+        filtering/test_filters.c
         )
 
 target_link_libraries(c functions)
