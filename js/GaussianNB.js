@@ -11,7 +11,7 @@ Environment:
 
 Usage:
     1. Execute a prediction:
-        $ node GaussianNB.js feature_1 ... feature_2
+        $ node GaussianNB.js feature_1 ... feature_3
 */
 var GaussianNB = function(priors, sigmas, thetas) {
 
@@ -73,12 +73,12 @@ var GaussianNB = function(priors, sigmas, thetas) {
 
 var main = function () {
     if (typeof process !== 'undefined' && typeof process.argv !== 'undefined') {
-        if (process.argv.length - 2 !== 2) {
+        if (process.argv.length - 2 !== 3) {
             var IllegalArgumentException = function(message) {
                 this.message = message;
                 this.name = "IllegalArgumentException";
             }
-            throw new IllegalArgumentException("You have to pass 2 features.");
+            throw new IllegalArgumentException("You have to pass 3 features.");
         }
     }
 
@@ -89,9 +89,9 @@ var main = function () {
     }
 
     // Model data:
-    var priors = [0.5064102564102564, 0.4935897435897436];
-    var sigmas = [[2.5501543778634055, 9119.17918017501], [5.153356434600118, 27503.576404166088]];
-    var thetas = [[9.80379746835443, 48.18987341772152], [10.831168831168831, 358.2012987012987]];
+    var priors = [0.47711511789181693, 0.5228848821081831];
+    var sigmas = [[1.9192167413777041, 1620.8947863060075, 1214.736956059929], [6.373906361833612, 140311.57924798806, 211342.8302101422]];
+    var thetas = [[8.700581395348838, 43.20348837209303, 40.93313953488372], [9.594164456233422, 233.0424403183024, 421.9867374005305]];
 
     // Estimator:
     var clf = new GaussianNB(priors, sigmas, thetas);

@@ -119,7 +119,36 @@ def draw_data(file_name):
     
     return x_values, force_l_values, force_r_values
 
-
+def parse_all_pressure(file_name):
+    """
+    从data/presure目录下读取单个文件数据，不需要滤波和相减运算
+    直接组成 x,size,force_l,force_r 四个特征，is_btn_down 为结果
+    """
+    x_list = []
+    y_list = []
+    
+    # 读取指定的单个数据文件
+    file_path = data_dir / file_name
+    
+    with open(file_path, 'r', encoding='utf-8') as f:
+        data = json.load(f)
+        
+        for item in data:
+            raw_data = item['raw_data']
+            # 提取四个特征
+            x = raw_data['x']
+            size = raw_data.get('size', 0)  # 如果没有size字段，使用默认值0
+            force_l = raw_data['force_l']
+            force_r = raw_data['force_r']
+            
+            # 提取结果值
+            is_btn_down = item.get('is_btn_down', False)
+            
+            # 添加到特征列表和结果列表
+            x_list.append([x, size, force_l, force_r])
+            y_list.append(is_btn_down)
+    
+    return np.array(x_list), np.array(y_list)
 def parse_raw_data():
     # 从data\presure\目录下读取四个文件夹内所有数据，分为四个数组
 
@@ -229,6 +258,12 @@ if __name__ == '__main__':
     # #         print(f"处理文件 {file_name} 时出错: {e}")
     # #
     print("开始训练模型...")
-    X_train, y_train = parse_raw_data()
-    print("len X_train", len(X_train))
+    # X_train, y_train = parse_raw_data()
+    # print("len X_train", len(X_train))
+
+    X_train, y_train = parse_all_pressure("Recollect_all_pressure.json")
+    # 输出前十个训练数据
+    print("X_train:", X_train[:10])
+    print("y_train:", y_train[:10])
+
     train_model(X_train, y_train)

@@ -3,10 +3,10 @@ from flask_cors import CORS
 from datetime import datetime
 import logging
 import matplotlib.pyplot as plt
-import os
 from pathlib import Path
 import json
 import numpy as np  # 添加 numpy 导入
+from parse import compile, findall
 # 配置日志
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
@@ -24,6 +24,63 @@ CORS(app, resources={
         "allow_headers": ["Content-Type"]  # 允许的请求头
     }
 })
+
+
+def parse_raw_touch_data(path: str) -> object:
+    """
+        解析触摸板原始数据
+    """
+    with open(path, 'r', encoding='utf8') as f:
+        index = 0
+        p_idx = compile("[{index:^d}] [{timestamp:^d}] {idx:^d} |")   # [ 19] [    10381877] 1 | True  True 00 ( 1345, 1121)   4  1290  2000
+        p_item = compile("{valid:^} {confidence:^} 0{id:d} ({x:^d},{y:^d}) {size:^d} {force:^d} {max_force:^d}")
+        response = []
+        while True:
+            line = f.readline()
+            if not line:
+                break
+            line = line.replace('\n', '')
+            result = p_idx.search(line)
+            if result is not None:
+                cnt = result['idx']
+                # if cnt != 2:
+                #     continue
+                start_idx = result.spans['idx'][1]
+                timestamp = result['timestamp']
+                items_str = line[start_idx:]
+
+                start_list = []
+                for r in findall("|{start}", items_str):
+                    start_list.append(r.spans['start'][1] - 1)
+                if len(start_list) != cnt:
+                    print("error:cnt not current")
+                    continue
+                item = []
+                for idx in range(len(start_list)):
+                    start = start_list[idx] + 1
+                    item_str = ""
+                    if idx + 1 == len(start_list):
+                        item_str = items_str[start:]
+                    else:
+                        end = start_list[idx + 1] - 1
+                        item_str = items_str[start:end]
+                    item_result = p_item.parse(item_str)
+                    if item_result["valid"] == "True":
+                        s = {
+                            'valid': item_result["valid"] == "True",
+                            'confidence': item_result["confidence"] == "True",
+                            'id': item_result["id"],
+                            'x': item_result["x"],
+                            'y': item_result["y"],
+                            'size': item_result["size"],
+                            'force': item_result["force"],
+                            'max_force': item_result["max_force"],
+                            'timestamp': timestamp,
+                        }
+                        item.append(s)
+                response.append(item)
+            index += 1
+        return response
 
 def plot_movement_data(touch_data):
     plt.figure(figsize=(12, 8), dpi=100)
@@ -407,7 +464,12 @@ def handle_touch():
         #                 f"movementX={event.get('movementX')}, "
         #                 f"movementY={event.get('movementY')}")
           # 绘制散点图并保存
-        filename = plot_movement_data(touch_data)
+        # filename = plot_movement_data(touch_data)
+        # 将json存储到文件,文件名为时间戳 YYYY-MM-DD_HH-MM-SS
+        filename = datetime.now().strftime("%Y-%m-%d_%H-%M-%S")
+        with open(f"{filename}.json", "w") as f:
+            json.dump(touch_data, f)
+        
         logger.info(f"Plot saved as {filename}")
 
 
@@ -431,5 +493,10 @@ if __name__ == '__main__':
     #
     # result = analysis_pressure_data("movement_plot_20250513_183932.png",0.7,3000)
     # print(result)
+
+    # 解析触控板原始数据
+    # result = parse_raw_touch_data(r"D:\Code\VScode\example\python\touch\touch_raw_data\record_20250804_143434\trackData.txt")
+    # for point in result:
+    #     print(point)
 
     print('end')

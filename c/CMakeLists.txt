@@ -71,6 +71,8 @@ add_library(functions STATIC ${FUNCTIONS_LIB_SRC}
         filtering/filtering.c
         filtering/filtering.h
         filtering/test_filters.c
+        touch/touch.c
+        touch/touch.h
         )
 
 add_executable(c main.c main.h
@@ -131,6 +133,8 @@ add_executable(c main.c main.h
         filtering/filtering.c
         filtering/filtering.h
         filtering/test_filters.c
+        touch/touch.c
+        touch/touch.h
         )
 
 target_link_libraries(c functions)

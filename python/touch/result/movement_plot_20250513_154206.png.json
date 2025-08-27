@@ -1,0 +1,6111 @@
+{
+  "metadata": {
+    "start_time": 64938,
+    "total_points": 1017,
+    "duration": 17999
+  },
+  "data": [
+    {
+      "original_timestamp": 64938,
+      "relative_timestamp": 0,
+      "movement_x": 0,
+      "movement_y": 0
+    },
+    {
+      "original_timestamp": 64954.00000000001,
+      "relative_timestamp": 16.000000000007276,
+      "movement_x": -2,
+      "movement_y": -3
+    },
+    {
+      "original_timestamp": 64969.00000000001,
+      "relative_timestamp": 31.000000000007276,
+      "movement_x": -2,
+      "movement_y": -2
+    },
+    {
+      "original_timestamp": 64986.00000000001,
+      "relative_timestamp": 48.000000000007276,
+      "movement_x": -4,
+      "movement_y": -2
+    },
+    {
+      "original_timestamp": 65003,
+      "relative_timestamp": 65,
+      "movement_x": -3,
+      "movement_y": -2
+    },
+    {
+      "original_timestamp": 65036,
+      "relative_timestamp": 98,
+      "movement_x": -3,
+      "movement_y": -1
+    },
+    {
+      "original_timestamp": 65054,
+      "relative_timestamp": 116,
+      "movement_x": -5,
+      "movement_y": 0
+    },
+    {
+      "original_timestamp": 65071,
+      "relative_timestamp": 133,
+      "movement_x": -42,
+      "movement_y": 14
+    },
+    {
+      "original_timestamp": 65087,
+      "relative_timestamp": 149,
+      "movement_x": -16,
+      "movement_y": 7
+    },
+    {
+      "original_timestamp": 65102.99999999999,
+      "relative_timestamp": 164.99999999999272,
+      "movement_x": -33,
+      "movement_y": 16
+    },
+    {
+      "original_timestamp": 65120.00000000001,
+      "relative_timestamp": 182.00000000000728,
+      "movement_x": -16,
+      "movement_y": 12
+    },
+    {
+      "original_timestamp": 65137,
+      "relative_timestamp": 199,
+      "movement_x": -17,
+      "movement_y": 13
+    },
+    {
+      "original_timestamp": 65154,
+      "relative_timestamp": 216,
+      "movement_x": -17,
+      "movement_y": 18
+    },
+    {
+      "original_timestamp": 65170,
+      "relative_timestamp": 232,
+      "movement_x": -13,
+      "movement_y": 17
+    },
+    {
+      "original_timestamp": 65187,
+      "relative_timestamp": 249,
+      "movement_x": -11,
+      "movement_y": 20
+    },
+    {
+      "original_timestamp": 65204.00000000001,
+      "relative_timestamp": 266.0000000000073,
+      "movement_x": -7,
+      "movement_y": 19
+    },
+    {
+      "original_timestamp": 65221,
+      "relative_timestamp": 283,
+      "movement_x": -5,
+      "movement_y": 17
+    },
+    {
+      "original_timestamp": 65236.99999999999,
+      "relative_timestamp": 298.9999999999927,
+      "movement_x": -1,
+      "movement_y": 34
+    },
+    {
+      "original_timestamp": 65254.00000000001,
+      "relative_timestamp": 316.0000000000073,
+      "movement_x": 10,
+      "movement_y": 29
+    },
+    {
+      "original_timestamp": 65269.99999999999,
+      "relative_timestamp": 331.9999999999927,
+      "movement_x": 10,
+      "movement_y": 12
+    },
+    {
+      "original_timestamp": 65287.00000000001,
+      "relative_timestamp": 349.0000000000073,
+      "movement_x": 14,
+      "movement_y": 14
+    },
+    {
+      "original_timestamp": 65304,
+      "relative_timestamp": 366,
+      "movement_x": 37,
+      "movement_y": 25
+    },
+    {
+      "original_timestamp": 65320.00000000001,
+      "relative_timestamp": 382.0000000000073,
+      "movement_x": 25,
+      "movement_y": 11
+    },
+    {
+      "original_timestamp": 65372,
+      "relative_timestamp": 434,
+      "movement_x": 25,
+      "movement_y": 8
+    },
+    {
+      "original_timestamp": 65387,
+      "relative_timestamp": 449,
+      "movement_x": 29,
+      "movement_y": 6
+    },
+    {
+      "original_timestamp": 65404,
+      "relative_timestamp": 466,
+      "movement_x": 129,
+      "movement_y": -5
+    },
+    {
+      "original_timestamp": 65420,
+      "relative_timestamp": 482,
+      "movement_x": 22,
+      "movement_y": -10
+    },
+    {
+      "original_timestamp": 65437,
+      "relative_timestamp": 499,
+      "movement_x": 21,
+      "movement_y": -15
+    },
+    {
+      "original_timestamp": 65454.00000000001,
+      "relative_timestamp": 516.0000000000073,
+      "movement_x": 46,
+      "movement_y": -54
+    },
+    {
+      "original_timestamp": 65470,
+      "relative_timestamp": 532,
+      "movement_x": 11,
+      "movement_y": -18
+    },
+    {
+      "original_timestamp": 65486.99999999999,
+      "relative_timestamp": 548.9999999999927,
+      "movement_x": 8,
+      "movement_y": -19
+    },
+    {
+      "original_timestamp": 65504.00000000001,
+      "relative_timestamp": 566.0000000000073,
+      "movement_x": 6,
+      "movement_y": -19
+    },
+    {
+      "original_timestamp": 65519.99999999999,
+      "relative_timestamp": 581.9999999999927,
+      "movement_x": 2,
+      "movement_y": -19
+    },
+    {
+      "original_timestamp": 65537,
+      "relative_timestamp": 599,
+      "movement_x": -3,
+      "movement_y": -33
+    },
+    {
+      "original_timestamp": 65553,
+      "relative_timestamp": 615,
+      "movement_x": -5,
+      "movement_y": -16
+    },
+    {
+      "original_timestamp": 65587,
+      "relative_timestamp": 649,
+      "movement_x": -54,
+      "movement_y": -53
+    },
+    {
+      "original_timestamp": 65604,
+      "relative_timestamp": 666,
+      "movement_x": -23,
+      "movement_y": -10
+    },
+    {
+      "original_timestamp": 65620,
+      "relative_timestamp": 682,
+      "movement_x": -28,
+      "movement_y": -8
+    },
+    {
+      "original_timestamp": 65637,
+      "relative_timestamp": 699,
+      "movement_x": -34,
+      "movement_y": -6
+    },
+    {
+      "original_timestamp": 65654,
+      "relative_timestamp": 716,
+      "movement_x": -34,
+      "movement_y": -2
+    },
+    {
+      "original_timestamp": 65670,
+      "relative_timestamp": 732,
+      "movement_x": -37,
+      "movement_y": 0
+    },
+    {
+      "original_timestamp": 65687,
+      "relative_timestamp": 749,
+      "movement_x": -34,
+      "movement_y": 2
+    },
+    {
+      "original_timestamp": 65704.00000000001,
+      "relative_timestamp": 766.0000000000146,
+      "movement_x": -57,
+      "movement_y": 12
+    },
+    {
+      "original_timestamp": 65720,
+      "relative_timestamp": 782,
+      "movement_x": -47,
+      "movement_y": 27
+    },
+    {
+      "original_timestamp": 65737,
+      "relative_timestamp": 799,
+      "movement_x": -8,
+      "movement_y": 12
+    },
+    {
+      "original_timestamp": 65754,
+      "relative_timestamp": 816,
+      "movement_x": -4,
+      "movement_y": 15
+    },
+    {
+      "original_timestamp": 65771,
+      "relative_timestamp": 833,
+      "movement_x": 0,
+      "movement_y": 17
+    },
+    {
+      "original_timestamp": 65787,
+      "relative_timestamp": 849,
+      "movement_x": 2,
+      "movement_y": 19
+    },
+    {
+      "original_timestamp": 65804,
+      "relative_timestamp": 866,
+      "movement_x": 6,
+      "movement_y": 20
+    },
+    {
+      "original_timestamp": 65820.00000000001,
+      "relative_timestamp": 882.0000000000146,
+      "movement_x": 11,
+      "movement_y": 23
+    },
+    {
+      "original_timestamp": 65837,
+      "relative_timestamp": 899,
+      "movement_x": 16,
+      "movement_y": 22
+    },
+    {
+      "original_timestamp": 65854,
+      "relative_timestamp": 916,
+      "movement_x": 42,
+      "movement_y": 44
+    },
+    {
+      "original_timestamp": 65870,
+      "relative_timestamp": 932,
+      "movement_x": 82,
+      "movement_y": 50
+    },
+    {
+      "original_timestamp": 65887,
+      "relative_timestamp": 949,
+      "movement_x": 30,
+      "movement_y": 9
+    },
+    {
+      "original_timestamp": 65904,
+      "relative_timestamp": 966,
+      "movement_x": 30,
+      "movement_y": 4
+    },
+    {
+      "original_timestamp": 65920,
+      "relative_timestamp": 982,
+      "movement_x": 32,
+      "movement_y": 0
+    },
+    {
+      "original_timestamp": 65938,
+      "relative_timestamp": 1000,
+      "movement_x": 30,
+      "movement_y": -4
+    },
+    {
+      "original_timestamp": 65954.00000000001,
+      "relative_timestamp": 1016.0000000000146,
+      "movement_x": 28,
+      "movement_y": -8
+    },
+    {
+      "original_timestamp": 65970,
+      "relative_timestamp": 1032,
+      "movement_x": 27,
+      "movement_y": -11
+    },
+    {
+      "original_timestamp": 65987,
+      "relative_timestamp": 1049,
+      "movement_x": 23,
+      "movement_y": -13
+    },
+    {
+      "original_timestamp": 66004,
+      "relative_timestamp": 1066,
+      "movement_x": 30,
+      "movement_y": -28
+    },
+    {
+      "original_timestamp": 66020,
+      "relative_timestamp": 1082,
+      "movement_x": 16,
+      "movement_y": -45
+    },
+    {
+      "original_timestamp": 66037,
+      "relative_timestamp": 1099,
+      "movement_x": 0,
+      "movement_y": -18
+    },
+    {
+      "original_timestamp": 66054,
+      "relative_timestamp": 1116,
+      "movement_x": -1,
+      "movement_y": -16
+    },
+    {
+      "original_timestamp": 66070.00000000001,
+      "relative_timestamp": 1132.0000000000146,
+      "movement_x": -5,
+      "movement_y": -15
+    },
+    {
+      "original_timestamp": 66087,
+      "relative_timestamp": 1149,
+      "movement_x": -8,
+      "movement_y": -15
+    },
+    {
+      "original_timestamp": 66104,
+      "relative_timestamp": 1166,
+      "movement_x": -11,
+      "movement_y": -14
+    },
+    {
+      "original_timestamp": 66120,
+      "relative_timestamp": 1182,
+      "movement_x": -13,
+      "movement_y": -11
+    },
+    {
+      "original_timestamp": 66137,
+      "relative_timestamp": 1199,
+      "movement_x": -17,
+      "movement_y": -10
+    },
+    {
+      "original_timestamp": 66154,
+      "relative_timestamp": 1216,
+      "movement_x": -22,
+      "movement_y": -9
+    },
+    {
+      "original_timestamp": 66170,
+      "relative_timestamp": 1232,
+      "movement_x": -25,
+      "movement_y": -6
+    },
+    {
+      "original_timestamp": 66187,
+      "relative_timestamp": 1249,
+      "movement_x": -114,
+      "movement_y": 2
+    },
+    {
+      "original_timestamp": 66204.00000000001,
+      "relative_timestamp": 1266.0000000000146,
+      "movement_x": -28,
+      "movement_y": 8
+    },
+    {
+      "original_timestamp": 66221,
+      "relative_timestamp": 1283,
+      "movement_x": -25,
+      "movement_y": 11
+    },
+    {
+      "original_timestamp": 66237,
+      "relative_timestamp": 1299,
+      "movement_x": -20,
+      "movement_y": 12
+    },
+    {
+      "original_timestamp": 66254,
+      "relative_timestamp": 1316,
+      "movement_x": -15,
+      "movement_y": 14
+    },
+    {
+      "original_timestamp": 66271,
+      "relative_timestamp": 1333,
+      "movement_x": -11,
+      "movement_y": 14
+    },
+    {
+      "original_timestamp": 66287,
+      "relative_timestamp": 1349,
+      "movement_x": -7,
+      "movement_y": 13
+    },
+    {
+      "original_timestamp": 66304,
+      "relative_timestamp": 1366,
+      "movement_x": -3,
+      "movement_y": 15
+    },
+    {
+      "original_timestamp": 66321,
+      "relative_timestamp": 1383,
+      "movement_x": 0,
+      "movement_y": 13
+    },
+    {
+      "original_timestamp": 66337,
+      "relative_timestamp": 1399,
+      "movement_x": 41,
+      "movement_y": 63
+    },
+    {
+      "original_timestamp": 66354,
+      "relative_timestamp": 1416,
+      "movement_x": 23,
+      "movement_y": 17
+    },
+    {
+      "original_timestamp": 66370,
+      "relative_timestamp": 1432,
+      "movement_x": 24,
+      "movement_y": 14
+    },
+    {
+      "original_timestamp": 66387,
+      "relative_timestamp": 1449,
+      "movement_x": 27,
+      "movement_y": 10
+    },
+    {
+      "original_timestamp": 66404,
+      "relative_timestamp": 1466,
+      "movement_x": 29,
+      "movement_y": 7
+    },
+    {
+      "original_timestamp": 66420,
+      "relative_timestamp": 1482,
+      "movement_x": 29,
+      "movement_y": 4
+    },
+    {
+      "original_timestamp": 66437,
+      "relative_timestamp": 1499,
+      "movement_x": 29,
+      "movement_y": 0
+    },
+    {
+      "original_timestamp": 66454.00000000001,
+      "relative_timestamp": 1516.0000000000146,
+      "movement_x": 51,
+      "movement_y": -9
+    },
+    {
+      "original_timestamp": 66470,
+      "relative_timestamp": 1532,
+      "movement_x": 52,
+      "movement_y": -30
+    },
+    {
+      "original_timestamp": 66487,
+      "relative_timestamp": 1549,
+      "movement_x": 9,
+      "movement_y": -14
+    },
+    {
+      "original_timestamp": 66504,
+      "relative_timestamp": 1566,
+      "movement_x": 7,
+      "movement_y": -14
+    },
+    {
+      "original_timestamp": 66520,
+      "relative_timestamp": 1582,
+      "movement_x": 2,
+      "movement_y": -15
+    },
+    {
+      "original_timestamp": 66555,
+      "relative_timestamp": 1617,
+      "movement_x": 0,
+      "movement_y": -15
+    },
+    {
+      "original_timestamp": 66571,
+      "relative_timestamp": 1633,
+      "movement_x": -2,
+      "movement_y": -17
+    },
+    {
+      "original_timestamp": 66587,
+      "relative_timestamp": 1649,
+      "movement_x": -44,
+      "movement_y": -58
+    },
+    {
+      "original_timestamp": 66604,
+      "relative_timestamp": 1666,
+      "movement_x": -44,
+      "movement_y": -20
+    },
+    {
+      "original_timestamp": 66620,
+      "relative_timestamp": 1682,
+      "movement_x": -28,
+      "movement_y": -7
+    },
+    {
+      "original_timestamp": 66637,
+      "relative_timestamp": 1699,
+      "movement_x": -30,
+      "movement_y": -3
+    },
+    {
+      "original_timestamp": 66654,
+      "relative_timestamp": 1716,
+      "movement_x": -32,
+      "movement_y": -1
+    },
+    {
+      "original_timestamp": 66670,
+      "relative_timestamp": 1732,
+      "movement_x": -31,
+      "movement_y": 2
+    },
+    {
+      "original_timestamp": 66705,
+      "relative_timestamp": 1767,
+      "movement_x": -31,
+      "movement_y": 5
+    },
+    {
+      "original_timestamp": 66721,
+      "relative_timestamp": 1783,
+      "movement_x": -28,
+      "movement_y": 10
+    },
+    {
+      "original_timestamp": 66737,
+      "relative_timestamp": 1799,
+      "movement_x": -65,
+      "movement_y": 60
+    },
+    {
+      "original_timestamp": 66754,
+      "relative_timestamp": 1816,
+      "movement_x": -4,
+      "movement_y": 34
+    },
+    {
+      "original_timestamp": 66770,
+      "relative_timestamp": 1832,
+      "movement_x": 4,
+      "movement_y": 17
+    },
+    {
+      "original_timestamp": 66787,
+      "relative_timestamp": 1849,
+      "movement_x": 8,
+      "movement_y": 15
+    },
+    {
+      "original_timestamp": 66820.00000000001,
+      "relative_timestamp": 1882.0000000000146,
+      "movement_x": 14,
+      "movement_y": 17
+    },
+    {
+      "original_timestamp": 66837,
+      "relative_timestamp": 1899,
+      "movement_x": 19,
+      "movement_y": 17
+    },
+    {
+      "original_timestamp": 66854,
+      "relative_timestamp": 1916,
+      "movement_x": 74,
+      "movement_y": 33
+    },
+    {
+      "original_timestamp": 66871,
+      "relative_timestamp": 1933,
+      "movement_x": 28,
+      "movement_y": 3
+    },
+    {
+      "original_timestamp": 66887,
+      "relative_timestamp": 1949,
+      "movement_x": 27,
+      "movement_y": 0
+    },
+    {
+      "original_timestamp": 66904,
+      "relative_timestamp": 1966,
+      "movement_x": 48,
+      "movement_y": -12
+    },
+    {
+      "original_timestamp": 66921,
+      "relative_timestamp": 1983,
+      "movement_x": 20,
+      "movement_y": -8
+    },
+    {
+      "original_timestamp": 66937,
+      "relative_timestamp": 1999,
+      "movement_x": 16,
+      "movement_y": -13
+    },
+    {
+      "original_timestamp": 66954.00000000001,
+      "relative_timestamp": 2016.0000000000146,
+      "movement_x": 13,
+      "movement_y": -13
+    },
+    {
+      "original_timestamp": 66970,
+      "relative_timestamp": 2032,
+      "movement_x": 21,
+      "movement_y": -59
+    },
+    {
+      "original_timestamp": 66987,
+      "relative_timestamp": 2049,
+      "movement_x": 0,
+      "movement_y": -21
+    },
+    {
+      "original_timestamp": 67004,
+      "relative_timestamp": 2066,
+      "movement_x": -3,
+      "movement_y": -23
+    },
+    {
+      "original_timestamp": 67021,
+      "relative_timestamp": 2083,
+      "movement_x": -6,
+      "movement_y": -20
+    },
+    {
+      "original_timestamp": 67037,
+      "relative_timestamp": 2099,
+      "movement_x": -8,
+      "movement_y": -16
+    },
+    {
+      "original_timestamp": 67054,
+      "relative_timestamp": 2116,
+      "movement_x": -27,
+      "movement_y": -26
+    },
+    {
+      "original_timestamp": 67070.00000000001,
+      "relative_timestamp": 2132.0000000000146,
+      "movement_x": -18,
+      "movement_y": -8
+    },
+    {
+      "original_timestamp": 67104,
+      "relative_timestamp": 2166,
+      "movement_x": -23,
+      "movement_y": -6
+    },
+    {
+      "original_timestamp": 67121,
+      "relative_timestamp": 2183,
+      "movement_x": -25,
+      "movement_y": -1
+    },
+    {
+      "original_timestamp": 67137,
+      "relative_timestamp": 2199,
+      "movement_x": -105,
+      "movement_y": 25
+    },
+    {
+      "original_timestamp": 67154,
+      "relative_timestamp": 2216,
+      "movement_x": -20,
+      "movement_y": 15
+    },
+    {
+      "original_timestamp": 67170,
+      "relative_timestamp": 2232,
+      "movement_x": -16,
+      "movement_y": 17
+    },
+    {
+      "original_timestamp": 67187,
+      "relative_timestamp": 2249,
+      "movement_x": -10,
+      "movement_y": 18
+    },
+    {
+      "original_timestamp": 67203,
+      "relative_timestamp": 2265,
+      "movement_x": -10,
+      "movement_y": 45
+    },
+    {
+      "original_timestamp": 67237,
+      "relative_timestamp": 2299,
+      "movement_x": 2,
+      "movement_y": 22
+    },
+    {
+      "original_timestamp": 67254,
+      "relative_timestamp": 2316,
+      "movement_x": 5,
+      "movement_y": 20
+    },
+    {
+      "original_timestamp": 67270,
+      "relative_timestamp": 2332,
+      "movement_x": 59,
+      "movement_y": 68
+    },
+    {
+      "original_timestamp": 67287,
+      "relative_timestamp": 2349,
+      "movement_x": 19,
+      "movement_y": 8
+    },
+    {
+      "original_timestamp": 67304,
+      "relative_timestamp": 2366,
+      "movement_x": 22,
+      "movement_y": 4
+    },
+    {
+      "original_timestamp": 67321,
+      "relative_timestamp": 2383,
+      "movement_x": 24,
+      "movement_y": 0
+    },
+    {
+      "original_timestamp": 67337,
+      "relative_timestamp": 2399,
+      "movement_x": 25,
+      "movement_y": -5
+    },
+    {
+      "original_timestamp": 67354,
+      "relative_timestamp": 2416,
+      "movement_x": 47,
+      "movement_y": -21
+    },
+    {
+      "original_timestamp": 67370,
+      "relative_timestamp": 2432,
+      "movement_x": 19,
+      "movement_y": -16
+    },
+    {
+      "original_timestamp": 67387,
+      "relative_timestamp": 2449,
+      "movement_x": 14,
+      "movement_y": -16
+    },
+    {
+      "original_timestamp": 67404,
+      "relative_timestamp": 2466,
+      "movement_x": 10,
+      "movement_y": -17
+    },
+    {
+      "original_timestamp": 67420,
+      "relative_timestamp": 2482,
+      "movement_x": 8,
+      "movement_y": -56
+    },
+    {
+      "original_timestamp": 67437,
+      "relative_timestamp": 2499,
+      "movement_x": -3,
+      "movement_y": -21
+    },
+    {
+      "original_timestamp": 67454.00000000001,
+      "relative_timestamp": 2516.0000000000146,
+      "movement_x": -8,
+      "movement_y": -20
+    },
+    {
+      "original_timestamp": 67471,
+      "relative_timestamp": 2533,
+      "movement_x": -11,
+      "movement_y": -20
+    },
+    {
+      "original_timestamp": 67487,
+      "relative_timestamp": 2549,
+      "movement_x": -34,
+      "movement_y": -38
+    },
+    {
+      "original_timestamp": 67504,
+      "relative_timestamp": 2566,
+      "movement_x": -24,
+      "movement_y": -16
+    },
+    {
+      "original_timestamp": 67521,
+      "relative_timestamp": 2583,
+      "movement_x": -26,
+      "movement_y": -13
+    },
+    {
+      "original_timestamp": 67537,
+      "relative_timestamp": 2599,
+      "movement_x": -94,
+      "movement_y": 0
+    },
+    {
+      "original_timestamp": 67554,
+      "relative_timestamp": 2616,
+      "movement_x": -34,
+      "movement_y": 13
+    },
+    {
+      "original_timestamp": 67570.00000000001,
+      "relative_timestamp": 2632.0000000000146,
+      "movement_x": -31,
+      "movement_y": 15
+    },
+    {
+      "original_timestamp": 67587,
+      "relative_timestamp": 2649,
+      "movement_x": -27,
+      "movement_y": 21
+    },
+    {
+      "original_timestamp": 67604,
+      "relative_timestamp": 2666,
+      "movement_x": -21,
+      "movement_y": 25
+    },
+    {
+      "original_timestamp": 67620,
+      "relative_timestamp": 2682,
+      "movement_x": -13,
+      "movement_y": 26
+    },
+    {
+      "original_timestamp": 67637,
+      "relative_timestamp": 2699,
+      "movement_x": -10,
+      "movement_y": 28
+    },
+    {
+      "original_timestamp": 67654,
+      "relative_timestamp": 2716,
+      "movement_x": -1,
+      "movement_y": 27
+    },
+    {
+      "original_timestamp": 67670,
+      "relative_timestamp": 2732,
+      "movement_x": 31,
+      "movement_y": 74
+    },
+    {
+      "original_timestamp": 67687,
+      "relative_timestamp": 2749,
+      "movement_x": 21,
+      "movement_y": 21
+    },
+    {
+      "original_timestamp": 67704.00000000001,
+      "relative_timestamp": 2766.0000000000146,
+      "movement_x": 27,
+      "movement_y": 17
+    },
+    {
+      "original_timestamp": 67720,
+      "relative_timestamp": 2782,
+      "movement_x": 32,
+      "movement_y": 12
+    },
+    {
+      "original_timestamp": 67737,
+      "relative_timestamp": 2799,
+      "movement_x": 35,
+      "movement_y": 7
+    },
+    {
+      "original_timestamp": 67754,
+      "relative_timestamp": 2816,
+      "movement_x": 42,
+      "movement_y": 1
+    },
+    {
+      "original_timestamp": 67771,
+      "relative_timestamp": 2833,
+      "movement_x": 118,
+      "movement_y": -32
+    },
+    {
+      "original_timestamp": 67787,
+      "relative_timestamp": 2849,
+      "movement_x": 31,
+      "movement_y": -18
+    },
+    {
+      "original_timestamp": 67804,
+      "relative_timestamp": 2866,
+      "movement_x": 47,
+      "movement_y": -41
+    },
+    {
+      "original_timestamp": 67820.00000000001,
+      "relative_timestamp": 2882.0000000000146,
+      "movement_x": 13,
+      "movement_y": -21
+    },
+    {
+      "original_timestamp": 67837,
+      "relative_timestamp": 2899,
+      "movement_x": 6,
+      "movement_y": -21
+    },
+    {
+      "original_timestamp": 67854,
+      "relative_timestamp": 2916,
+      "movement_x": 1,
+      "movement_y": -19
+    },
+    {
+      "original_timestamp": 67870,
+      "relative_timestamp": 2932,
+      "movement_x": -3,
+      "movement_y": -21
+    },
+    {
+      "original_timestamp": 67887,
+      "relative_timestamp": 2949,
+      "movement_x": -8,
+      "movement_y": -19
+    },
+    {
+      "original_timestamp": 67904,
+      "relative_timestamp": 2966,
+      "movement_x": -11,
+      "movement_y": -18
+    },
+    {
+      "original_timestamp": 67921,
+      "relative_timestamp": 2983,
+      "movement_x": -63,
+      "movement_y": -55
+    },
+    {
+      "original_timestamp": 67937,
+      "relative_timestamp": 2999,
+      "movement_x": -28,
+      "movement_y": -12
+    },
+    {
+      "original_timestamp": 67954.00000000001,
+      "relative_timestamp": 3016.0000000000146,
+      "movement_x": -55,
+      "movement_y": -10
+    },
+    {
+      "original_timestamp": 67971,
+      "relative_timestamp": 3033,
+      "movement_x": -29,
+      "movement_y": 4
+    },
+    {
+      "original_timestamp": 67987,
+      "relative_timestamp": 3049,
+      "movement_x": -28,
+      "movement_y": 10
+    },
+    {
+      "original_timestamp": 68004,
+      "relative_timestamp": 3066,
+      "movement_x": -27,
+      "movement_y": 17
+    },
+    {
+      "original_timestamp": 68021,
+      "relative_timestamp": 3083,
+      "movement_x": -24,
+      "movement_y": 21
+    },
+    {
+      "original_timestamp": 68037,
+      "relative_timestamp": 3099,
+      "movement_x": -20,
+      "movement_y": 27
+    },
+    {
+      "original_timestamp": 68054,
+      "relative_timestamp": 3116,
+      "movement_x": -16,
+      "movement_y": 30
+    },
+    {
+      "original_timestamp": 68071,
+      "relative_timestamp": 3133,
+      "movement_x": -14,
+      "movement_y": 86
+    },
+    {
+      "original_timestamp": 68087,
+      "relative_timestamp": 3149,
+      "movement_x": 4,
+      "movement_y": 22
+    },
+    {
+      "original_timestamp": 68104,
+      "relative_timestamp": 3166,
+      "movement_x": 23,
+      "movement_y": 37
+    },
+    {
+      "original_timestamp": 68120,
+      "relative_timestamp": 3182,
+      "movement_x": 18,
+      "movement_y": 17
+    },
+    {
+      "original_timestamp": 68137,
+      "relative_timestamp": 3199,
+      "movement_x": 22,
+      "movement_y": 13
+    },
+    {
+      "original_timestamp": 68154,
+      "relative_timestamp": 3216,
+      "movement_x": 27,
+      "movement_y": 9
+    },
+    {
+      "original_timestamp": 68170,
+      "relative_timestamp": 3232,
+      "movement_x": 29,
+      "movement_y": 7
+    },
+    {
+      "original_timestamp": 68187,
+      "relative_timestamp": 3249,
+      "movement_x": 34,
+      "movement_y": 2
+    },
+    {
+      "original_timestamp": 68204.00000000001,
+      "relative_timestamp": 3266.0000000000146,
+      "movement_x": 31,
+      "movement_y": -1
+    },
+    {
+      "original_timestamp": 68221,
+      "relative_timestamp": 3283,
+      "movement_x": 82,
+      "movement_y": -34
+    },
+    {
+      "original_timestamp": 68237,
+      "relative_timestamp": 3299,
+      "movement_x": 19,
+      "movement_y": -18
+    },
+    {
+      "original_timestamp": 68254,
+      "relative_timestamp": 3316,
+      "movement_x": 21,
+      "movement_y": -40
+    },
+    {
+      "original_timestamp": 68270,
+      "relative_timestamp": 3332,
+      "movement_x": 4,
+      "movement_y": -23
+    },
+    {
+      "original_timestamp": 68287,
+      "relative_timestamp": 3349,
+      "movement_x": -1,
+      "movement_y": -24
+    },
+    {
+      "original_timestamp": 68304,
+      "relative_timestamp": 3366,
+      "movement_x": -6,
+      "movement_y": -28
+    },
+    {
+      "original_timestamp": 68338.00000000001,
+      "relative_timestamp": 3400.0000000000146,
+      "movement_x": -9,
+      "movement_y": -24
+    },
+    {
+      "original_timestamp": 68354,
+      "relative_timestamp": 3416,
+      "movement_x": -13,
+      "movement_y": -26
+    },
+    {
+      "original_timestamp": 68370,
+      "relative_timestamp": 3432,
+      "movement_x": -97,
+      "movement_y": -86
+    },
+    {
+      "original_timestamp": 68404,
+      "relative_timestamp": 3466,
+      "movement_x": -66,
+      "movement_y": -7
+    },
+    {
+      "original_timestamp": 68421,
+      "relative_timestamp": 3483,
+      "movement_x": -36,
+      "movement_y": 8
+    },
+    {
+      "original_timestamp": 68437,
+      "relative_timestamp": 3499,
+      "movement_x": -93,
+      "movement_y": 55
+    },
+    {
+      "original_timestamp": 68454.00000000001,
+      "relative_timestamp": 3516.0000000000146,
+      "movement_x": -19,
+      "movement_y": 23
+    },
+    {
+      "original_timestamp": 68470,
+      "relative_timestamp": 3532,
+      "movement_x": -13,
+      "movement_y": 25
+    },
+    {
+      "original_timestamp": 68504,
+      "relative_timestamp": 3566,
+      "movement_x": -6,
+      "movement_y": 24
+    },
+    {
+      "original_timestamp": 68521,
+      "relative_timestamp": 3583,
+      "movement_x": 15,
+      "movement_y": 72
+    },
+    {
+      "original_timestamp": 68537,
+      "relative_timestamp": 3599,
+      "movement_x": 16,
+      "movement_y": 22
+    },
+    {
+      "original_timestamp": 68554,
+      "relative_timestamp": 3616,
+      "movement_x": 43,
+      "movement_y": 34
+    },
+    {
+      "original_timestamp": 68570.00000000001,
+      "relative_timestamp": 3632.0000000000146,
+      "movement_x": 27,
+      "movement_y": 11
+    },
+    {
+      "original_timestamp": 68587,
+      "relative_timestamp": 3649,
+      "movement_x": 27,
+      "movement_y": 7
+    },
+    {
+      "original_timestamp": 68604,
+      "relative_timestamp": 3666,
+      "movement_x": 23,
+      "movement_y": 1
+    },
+    {
+      "original_timestamp": 68621,
+      "relative_timestamp": 3683,
+      "movement_x": 25,
+      "movement_y": -2
+    },
+    {
+      "original_timestamp": 68637,
+      "relative_timestamp": 3699,
+      "movement_x": 55,
+      "movement_y": -25
+    },
+    {
+      "original_timestamp": 68654,
+      "relative_timestamp": 3716,
+      "movement_x": 14,
+      "movement_y": -15
+    },
+    {
+      "original_timestamp": 68671,
+      "relative_timestamp": 3733,
+      "movement_x": 9,
+      "movement_y": -16
+    },
+    {
+      "original_timestamp": 68687,
+      "relative_timestamp": 3749,
+      "movement_x": 7,
+      "movement_y": -20
+    },
+    {
+      "original_timestamp": 68704.00000000001,
+      "relative_timestamp": 3766.0000000000146,
+      "movement_x": -3,
+      "movement_y": -43
+    },
+    {
+      "original_timestamp": 68720,
+      "relative_timestamp": 3782,
+      "movement_x": -6,
+      "movement_y": -21
+    },
+    {
+      "original_timestamp": 68737,
+      "relative_timestamp": 3799,
+      "movement_x": -11,
+      "movement_y": -23
+    },
+    {
+      "original_timestamp": 68770,
+      "relative_timestamp": 3832,
+      "movement_x": -14,
+      "movement_y": -22
+    },
+    {
+      "original_timestamp": 68788,
+      "relative_timestamp": 3850,
+      "movement_x": -18,
+      "movement_y": -21
+    },
+    {
+      "original_timestamp": 68804,
+      "relative_timestamp": 3866,
+      "movement_x": -84,
+      "movement_y": -41
+    },
+    {
+      "original_timestamp": 68820.00000000001,
+      "relative_timestamp": 3882.0000000000146,
+      "movement_x": -24,
+      "movement_y": 4
+    },
+    {
+      "original_timestamp": 68837,
+      "relative_timestamp": 3899,
+      "movement_x": -27,
+      "movement_y": 9
+    },
+    {
+      "original_timestamp": 68854,
+      "relative_timestamp": 3916,
+      "movement_x": -25,
+      "movement_y": 16
+    },
+    {
+      "original_timestamp": 68871,
+      "relative_timestamp": 3933,
+      "movement_x": -61,
+      "movement_y": 74
+    },
+    {
+      "original_timestamp": 68887,
+      "relative_timestamp": 3949,
+      "movement_x": -10,
+      "movement_y": 31
+    },
+    {
+      "original_timestamp": 68904,
+      "relative_timestamp": 3966,
+      "movement_x": -2,
+      "movement_y": 29
+    },
+    {
+      "original_timestamp": 68920,
+      "relative_timestamp": 3982,
+      "movement_x": 4,
+      "movement_y": 29
+    },
+    {
+      "original_timestamp": 68938,
+      "relative_timestamp": 4000,
+      "movement_x": 10,
+      "movement_y": 28
+    },
+    {
+      "original_timestamp": 68954.00000000001,
+      "relative_timestamp": 4016.0000000000146,
+      "movement_x": 16,
+      "movement_y": 22
+    },
+    {
+      "original_timestamp": 68971,
+      "relative_timestamp": 4033,
+      "movement_x": 21,
+      "movement_y": 20
+    },
+    {
+      "original_timestamp": 68987,
+      "relative_timestamp": 4049,
+      "movement_x": 58,
+      "movement_y": 30
+    },
+    {
+      "original_timestamp": 69004,
+      "relative_timestamp": 4066,
+      "movement_x": 108,
+      "movement_y": 0
+    },
+    {
+      "original_timestamp": 69020,
+      "relative_timestamp": 4082,
+      "movement_x": 39,
+      "movement_y": -11
+    },
+    {
+      "original_timestamp": 69037,
+      "relative_timestamp": 4099,
+      "movement_x": 36,
+      "movement_y": -18
+    },
+    {
+      "original_timestamp": 69054,
+      "relative_timestamp": 4116,
+      "movement_x": 33,
+      "movement_y": -21
+    },
+    {
+      "original_timestamp": 69070.00000000001,
+      "relative_timestamp": 4132.000000000015,
+      "movement_x": 27,
+      "movement_y": -26
+    },
+    {
+      "original_timestamp": 69087,
+      "relative_timestamp": 4149,
+      "movement_x": 20,
+      "movement_y": -25
+    },
+    {
+      "original_timestamp": 69104,
+      "relative_timestamp": 4166,
+      "movement_x": 12,
+      "movement_y": -25
+    },
+    {
+      "original_timestamp": 69121,
+      "relative_timestamp": 4183,
+      "movement_x": 5,
+      "movement_y": -24
+    },
+    {
+      "original_timestamp": 69137,
+      "relative_timestamp": 4199,
+      "movement_x": -1,
+      "movement_y": -22
+    },
+    {
+      "original_timestamp": 69154,
+      "relative_timestamp": 4216,
+      "movement_x": -18,
+      "movement_y": -38
+    },
+    {
+      "original_timestamp": 69171,
+      "relative_timestamp": 4233,
+      "movement_x": -75,
+      "movement_y": -47
+    },
+    {
+      "original_timestamp": 69188,
+      "relative_timestamp": 4250,
+      "movement_x": -41,
+      "movement_y": -9
+    },
+    {
+      "original_timestamp": 69204.00000000001,
+      "relative_timestamp": 4266.000000000015,
+      "movement_x": -48,
+      "movement_y": 0
+    },
+    {
+      "original_timestamp": 69221,
+      "relative_timestamp": 4283,
+      "movement_x": -49,
+      "movement_y": 5
+    },
+    {
+      "original_timestamp": 69238,
+      "relative_timestamp": 4300,
+      "movement_x": -51,
+      "movement_y": 12
+    },
+    {
+      "original_timestamp": 69254,
+      "relative_timestamp": 4316,
+      "movement_x": -51,
+      "movement_y": 17
+    },
+    {
+      "original_timestamp": 69271,
+      "relative_timestamp": 4333,
+      "movement_x": -39,
+      "movement_y": 24
+    },
+    {
+      "original_timestamp": 69287,
+      "relative_timestamp": 4349,
+      "movement_x": -29,
+      "movement_y": 22
+    },
+    {
+      "original_timestamp": 69304,
+      "relative_timestamp": 4366,
+      "movement_x": -26,
+      "movement_y": 95
+    },
+    {
+      "original_timestamp": 69320.00000000001,
+      "relative_timestamp": 4382.000000000015,
+      "movement_x": 13,
+      "movement_y": 24
+    },
+    {
+      "original_timestamp": 69337,
+      "relative_timestamp": 4399,
+      "movement_x": 21,
+      "movement_y": 22
+    },
+    {
+      "original_timestamp": 69354,
+      "relative_timestamp": 4416,
+      "movement_x": 27,
+      "movement_y": 20
+    },
+    {
+      "original_timestamp": 69388,
+      "relative_timestamp": 4450,
+      "movement_x": 36,
+      "movement_y": 17
+    },
+    {
+      "original_timestamp": 69404,
+      "relative_timestamp": 4466,
+      "movement_x": 40,
+      "movement_y": 11
+    },
+    {
+      "original_timestamp": 69420,
+      "relative_timestamp": 4482,
+      "movement_x": 169,
+      "movement_y": -13
+    },
+    {
+      "original_timestamp": 69437,
+      "relative_timestamp": 4499,
+      "movement_x": 33,
+      "movement_y": -16
+    },
+    {
+      "original_timestamp": 69470,
+      "relative_timestamp": 4532,
+      "movement_x": 26,
+      "movement_y": -18
+    },
+    {
+      "original_timestamp": 69487,
+      "relative_timestamp": 4549,
+      "movement_x": 20,
+      "movement_y": -19
+    },
+    {
+      "original_timestamp": 69504,
+      "relative_timestamp": 4566,
+      "movement_x": 23,
+      "movement_y": -86
+    },
+    {
+      "original_timestamp": 69521,
+      "relative_timestamp": 4583,
+      "movement_x": -7,
+      "movement_y": -19
+    },
+    {
+      "original_timestamp": 69537,
+      "relative_timestamp": 4599,
+      "movement_x": -12,
+      "movement_y": -20
+    },
+    {
+      "original_timestamp": 69554,
+      "relative_timestamp": 4616,
+      "movement_x": -18,
+      "movement_y": -17
+    },
+    {
+      "original_timestamp": 69571,
+      "relative_timestamp": 4633,
+      "movement_x": -24,
+      "movement_y": -17
+    },
+    {
+      "original_timestamp": 69587,
+      "relative_timestamp": 4649,
+      "movement_x": -29,
+      "movement_y": -12
+    },
+    {
+      "original_timestamp": 69604,
+      "relative_timestamp": 4666,
+      "movement_x": -83,
+      "movement_y": -4
+    },
+    {
+      "original_timestamp": 69621,
+      "relative_timestamp": 4683,
+      "movement_x": -49,
+      "movement_y": 8
+    },
+    {
+      "original_timestamp": 69637,
+      "relative_timestamp": 4699,
+      "movement_x": -51,
+      "movement_y": 15
+    },
+    {
+      "original_timestamp": 69670,
+      "relative_timestamp": 4732,
+      "movement_x": -142,
+      "movement_y": 96
+    },
+    {
+      "original_timestamp": 69688,
+      "relative_timestamp": 4750,
+      "movement_x": -11,
+      "movement_y": 25
+    },
+    {
+      "original_timestamp": 69704.00000000001,
+      "relative_timestamp": 4766.000000000015,
+      "movement_x": -4,
+      "movement_y": 22
+    },
+    {
+      "original_timestamp": 69721,
+      "relative_timestamp": 4783,
+      "movement_x": 3,
+      "movement_y": 23
+    },
+    {
+      "original_timestamp": 69737,
+      "relative_timestamp": 4799,
+      "movement_x": 24,
+      "movement_y": 41
+    },
+    {
+      "original_timestamp": 69754,
+      "relative_timestamp": 4816,
+      "movement_x": 22,
+      "movement_y": 19
+    },
+    {
+      "original_timestamp": 69770,
+      "relative_timestamp": 4832,
+      "movement_x": 31,
+      "movement_y": 16
+    },
+    {
+      "original_timestamp": 69787,
+      "relative_timestamp": 4849,
+      "movement_x": 32,
+      "movement_y": 10
+    },
+    {
+      "original_timestamp": 69804,
+      "relative_timestamp": 4866,
+      "movement_x": 114,
+      "movement_y": -8
+    },
+    {
+      "original_timestamp": 69820.00000000001,
+      "relative_timestamp": 4882.000000000015,
+      "movement_x": 38,
+      "movement_y": -16
+    },
+    {
+      "original_timestamp": 69837,
+      "relative_timestamp": 4899,
+      "movement_x": 35,
+      "movement_y": -20
+    },
+    {
+      "original_timestamp": 69854,
+      "relative_timestamp": 4916,
+      "movement_x": 31,
+      "movement_y": -23
+    },
+    {
+      "original_timestamp": 69871,
+      "relative_timestamp": 4933,
+      "movement_x": 24,
+      "movement_y": -25
+    },
+    {
+      "original_timestamp": 69888,
+      "relative_timestamp": 4950,
+      "movement_x": 17,
+      "movement_y": -26
+    },
+    {
+      "original_timestamp": 69904,
+      "relative_timestamp": 4966,
+      "movement_x": 9,
+      "movement_y": -22
+    },
+    {
+      "original_timestamp": 69921,
+      "relative_timestamp": 4983,
+      "movement_x": -9,
+      "movement_y": -67
+    },
+    {
+      "original_timestamp": 69937,
+      "relative_timestamp": 4999,
+      "movement_x": -15,
+      "movement_y": -23
+    },
+    {
+      "original_timestamp": 69954.00000000001,
+      "relative_timestamp": 5016.000000000015,
+      "movement_x": -20,
+      "movement_y": -21
+    },
+    {
+      "original_timestamp": 69970,
+      "relative_timestamp": 5032,
+      "movement_x": -25,
+      "movement_y": -18
+    },
+    {
+      "original_timestamp": 69987,
+      "relative_timestamp": 5049,
+      "movement_x": -31,
+      "movement_y": -13
+    },
+    {
+      "original_timestamp": 70004,
+      "relative_timestamp": 5066,
+      "movement_x": -34,
+      "movement_y": -7
+    },
+    {
+      "original_timestamp": 70021,
+      "relative_timestamp": 5083,
+      "movement_x": -39,
+      "movement_y": 0
+    },
+    {
+      "original_timestamp": 70037,
+      "relative_timestamp": 5099,
+      "movement_x": -117,
+      "movement_y": 45
+    },
+    {
+      "original_timestamp": 70054,
+      "relative_timestamp": 5116,
+      "movement_x": -50,
+      "movement_y": 51
+    },
+    {
+      "original_timestamp": 70070.00000000001,
+      "relative_timestamp": 5132.000000000015,
+      "movement_x": -12,
+      "movement_y": 28
+    },
+    {
+      "original_timestamp": 70087,
+      "relative_timestamp": 5149,
+      "movement_x": -4,
+      "movement_y": 28
+    },
+    {
+      "original_timestamp": 70104,
+      "relative_timestamp": 5166,
+      "movement_x": 4,
+      "movement_y": 27
+    },
+    {
+      "original_timestamp": 70120,
+      "relative_timestamp": 5182,
+      "movement_x": 10,
+      "movement_y": 26
+    },
+    {
+      "original_timestamp": 70137,
+      "relative_timestamp": 5199,
+      "movement_x": 19,
+      "movement_y": 25
+    },
+    {
+      "original_timestamp": 70171,
+      "relative_timestamp": 5233,
+      "movement_x": 24,
+      "movement_y": 20
+    },
+    {
+      "original_timestamp": 70187,
+      "relative_timestamp": 5249,
+      "movement_x": 143,
+      "movement_y": 32
+    },
+    {
+      "original_timestamp": 70204.00000000001,
+      "relative_timestamp": 5266.000000000015,
+      "movement_x": 73,
+      "movement_y": -17
+    },
+    {
+      "original_timestamp": 70220,
+      "relative_timestamp": 5282,
+      "movement_x": 33,
+      "movement_y": -16
+    },
+    {
+      "original_timestamp": 70237,
+      "relative_timestamp": 5299,
+      "movement_x": 28,
+      "movement_y": -20
+    },
+    {
+      "original_timestamp": 70254,
+      "relative_timestamp": 5316,
+      "movement_x": 21,
+      "movement_y": -21
+    },
+    {
+      "original_timestamp": 70271,
+      "relative_timestamp": 5333,
+      "movement_x": 14,
+      "movement_y": -23
+    },
+    {
+      "original_timestamp": 70287,
+      "relative_timestamp": 5349,
+      "movement_x": 7,
+      "movement_y": -22
+    },
+    {
+      "original_timestamp": 70305,
+      "relative_timestamp": 5367,
+      "movement_x": 0,
+      "movement_y": -21
+    },
+    {
+      "original_timestamp": 70321,
+      "relative_timestamp": 5383,
+      "movement_x": -5,
+      "movement_y": -21
+    },
+    {
+      "original_timestamp": 70337,
+      "relative_timestamp": 5399,
+      "movement_x": -53,
+      "movement_y": -62
+    },
+    {
+      "original_timestamp": 70354,
+      "relative_timestamp": 5416,
+      "movement_x": -69,
+      "movement_y": -24
+    },
+    {
+      "original_timestamp": 70370,
+      "relative_timestamp": 5432,
+      "movement_x": -44,
+      "movement_y": -2
+    },
+    {
+      "original_timestamp": 70387,
+      "relative_timestamp": 5449,
+      "movement_x": -47,
+      "movement_y": 5
+    },
+    {
+      "original_timestamp": 70404,
+      "relative_timestamp": 5466,
+      "movement_x": -48,
+      "movement_y": 13
+    },
+    {
+      "original_timestamp": 70420,
+      "relative_timestamp": 5482,
+      "movement_x": -42,
+      "movement_y": 16
+    },
+    {
+      "original_timestamp": 70437,
+      "relative_timestamp": 5499,
+      "movement_x": -32,
+      "movement_y": 18
+    },
+    {
+      "original_timestamp": 70454.00000000001,
+      "relative_timestamp": 5516.000000000015,
+      "movement_x": -23,
+      "movement_y": 19
+    },
+    {
+      "original_timestamp": 70471,
+      "relative_timestamp": 5533,
+      "movement_x": -13,
+      "movement_y": 21
+    },
+    {
+      "original_timestamp": 70487,
+      "relative_timestamp": 5549,
+      "movement_x": 7,
+      "movement_y": 66
+    },
+    {
+      "original_timestamp": 70504,
+      "relative_timestamp": 5566,
+      "movement_x": 51,
+      "movement_y": 55
+    },
+    {
+      "original_timestamp": 70520,
+      "relative_timestamp": 5582,
+      "movement_x": 38,
+      "movement_y": 23
+    },
+    {
+      "original_timestamp": 70537,
+      "relative_timestamp": 5599,
+      "movement_x": 44,
+      "movement_y": 19
+    },
+    {
+      "original_timestamp": 70554,
+      "relative_timestamp": 5616,
+      "movement_x": 49,
+      "movement_y": 12
+    },
+    {
+      "original_timestamp": 70587,
+      "relative_timestamp": 5649,
+      "movement_x": 47,
+      "movement_y": 6
+    },
+    {
+      "original_timestamp": 70621,
+      "relative_timestamp": 5683,
+      "movement_x": 47,
+      "movement_y": 0
+    },
+    {
+      "original_timestamp": 70637,
+      "relative_timestamp": 5699,
+      "movement_x": 137,
+      "movement_y": -60
+    },
+    {
+      "original_timestamp": 70654,
+      "relative_timestamp": 5716,
+      "movement_x": 29,
+      "movement_y": -47
+    },
+    {
+      "original_timestamp": 70670,
+      "relative_timestamp": 5732,
+      "movement_x": -1,
+      "movement_y": -78
+    },
+    {
+      "original_timestamp": 70687,
+      "relative_timestamp": 5749,
+      "movement_x": -13,
+      "movement_y": -29
+    },
+    {
+      "original_timestamp": 70704.00000000001,
+      "relative_timestamp": 5766.000000000015,
+      "movement_x": -19,
+      "movement_y": -31
+    },
+    {
+      "original_timestamp": 70720,
+      "relative_timestamp": 5782,
+      "movement_x": -22,
+      "movement_y": -22
+    },
+    {
+      "original_timestamp": 70754,
+      "relative_timestamp": 5816,
+      "movement_x": -28,
+      "movement_y": -16
+    },
+    {
+      "original_timestamp": 70771,
+      "relative_timestamp": 5833,
+      "movement_x": -33,
+      "movement_y": -9
+    },
+    {
+      "original_timestamp": 70787,
+      "relative_timestamp": 5849,
+      "movement_x": -121,
+      "movement_y": 11
+    },
+    {
+      "original_timestamp": 70804,
+      "relative_timestamp": 5866,
+      "movement_x": -41,
+      "movement_y": 17
+    },
+    {
+      "original_timestamp": 70821,
+      "relative_timestamp": 5883,
+      "movement_x": -57,
+      "movement_y": 44
+    },
+    {
+      "original_timestamp": 70837,
+      "relative_timestamp": 5899,
+      "movement_x": -16,
+      "movement_y": 24
+    },
+    {
+      "original_timestamp": 70854,
+      "relative_timestamp": 5916,
+      "movement_x": -10,
+      "movement_y": 28
+    },
+    {
+      "original_timestamp": 70871,
+      "relative_timestamp": 5933,
+      "movement_x": -1,
+      "movement_y": 27
+    },
+    {
+      "original_timestamp": 70888,
+      "relative_timestamp": 5950,
+      "movement_x": 5,
+      "movement_y": 29
+    },
+    {
+      "original_timestamp": 70904,
+      "relative_timestamp": 5966,
+      "movement_x": 48,
+      "movement_y": 73
+    },
+    {
+      "original_timestamp": 70921,
+      "relative_timestamp": 5983,
+      "movement_x": 25,
+      "movement_y": 16
+    },
+    {
+      "original_timestamp": 70937,
+      "relative_timestamp": 5999,
+      "movement_x": 27,
+      "movement_y": 10
+    },
+    {
+      "original_timestamp": 70954.00000000001,
+      "relative_timestamp": 6016.000000000015,
+      "movement_x": 55,
+      "movement_y": 4
+    },
+    {
+      "original_timestamp": 70987,
+      "relative_timestamp": 6049,
+      "movement_x": 25,
+      "movement_y": -5
+    },
+    {
+      "original_timestamp": 71004,
+      "relative_timestamp": 6066,
+      "movement_x": 21,
+      "movement_y": -9
+    },
+    {
+      "original_timestamp": 71020,
+      "relative_timestamp": 6082,
+      "movement_x": 41,
+      "movement_y": -47
+    },
+    {
+      "original_timestamp": 71037,
+      "relative_timestamp": 6099,
+      "movement_x": 4,
+      "movement_y": -19
+    },
+    {
+      "original_timestamp": 71054,
+      "relative_timestamp": 6116,
+      "movement_x": 0,
+      "movement_y": -22
+    },
+    {
+      "original_timestamp": 71071,
+      "relative_timestamp": 6133,
+      "movement_x": -16,
+      "movement_y": -47
+    },
+    {
+      "original_timestamp": 71103,
+      "relative_timestamp": 6165,
+      "movement_x": -39,
+      "movement_y": -56
+    },
+    {
+      "original_timestamp": 71137,
+      "relative_timestamp": 6199,
+      "movement_x": -56,
+      "movement_y": -41
+    },
+    {
+      "original_timestamp": 71154,
+      "relative_timestamp": 6216,
+      "movement_x": -58,
+      "movement_y": -14
+    },
+    {
+      "original_timestamp": 71171,
+      "relative_timestamp": 6233,
+      "movement_x": -32,
+      "movement_y": 2
+    },
+    {
+      "original_timestamp": 71187,
+      "relative_timestamp": 6249,
+      "movement_x": -33,
+      "movement_y": 10
+    },
+    {
+      "original_timestamp": 71204.00000000001,
+      "relative_timestamp": 6266.000000000015,
+      "movement_x": -77,
+      "movement_y": 64
+    },
+    {
+      "original_timestamp": 71221,
+      "relative_timestamp": 6283,
+      "movement_x": -15,
+      "movement_y": 31
+    },
+    {
+      "original_timestamp": 71237,
+      "relative_timestamp": 6299,
+      "movement_x": -7,
+      "movement_y": 34
+    },
+    {
+      "original_timestamp": 71253,
+      "relative_timestamp": 6315,
+      "movement_x": 11,
+      "movement_y": 74
+    },
+    {
+      "original_timestamp": 71304,
+      "relative_timestamp": 6366,
+      "movement_x": 18,
+      "movement_y": 34
+    },
+    {
+      "original_timestamp": 71320.00000000001,
+      "relative_timestamp": 6382.000000000015,
+      "movement_x": 60,
+      "movement_y": 64
+    },
+    {
+      "original_timestamp": 71337,
+      "relative_timestamp": 6399,
+      "movement_x": 128,
+      "movement_y": 41
+    },
+    {
+      "original_timestamp": 71354,
+      "relative_timestamp": 6416,
+      "movement_x": 28,
+      "movement_y": -8
+    },
+    {
+      "original_timestamp": 71371,
+      "relative_timestamp": 6433,
+      "movement_x": 21,
+      "movement_y": -10
+    },
+    {
+      "original_timestamp": 71387,
+      "relative_timestamp": 6449,
+      "movement_x": 19,
+      "movement_y": -16
+    },
+    {
+      "original_timestamp": 71404,
+      "relative_timestamp": 6466,
+      "movement_x": 22,
+      "movement_y": -36
+    },
+    {
+      "original_timestamp": 71420,
+      "relative_timestamp": 6482,
+      "movement_x": 4,
+      "movement_y": -20
+    },
+    {
+      "original_timestamp": 71437,
+      "relative_timestamp": 6499,
+      "movement_x": 0,
+      "movement_y": -23
+    },
+    {
+      "original_timestamp": 71470,
+      "relative_timestamp": 6532,
+      "movement_x": -5,
+      "movement_y": -23
+    },
+    {
+      "original_timestamp": 71487,
+      "relative_timestamp": 6549,
+      "movement_x": -10,
+      "movement_y": -25
+    },
+    {
+      "original_timestamp": 71504,
+      "relative_timestamp": 6566,
+      "movement_x": -98,
+      "movement_y": -89
+    },
+    {
+      "original_timestamp": 71521,
+      "relative_timestamp": 6583,
+      "movement_x": -32,
+      "movement_y": -11
+    },
+    {
+      "original_timestamp": 71537,
+      "relative_timestamp": 6599,
+      "movement_x": -31,
+      "movement_y": -4
+    },
+    {
+      "original_timestamp": 71554,
+      "relative_timestamp": 6616,
+      "movement_x": -60,
+      "movement_y": 14
+    },
+    {
+      "original_timestamp": 71571,
+      "relative_timestamp": 6633,
+      "movement_x": -27,
+      "movement_y": 17
+    },
+    {
+      "original_timestamp": 71587,
+      "relative_timestamp": 6649,
+      "movement_x": -22,
+      "movement_y": 23
+    },
+    {
+      "original_timestamp": 71604,
+      "relative_timestamp": 6666,
+      "movement_x": -17,
+      "movement_y": 28
+    },
+    {
+      "original_timestamp": 71620,
+      "relative_timestamp": 6682,
+      "movement_x": -5,
+      "movement_y": 94
+    },
+    {
+      "original_timestamp": 71637,
+      "relative_timestamp": 6699,
+      "movement_x": 11,
+      "movement_y": 30
+    },
+    {
+      "original_timestamp": 71654,
+      "relative_timestamp": 6716,
+      "movement_x": 19,
+      "movement_y": 31
+    },
+    {
+      "original_timestamp": 71671,
+      "relative_timestamp": 6733,
+      "movement_x": 25,
+      "movement_y": 27
+    },
+    {
+      "original_timestamp": 71687,
+      "relative_timestamp": 6749,
+      "movement_x": 61,
+      "movement_y": 35
+    },
+    {
+      "original_timestamp": 71737,
+      "relative_timestamp": 6799,
+      "movement_x": 36,
+      "movement_y": 7
+    },
+    {
+      "original_timestamp": 71754,
+      "relative_timestamp": 6816,
+      "movement_x": 37,
+      "movement_y": 0
+    },
+    {
+      "original_timestamp": 71787,
+      "relative_timestamp": 6849,
+      "movement_x": 147,
+      "movement_y": -78
+    },
+    {
+      "original_timestamp": 71804,
+      "relative_timestamp": 6866,
+      "movement_x": 51,
+      "movement_y": -78
+    },
+    {
+      "original_timestamp": 71821,
+      "relative_timestamp": 6883,
+      "movement_x": 3,
+      "movement_y": -18
+    },
+    {
+      "original_timestamp": 71837,
+      "relative_timestamp": 6899,
+      "movement_x": -1,
+      "movement_y": -14
+    },
+    {
+      "original_timestamp": 71854,
+      "relative_timestamp": 6916,
+      "movement_x": -17,
+      "movement_y": -27
+    },
+    {
+      "original_timestamp": 71870,
+      "relative_timestamp": 6932,
+      "movement_x": -16,
+      "movement_y": -8
+    },
+    {
+      "original_timestamp": 71887,
+      "relative_timestamp": 6949,
+      "movement_x": -24,
+      "movement_y": -5
+    },
+    {
+      "original_timestamp": 71904,
+      "relative_timestamp": 6966,
+      "movement_x": -30,
+      "movement_y": 0
+    },
+    {
+      "original_timestamp": 71921,
+      "relative_timestamp": 6983,
+      "movement_x": -142,
+      "movement_y": 57
+    },
+    {
+      "original_timestamp": 71937,
+      "relative_timestamp": 6999,
+      "movement_x": -57,
+      "movement_y": 44
+    },
+    {
+      "original_timestamp": 71954.00000000001,
+      "relative_timestamp": 7016.000000000015,
+      "movement_x": -51,
+      "movement_y": 56
+    },
+    {
+      "original_timestamp": 71971,
+      "relative_timestamp": 7033,
+      "movement_x": -41,
+      "movement_y": 59
+    },
+    {
+      "original_timestamp": 71989,
+      "relative_timestamp": 7051,
+      "movement_x": -27,
+      "movement_y": 55
+    },
+    {
+      "original_timestamp": 72004,
+      "relative_timestamp": 7066,
+      "movement_x": -16,
+      "movement_y": 89
+    },
+    {
+      "original_timestamp": 72021,
+      "relative_timestamp": 7083,
+      "movement_x": 5,
+      "movement_y": 34
+    },
+    {
+      "original_timestamp": 72037,
+      "relative_timestamp": 7099,
+      "movement_x": 13,
+      "movement_y": 35
+    },
+    {
+      "original_timestamp": 72054,
+      "relative_timestamp": 7116,
+      "movement_x": 22,
+      "movement_y": 14
+    },
+    {
+      "original_timestamp": 72071,
+      "relative_timestamp": 7133,
+      "movement_x": 94,
+      "movement_y": 0
+    },
+    {
+      "original_timestamp": 72088.00000000001,
+      "relative_timestamp": 7150.000000000015,
+      "movement_x": 33,
+      "movement_y": 0
+    },
+    {
+      "original_timestamp": 72104,
+      "relative_timestamp": 7166,
+      "movement_x": 29,
+      "movement_y": 0
+    },
+    {
+      "original_timestamp": 72121,
+      "relative_timestamp": 7183,
+      "movement_x": 27,
+      "movement_y": -3
+    },
+    {
+      "original_timestamp": 72138,
+      "relative_timestamp": 7200,
+      "movement_x": 25,
+      "movement_y": -11
+    },
+    {
+      "original_timestamp": 72154,
+      "relative_timestamp": 7216,
+      "movement_x": 33,
+      "movement_y": -38
+    },
+    {
+      "original_timestamp": 72171,
+      "relative_timestamp": 7233,
+      "movement_x": 11,
+      "movement_y": -25
+    },
+    {
+      "original_timestamp": 72188,
+      "relative_timestamp": 7250,
+      "movement_x": 7,
+      "movement_y": -28
+    },
+    {
+      "original_timestamp": 72204.00000000001,
+      "relative_timestamp": 7266.000000000015,
+      "movement_x": 3,
+      "movement_y": -34
+    },
+    {
+      "original_timestamp": 72238,
+      "relative_timestamp": 7300,
+      "movement_x": -17,
+      "movement_y": -113
+    },
+    {
+      "original_timestamp": 72255,
+      "relative_timestamp": 7317,
+      "movement_x": -15,
+      "movement_y": -38
+    },
+    {
+      "original_timestamp": 72271,
+      "relative_timestamp": 7333,
+      "movement_x": -17,
+      "movement_y": -36
+    },
+    {
+      "original_timestamp": 72288,
+      "relative_timestamp": 7350,
+      "movement_x": -21,
+      "movement_y": -30
+    },
+    {
+      "original_timestamp": 72304,
+      "relative_timestamp": 7366,
+      "movement_x": -63,
+      "movement_y": -44
+    },
+    {
+      "original_timestamp": 72337,
+      "relative_timestamp": 7399,
+      "movement_x": -26,
+      "movement_y": -2
+    },
+    {
+      "original_timestamp": 72371,
+      "relative_timestamp": 7433,
+      "movement_x": -98,
+      "movement_y": 58
+    },
+    {
+      "original_timestamp": 72387,
+      "relative_timestamp": 7449,
+      "movement_x": -13,
+      "movement_y": 27
+    },
+    {
+      "original_timestamp": 72404,
+      "relative_timestamp": 7466,
+      "movement_x": -5,
+      "movement_y": 24
+    },
+    {
+      "original_timestamp": 72421,
+      "relative_timestamp": 7483,
+      "movement_x": 1,
+      "movement_y": 25
+    },
+    {
+      "original_timestamp": 72437,
+      "relative_timestamp": 7499,
+      "movement_x": 8,
+      "movement_y": 19
+    },
+    {
+      "original_timestamp": 72454.00000000001,
+      "relative_timestamp": 7516.000000000015,
+      "movement_x": 85,
+      "movement_y": 42
+    },
+    {
+      "original_timestamp": 72471,
+      "relative_timestamp": 7533,
+      "movement_x": 36,
+      "movement_y": -4
+    },
+    {
+      "original_timestamp": 72487,
+      "relative_timestamp": 7549,
+      "movement_x": 42,
+      "movement_y": -15
+    },
+    {
+      "original_timestamp": 72504,
+      "relative_timestamp": 7566,
+      "movement_x": 40,
+      "movement_y": -23
+    },
+    {
+      "original_timestamp": 72520,
+      "relative_timestamp": 7582,
+      "movement_x": 42,
+      "movement_y": -31
+    },
+    {
+      "original_timestamp": 72537,
+      "relative_timestamp": 7599,
+      "movement_x": 35,
+      "movement_y": -35
+    },
+    {
+      "original_timestamp": 72554,
+      "relative_timestamp": 7616,
+      "movement_x": 24,
+      "movement_y": -31
+    },
+    {
+      "original_timestamp": 72571,
+      "relative_timestamp": 7633,
+      "movement_x": 19,
+      "movement_y": -78
+    },
+    {
+      "original_timestamp": 72587,
+      "relative_timestamp": 7649,
+      "movement_x": -8,
+      "movement_y": -22
+    },
+    {
+      "original_timestamp": 72604,
+      "relative_timestamp": 7666,
+      "movement_x": -40,
+      "movement_y": -40
+    },
+    {
+      "original_timestamp": 72621,
+      "relative_timestamp": 7683,
+      "movement_x": -31,
+      "movement_y": -17
+    },
+    {
+      "original_timestamp": 72637,
+      "relative_timestamp": 7699,
+      "movement_x": -40,
+      "movement_y": -13
+    },
+    {
+      "original_timestamp": 72654,
+      "relative_timestamp": 7716,
+      "movement_x": -43,
+      "movement_y": -6
+    },
+    {
+      "original_timestamp": 72671,
+      "relative_timestamp": 7733,
+      "movement_x": -44,
+      "movement_y": 1
+    },
+    {
+      "original_timestamp": 72688,
+      "relative_timestamp": 7750,
+      "movement_x": -45,
+      "movement_y": 7
+    },
+    {
+      "original_timestamp": 72704.00000000001,
+      "relative_timestamp": 7766.000000000015,
+      "movement_x": -37,
+      "movement_y": 12
+    },
+    {
+      "original_timestamp": 72721,
+      "relative_timestamp": 7783,
+      "movement_x": -56,
+      "movement_y": 49
+    },
+    {
+      "original_timestamp": 72737,
+      "relative_timestamp": 7799,
+      "movement_x": 0,
+      "movement_y": 37
+    },
+    {
+      "original_timestamp": 72754,
+      "relative_timestamp": 7816,
+      "movement_x": 9,
+      "movement_y": 18
+    },
+    {
+      "original_timestamp": 72770,
+      "relative_timestamp": 7832,
+      "movement_x": 16,
+      "movement_y": 18
+    },
+    {
+      "original_timestamp": 72821,
+      "relative_timestamp": 7883,
+      "movement_x": 24,
+      "movement_y": 18
+    },
+    {
+      "original_timestamp": 72837,
+      "relative_timestamp": 7899,
+      "movement_x": 29,
+      "movement_y": 13
+    },
+    {
+      "original_timestamp": 72854,
+      "relative_timestamp": 7916,
+      "movement_x": 133,
+      "movement_y": -7
+    },
+    {
+      "original_timestamp": 72872,
+      "relative_timestamp": 7934,
+      "movement_x": 24,
+      "movement_y": -13
+    },
+    {
+      "original_timestamp": 72887,
+      "relative_timestamp": 7949,
+      "movement_x": 18,
+      "movement_y": -15
+    },
+    {
+      "original_timestamp": 72904,
+      "relative_timestamp": 7966,
+      "movement_x": 18,
+      "movement_y": -31
+    },
+    {
+      "original_timestamp": 72920,
+      "relative_timestamp": 7982,
+      "movement_x": 1,
+      "movement_y": -18
+    },
+    {
+      "original_timestamp": 72937,
+      "relative_timestamp": 7999,
+      "movement_x": -25,
+      "movement_y": -52
+    },
+    {
+      "original_timestamp": 72971,
+      "relative_timestamp": 8033,
+      "movement_x": -23,
+      "movement_y": -19
+    },
+    {
+      "original_timestamp": 72987,
+      "relative_timestamp": 8049,
+      "movement_x": -28,
+      "movement_y": -17
+    },
+    {
+      "original_timestamp": 73004,
+      "relative_timestamp": 8066,
+      "movement_x": -30,
+      "movement_y": -11
+    },
+    {
+      "original_timestamp": 73021,
+      "relative_timestamp": 8083,
+      "movement_x": -101,
+      "movement_y": 6
+    },
+    {
+      "original_timestamp": 73037,
+      "relative_timestamp": 8099,
+      "movement_x": -29,
+      "movement_y": 14
+    },
+    {
+      "original_timestamp": 73054,
+      "relative_timestamp": 8116,
+      "movement_x": -38,
+      "movement_y": 39
+    },
+    {
+      "original_timestamp": 73071,
+      "relative_timestamp": 8133,
+      "movement_x": -7,
+      "movement_y": 24
+    },
+    {
+      "original_timestamp": 73087,
+      "relative_timestamp": 8149,
+      "movement_x": -1,
+      "movement_y": 26
+    },
+    {
+      "original_timestamp": 73104,
+      "relative_timestamp": 8166,
+      "movement_x": 6,
+      "movement_y": 25
+    },
+    {
+      "original_timestamp": 73121,
+      "relative_timestamp": 8183,
+      "movement_x": 14,
+      "movement_y": 24
+    },
+    {
+      "original_timestamp": 73137,
+      "relative_timestamp": 8199,
+      "movement_x": 20,
+      "movement_y": 22
+    },
+    {
+      "original_timestamp": 73154,
+      "relative_timestamp": 8216,
+      "movement_x": 26,
+      "movement_y": 18
+    },
+    {
+      "original_timestamp": 73171,
+      "relative_timestamp": 8233,
+      "movement_x": 97,
+      "movement_y": 12
+    },
+    {
+      "original_timestamp": 73187,
+      "relative_timestamp": 8249,
+      "movement_x": 36,
+      "movement_y": -9
+    },
+    {
+      "original_timestamp": 73204.00000000001,
+      "relative_timestamp": 8266.000000000015,
+      "movement_x": 54,
+      "movement_y": -32
+    },
+    {
+      "original_timestamp": 73221,
+      "relative_timestamp": 8283,
+      "movement_x": 16,
+      "movement_y": -19
+    },
+    {
+      "original_timestamp": 73237,
+      "relative_timestamp": 8299,
+      "movement_x": 9,
+      "movement_y": -17
+    },
+    {
+      "original_timestamp": 73254,
+      "relative_timestamp": 8316,
+      "movement_x": 4,
+      "movement_y": -19
+    },
+    {
+      "original_timestamp": 73270,
+      "relative_timestamp": 8332,
+      "movement_x": 0,
+      "movement_y": -19
+    },
+    {
+      "original_timestamp": 73287,
+      "relative_timestamp": 8349,
+      "movement_x": -8,
+      "movement_y": -22
+    },
+    {
+      "original_timestamp": 73303,
+      "relative_timestamp": 8365,
+      "movement_x": -13,
+      "movement_y": -26
+    },
+    {
+      "original_timestamp": 73319,
+      "relative_timestamp": 8381,
+      "movement_x": -21,
+      "movement_y": -27
+    },
+    {
+      "original_timestamp": 73337,
+      "relative_timestamp": 8399,
+      "movement_x": -50,
+      "movement_y": -35
+    },
+    {
+      "original_timestamp": 73354,
+      "relative_timestamp": 8416,
+      "movement_x": -58,
+      "movement_y": -7
+    },
+    {
+      "original_timestamp": 73371,
+      "relative_timestamp": 8433,
+      "movement_x": -29,
+      "movement_y": 8
+    },
+    {
+      "original_timestamp": 73387,
+      "relative_timestamp": 8449,
+      "movement_x": -80,
+      "movement_y": 62
+    },
+    {
+      "original_timestamp": 73404,
+      "relative_timestamp": 8466,
+      "movement_x": -14,
+      "movement_y": 26
+    },
+    {
+      "original_timestamp": 73420,
+      "relative_timestamp": 8482,
+      "movement_x": -9,
+      "movement_y": 26
+    },
+    {
+      "original_timestamp": 73437,
+      "relative_timestamp": 8499,
+      "movement_x": 0,
+      "movement_y": 26
+    },
+    {
+      "original_timestamp": 73454.00000000001,
+      "relative_timestamp": 8516.000000000015,
+      "movement_x": 6,
+      "movement_y": 24
+    },
+    {
+      "original_timestamp": 73471,
+      "relative_timestamp": 8533,
+      "movement_x": 11,
+      "movement_y": 20
+    },
+    {
+      "original_timestamp": 73487,
+      "relative_timestamp": 8549,
+      "movement_x": 18,
+      "movement_y": 17
+    },
+    {
+      "original_timestamp": 73504,
+      "relative_timestamp": 8566,
+      "movement_x": 43,
+      "movement_y": 21
+    },
+    {
+      "original_timestamp": 73521,
+      "relative_timestamp": 8583,
+      "movement_x": 24,
+      "movement_y": 2
+    },
+    {
+      "original_timestamp": 73537,
+      "relative_timestamp": 8599,
+      "movement_x": 71,
+      "movement_y": -19
+    },
+    {
+      "original_timestamp": 73554,
+      "relative_timestamp": 8616,
+      "movement_x": 16,
+      "movement_y": -13
+    },
+    {
+      "original_timestamp": 73571,
+      "relative_timestamp": 8633,
+      "movement_x": 12,
+      "movement_y": -16
+    },
+    {
+      "original_timestamp": 73587,
+      "relative_timestamp": 8649,
+      "movement_x": 8,
+      "movement_y": -16
+    },
+    {
+      "original_timestamp": 73604,
+      "relative_timestamp": 8666,
+      "movement_x": 1,
+      "movement_y": -15
+    },
+    {
+      "original_timestamp": 73621,
+      "relative_timestamp": 8683,
+      "movement_x": -1,
+      "movement_y": -16
+    },
+    {
+      "original_timestamp": 73638,
+      "relative_timestamp": 8700,
+      "movement_x": -8,
+      "movement_y": -16
+    },
+    {
+      "original_timestamp": 73654,
+      "relative_timestamp": 8716,
+      "movement_x": -60,
+      "movement_y": -51
+    },
+    {
+      "original_timestamp": 73671,
+      "relative_timestamp": 8733,
+      "movement_x": -64,
+      "movement_y": -17
+    },
+    {
+      "original_timestamp": 73687,
+      "relative_timestamp": 8749,
+      "movement_x": -36,
+      "movement_y": 1
+    },
+    {
+      "original_timestamp": 73704.00000000001,
+      "relative_timestamp": 8766.000000000015,
+      "movement_x": -35,
+      "movement_y": 10
+    },
+    {
+      "original_timestamp": 73721,
+      "relative_timestamp": 8783,
+      "movement_x": -33,
+      "movement_y": 14
+    },
+    {
+      "original_timestamp": 73737,
+      "relative_timestamp": 8799,
+      "movement_x": -30,
+      "movement_y": 21
+    },
+    {
+      "original_timestamp": 73754,
+      "relative_timestamp": 8816,
+      "movement_x": -19,
+      "movement_y": 23
+    },
+    {
+      "original_timestamp": 73771,
+      "relative_timestamp": 8833,
+      "movement_x": -11,
+      "movement_y": 23
+    },
+    {
+      "original_timestamp": 73788,
+      "relative_timestamp": 8850,
+      "movement_x": -2,
+      "movement_y": 41
+    },
+    {
+      "original_timestamp": 73804,
+      "relative_timestamp": 8866,
+      "movement_x": 9,
+      "movement_y": 15
+    },
+    {
+      "original_timestamp": 73820.00000000001,
+      "relative_timestamp": 8882.000000000015,
+      "movement_x": 63,
+      "movement_y": 38
+    },
+    {
+      "original_timestamp": 73837,
+      "relative_timestamp": 8899,
+      "movement_x": 27,
+      "movement_y": 5
+    },
+    {
+      "original_timestamp": 73854,
+      "relative_timestamp": 8916,
+      "movement_x": 32,
+      "movement_y": 0
+    },
+    {
+      "original_timestamp": 73870,
+      "relative_timestamp": 8932,
+      "movement_x": 30,
+      "movement_y": -3
+    },
+    {
+      "original_timestamp": 73904,
+      "relative_timestamp": 8966,
+      "movement_x": 28,
+      "movement_y": -10
+    },
+    {
+      "original_timestamp": 73920,
+      "relative_timestamp": 8982,
+      "movement_x": 63,
+      "movement_y": -44
+    },
+    {
+      "original_timestamp": 73937,
+      "relative_timestamp": 8999,
+      "movement_x": 12,
+      "movement_y": -29
+    },
+    {
+      "original_timestamp": 73954.00000000001,
+      "relative_timestamp": 9016.000000000015,
+      "movement_x": 0,
+      "movement_y": -14
+    },
+    {
+      "original_timestamp": 73971,
+      "relative_timestamp": 9033,
+      "movement_x": -6,
+      "movement_y": -15
+    },
+    {
+      "original_timestamp": 73987,
+      "relative_timestamp": 9049,
+      "movement_x": -10,
+      "movement_y": -16
+    },
+    {
+      "original_timestamp": 74004,
+      "relative_timestamp": 9066,
+      "movement_x": -18,
+      "movement_y": -18
+    },
+    {
+      "original_timestamp": 74021,
+      "relative_timestamp": 9083,
+      "movement_x": -24,
+      "movement_y": -19
+    },
+    {
+      "original_timestamp": 74037,
+      "relative_timestamp": 9099,
+      "movement_x": -85,
+      "movement_y": -20
+    },
+    {
+      "original_timestamp": 74054,
+      "relative_timestamp": 9116,
+      "movement_x": -28,
+      "movement_y": 7
+    },
+    {
+      "original_timestamp": 74071,
+      "relative_timestamp": 9133,
+      "movement_x": -25,
+      "movement_y": 11
+    },
+    {
+      "original_timestamp": 74087,
+      "relative_timestamp": 9149,
+      "movement_x": -22,
+      "movement_y": 16
+    },
+    {
+      "original_timestamp": 74104,
+      "relative_timestamp": 9166,
+      "movement_x": -27,
+      "movement_y": 40
+    },
+    {
+      "original_timestamp": 74121,
+      "relative_timestamp": 9183,
+      "movement_x": -3,
+      "movement_y": 21
+    },
+    {
+      "original_timestamp": 74137,
+      "relative_timestamp": 9199,
+      "movement_x": 2,
+      "movement_y": 19
+    },
+    {
+      "original_timestamp": 74154,
+      "relative_timestamp": 9216,
+      "movement_x": 9,
+      "movement_y": 20
+    },
+    {
+      "original_timestamp": 74171,
+      "relative_timestamp": 9233,
+      "movement_x": 14,
+      "movement_y": 17
+    },
+    {
+      "original_timestamp": 74187,
+      "relative_timestamp": 9249,
+      "movement_x": 73,
+      "movement_y": 30
+    },
+    {
+      "original_timestamp": 74204.00000000001,
+      "relative_timestamp": 9266.000000000015,
+      "movement_x": 30,
+      "movement_y": 1
+    },
+    {
+      "original_timestamp": 74221,
+      "relative_timestamp": 9283,
+      "movement_x": 30,
+      "movement_y": -3
+    },
+    {
+      "original_timestamp": 74237,
+      "relative_timestamp": 9299,
+      "movement_x": 30,
+      "movement_y": -9
+    },
+    {
+      "original_timestamp": 74254,
+      "relative_timestamp": 9316,
+      "movement_x": 41,
+      "movement_y": -24
+    },
+    {
+      "original_timestamp": 74271,
+      "relative_timestamp": 9333,
+      "movement_x": 14,
+      "movement_y": -15
+    },
+    {
+      "original_timestamp": 74287,
+      "relative_timestamp": 9349,
+      "movement_x": 7,
+      "movement_y": -15
+    },
+    {
+      "original_timestamp": 74304,
+      "relative_timestamp": 9366,
+      "movement_x": 3,
+      "movement_y": -15
+    },
+    {
+      "original_timestamp": 74321,
+      "relative_timestamp": 9383,
+      "movement_x": -2,
+      "movement_y": -18
+    },
+    {
+      "original_timestamp": 74337,
+      "relative_timestamp": 9399,
+      "movement_x": -46,
+      "movement_y": -82
+    },
+    {
+      "original_timestamp": 74354,
+      "relative_timestamp": 9416,
+      "movement_x": -25,
+      "movement_y": -20
+    },
+    {
+      "original_timestamp": 74371,
+      "relative_timestamp": 9433,
+      "movement_x": -27,
+      "movement_y": -13
+    },
+    {
+      "original_timestamp": 74387,
+      "relative_timestamp": 9449,
+      "movement_x": -24,
+      "movement_y": -7
+    },
+    {
+      "original_timestamp": 74404,
+      "relative_timestamp": 9466,
+      "movement_x": -49,
+      "movement_y": 2
+    },
+    {
+      "original_timestamp": 74421,
+      "relative_timestamp": 9483,
+      "movement_x": -20,
+      "movement_y": 8
+    },
+    {
+      "original_timestamp": 74437,
+      "relative_timestamp": 9499,
+      "movement_x": -17,
+      "movement_y": 13
+    },
+    {
+      "original_timestamp": 74471,
+      "relative_timestamp": 9533,
+      "movement_x": -14,
+      "movement_y": 18
+    },
+    {
+      "original_timestamp": 74487,
+      "relative_timestamp": 9549,
+      "movement_x": -11,
+      "movement_y": 23
+    },
+    {
+      "original_timestamp": 74504,
+      "relative_timestamp": 9566,
+      "movement_x": 3,
+      "movement_y": 78
+    },
+    {
+      "original_timestamp": 74521,
+      "relative_timestamp": 9583,
+      "movement_x": 14,
+      "movement_y": 23
+    },
+    {
+      "original_timestamp": 74538,
+      "relative_timestamp": 9600,
+      "movement_x": 21,
+      "movement_y": 20
+    },
+    {
+      "original_timestamp": 74554,
+      "relative_timestamp": 9616,
+      "movement_x": 110,
+      "movement_y": 23
+    },
+    {
+      "original_timestamp": 74571,
+      "relative_timestamp": 9633,
+      "movement_x": 28,
+      "movement_y": -7
+    },
+    {
+      "original_timestamp": 74587,
+      "relative_timestamp": 9649,
+      "movement_x": 24,
+      "movement_y": -10
+    },
+    {
+      "original_timestamp": 74604,
+      "relative_timestamp": 9666,
+      "movement_x": 20,
+      "movement_y": -15
+    },
+    {
+      "original_timestamp": 74621,
+      "relative_timestamp": 9683,
+      "movement_x": 14,
+      "movement_y": -14
+    },
+    {
+      "original_timestamp": 74638,
+      "relative_timestamp": 9700,
+      "movement_x": 8,
+      "movement_y": -15
+    },
+    {
+      "original_timestamp": 74654,
+      "relative_timestamp": 9716,
+      "movement_x": 3,
+      "movement_y": -14
+    },
+    {
+      "original_timestamp": 74672,
+      "relative_timestamp": 9734,
+      "movement_x": -1,
+      "movement_y": -16
+    },
+    {
+      "original_timestamp": 74687,
+      "relative_timestamp": 9749,
+      "movement_x": -36,
+      "movement_y": -56
+    },
+    {
+      "original_timestamp": 74704.00000000001,
+      "relative_timestamp": 9766.000000000015,
+      "movement_x": -22,
+      "movement_y": -16
+    },
+    {
+      "original_timestamp": 74721,
+      "relative_timestamp": 9783,
+      "movement_x": -23,
+      "movement_y": -10
+    },
+    {
+      "original_timestamp": 74737,
+      "relative_timestamp": 9799,
+      "movement_x": -27,
+      "movement_y": -3
+    },
+    {
+      "original_timestamp": 74771,
+      "relative_timestamp": 9833,
+      "movement_x": -90,
+      "movement_y": 39
+    },
+    {
+      "original_timestamp": 74787,
+      "relative_timestamp": 9849,
+      "movement_x": -12,
+      "movement_y": 19
+    },
+    {
+      "original_timestamp": 74804,
+      "relative_timestamp": 9866,
+      "movement_x": -7,
+      "movement_y": 20
+    },
+    {
+      "original_timestamp": 74821,
+      "relative_timestamp": 9883,
+      "movement_x": 0,
+      "movement_y": 23
+    },
+    {
+      "original_timestamp": 74837,
+      "relative_timestamp": 9899,
+      "movement_x": 20,
+      "movement_y": 47
+    },
+    {
+      "original_timestamp": 74854,
+      "relative_timestamp": 9916,
+      "movement_x": 23,
+      "movement_y": 22
+    },
+    {
+      "original_timestamp": 74870,
+      "relative_timestamp": 9932,
+      "movement_x": 29,
+      "movement_y": 17
+    },
+    {
+      "original_timestamp": 74887,
+      "relative_timestamp": 9949,
+      "movement_x": 35,
+      "movement_y": 10
+    },
+    {
+      "original_timestamp": 74904,
+      "relative_timestamp": 9966,
+      "movement_x": 117,
+      "movement_y": -5
+    },
+    {
+      "original_timestamp": 74921,
+      "relative_timestamp": 9983,
+      "movement_x": 34,
+      "movement_y": -14
+    },
+    {
+      "original_timestamp": 74937,
+      "relative_timestamp": 9999,
+      "movement_x": 29,
+      "movement_y": -18
+    },
+    {
+      "original_timestamp": 74954.00000000001,
+      "relative_timestamp": 10016.000000000015,
+      "movement_x": 20,
+      "movement_y": -19
+    },
+    {
+      "original_timestamp": 74971,
+      "relative_timestamp": 10033,
+      "movement_x": 14,
+      "movement_y": -19
+    },
+    {
+      "original_timestamp": 74987,
+      "relative_timestamp": 10049,
+      "movement_x": 7,
+      "movement_y": -18
+    },
+    {
+      "original_timestamp": 75004,
+      "relative_timestamp": 10066,
+      "movement_x": 1,
+      "movement_y": -19
+    },
+    {
+      "original_timestamp": 75020,
+      "relative_timestamp": 10082,
+      "movement_x": -6,
+      "movement_y": -25
+    },
+    {
+      "original_timestamp": 75037,
+      "relative_timestamp": 10099,
+      "movement_x": -11,
+      "movement_y": -25
+    },
+    {
+      "original_timestamp": 75054,
+      "relative_timestamp": 10116,
+      "movement_x": -91,
+      "movement_y": -46
+    },
+    {
+      "original_timestamp": 75071,
+      "relative_timestamp": 10133,
+      "movement_x": -35,
+      "movement_y": 2
+    },
+    {
+      "original_timestamp": 75087,
+      "relative_timestamp": 10149,
+      "movement_x": -38,
+      "movement_y": 11
+    },
+    {
+      "original_timestamp": 75104,
+      "relative_timestamp": 10166,
+      "movement_x": -40,
+      "movement_y": 18
+    },
+    {
+      "original_timestamp": 75121,
+      "relative_timestamp": 10183,
+      "movement_x": -36,
+      "movement_y": 23
+    },
+    {
+      "original_timestamp": 75137,
+      "relative_timestamp": 10199,
+      "movement_x": -32,
+      "movement_y": 27
+    },
+    {
+      "original_timestamp": 75154,
+      "relative_timestamp": 10216,
+      "movement_x": -30,
+      "movement_y": 54
+    },
+    {
+      "original_timestamp": 75171,
+      "relative_timestamp": 10233,
+      "movement_x": -2,
+      "movement_y": 25
+    },
+    {
+      "original_timestamp": 75187,
+      "relative_timestamp": 10249,
+      "movement_x": 5,
+      "movement_y": 25
+    },
+    {
+      "original_timestamp": 75204.00000000001,
+      "relative_timestamp": 10266.000000000015,
+      "movement_x": 30,
+      "movement_y": 38
+    },
+    {
+      "original_timestamp": 75220,
+      "relative_timestamp": 10282,
+      "movement_x": 25,
+      "movement_y": 16
+    },
+    {
+      "original_timestamp": 75237,
+      "relative_timestamp": 10299,
+      "movement_x": 28,
+      "movement_y": 9
+    },
+    {
+      "original_timestamp": 75254,
+      "relative_timestamp": 10316,
+      "movement_x": 30,
+      "movement_y": 4
+    },
+    {
+      "original_timestamp": 75271,
+      "relative_timestamp": 10333,
+      "movement_x": 29,
+      "movement_y": 0
+    },
+    {
+      "original_timestamp": 75287,
+      "relative_timestamp": 10349,
+      "movement_x": 53,
+      "movement_y": -13
+    },
+    {
+      "original_timestamp": 75304,
+      "relative_timestamp": 10366,
+      "movement_x": 45,
+      "movement_y": -44
+    },
+    {
+      "original_timestamp": 75321,
+      "relative_timestamp": 10383,
+      "movement_x": 6,
+      "movement_y": -17
+    },
+    {
+      "original_timestamp": 75337,
+      "relative_timestamp": 10399,
+      "movement_x": 0,
+      "movement_y": -19
+    },
+    {
+      "original_timestamp": 75354,
+      "relative_timestamp": 10416,
+      "movement_x": -4,
+      "movement_y": -20
+    },
+    {
+      "original_timestamp": 75387,
+      "relative_timestamp": 10449,
+      "movement_x": -10,
+      "movement_y": -22
+    },
+    {
+      "original_timestamp": 75405,
+      "relative_timestamp": 10467,
+      "movement_x": -16,
+      "movement_y": -24
+    },
+    {
+      "original_timestamp": 75437,
+      "relative_timestamp": 10499,
+      "movement_x": -99,
+      "movement_y": -47
+    },
+    {
+      "original_timestamp": 75454.00000000001,
+      "relative_timestamp": 10516.000000000015,
+      "movement_x": -54,
+      "movement_y": 20
+    },
+    {
+      "original_timestamp": 75471,
+      "relative_timestamp": 10533,
+      "movement_x": -21,
+      "movement_y": 18
+    },
+    {
+      "original_timestamp": 75487,
+      "relative_timestamp": 10549,
+      "movement_x": -15,
+      "movement_y": 22
+    },
+    {
+      "original_timestamp": 75504,
+      "relative_timestamp": 10566,
+      "movement_x": -3,
+      "movement_y": 79
+    },
+    {
+      "original_timestamp": 75521,
+      "relative_timestamp": 10583,
+      "movement_x": 15,
+      "movement_y": 27
+    },
+    {
+      "original_timestamp": 75537,
+      "relative_timestamp": 10599,
+      "movement_x": 22,
+      "movement_y": 24
+    },
+    {
+      "original_timestamp": 75554,
+      "relative_timestamp": 10616,
+      "movement_x": 27,
+      "movement_y": 20
+    },
+    {
+      "original_timestamp": 75571,
+      "relative_timestamp": 10633,
+      "movement_x": 34,
+      "movement_y": 16
+    },
+    {
+      "original_timestamp": 75587,
+      "relative_timestamp": 10649,
+      "movement_x": 36,
+      "movement_y": 7
+    },
+    {
+      "original_timestamp": 75604,
+      "relative_timestamp": 10666,
+      "movement_x": 71,
+      "movement_y": -6
+    },
+    {
+      "original_timestamp": 75621,
+      "relative_timestamp": 10683,
+      "movement_x": 32,
+      "movement_y": -13
+    },
+    {
+      "original_timestamp": 75637,
+      "relative_timestamp": 10699,
+      "movement_x": 55,
+      "movement_y": -53
+    },
+    {
+      "original_timestamp": 75654,
+      "relative_timestamp": 10716,
+      "movement_x": 7,
+      "movement_y": -22
+    },
+    {
+      "original_timestamp": 75671,
+      "relative_timestamp": 10733,
+      "movement_x": 0,
+      "movement_y": -19
+    },
+    {
+      "original_timestamp": 75687,
+      "relative_timestamp": 10749,
+      "movement_x": -5,
+      "movement_y": -23
+    },
+    {
+      "original_timestamp": 75704.00000000001,
+      "relative_timestamp": 10766.000000000015,
+      "movement_x": -13,
+      "movement_y": -27
+    },
+    {
+      "original_timestamp": 75721,
+      "relative_timestamp": 10783,
+      "movement_x": -20,
+      "movement_y": -28
+    },
+    {
+      "original_timestamp": 75737,
+      "relative_timestamp": 10799,
+      "movement_x": -25,
+      "movement_y": -22
+    },
+    {
+      "original_timestamp": 75754,
+      "relative_timestamp": 10816,
+      "movement_x": -58,
+      "movement_y": -26
+    },
+    {
+      "original_timestamp": 75771,
+      "relative_timestamp": 10833,
+      "movement_x": -30,
+      "movement_y": -3
+    },
+    {
+      "original_timestamp": 75787,
+      "relative_timestamp": 10849,
+      "movement_x": -82,
+      "movement_y": 19
+    },
+    {
+      "original_timestamp": 75804,
+      "relative_timestamp": 10866,
+      "movement_x": -17,
+      "movement_y": 13
+    },
+    {
+      "original_timestamp": 75821,
+      "relative_timestamp": 10883,
+      "movement_x": -13,
+      "movement_y": 17
+    },
+    {
+      "original_timestamp": 75838.00000000001,
+      "relative_timestamp": 10900.000000000015,
+      "movement_x": -8,
+      "movement_y": 17
+    },
+    {
+      "original_timestamp": 75854,
+      "relative_timestamp": 10916,
+      "movement_x": -2,
+      "movement_y": 19
+    },
+    {
+      "original_timestamp": 75871,
+      "relative_timestamp": 10933,
+      "movement_x": 4,
+      "movement_y": 21
+    },
+    {
+      "original_timestamp": 75887,
+      "relative_timestamp": 10949,
+      "movement_x": 10,
+      "movement_y": 21
+    },
+    {
+      "original_timestamp": 75904,
+      "relative_timestamp": 10966,
+      "movement_x": 43,
+      "movement_y": 35
+    },
+    {
+      "original_timestamp": 75921,
+      "relative_timestamp": 10983,
+      "movement_x": 30,
+      "movement_y": 11
+    },
+    {
+      "original_timestamp": 75937,
+      "relative_timestamp": 10999,
+      "movement_x": 97,
+      "movement_y": 1
+    },
+    {
+      "original_timestamp": 75954.00000000001,
+      "relative_timestamp": 11016.000000000015,
+      "movement_x": 29,
+      "movement_y": -11
+    },
+    {
+      "original_timestamp": 75971,
+      "relative_timestamp": 11033,
+      "movement_x": 26,
+      "movement_y": -14
+    },
+    {
+      "original_timestamp": 75987,
+      "relative_timestamp": 11049,
+      "movement_x": 17,
+      "movement_y": -18
+    },
+    {
+      "original_timestamp": 76021,
+      "relative_timestamp": 11083,
+      "movement_x": 12,
+      "movement_y": -17
+    },
+    {
+      "original_timestamp": 76037,
+      "relative_timestamp": 11099,
+      "movement_x": 7,
+      "movement_y": -20
+    },
+    {
+      "original_timestamp": 76054,
+      "relative_timestamp": 11116,
+      "movement_x": -32,
+      "movement_y": -82
+    },
+    {
+      "original_timestamp": 76071,
+      "relative_timestamp": 11133,
+      "movement_x": -23,
+      "movement_y": -10
+    },
+    {
+      "original_timestamp": 76087,
+      "relative_timestamp": 11149,
+      "movement_x": -31,
+      "movement_y": -7
+    },
+    {
+      "original_timestamp": 76104,
+      "relative_timestamp": 11166,
+      "movement_x": -34,
+      "movement_y": -4
+    },
+    {
+      "original_timestamp": 76121,
+      "relative_timestamp": 11183,
+      "movement_x": -39,
+      "movement_y": 2
+    },
+    {
+      "original_timestamp": 76138,
+      "relative_timestamp": 11200,
+      "movement_x": -42,
+      "movement_y": 11
+    },
+    {
+      "original_timestamp": 76154,
+      "relative_timestamp": 11216,
+      "movement_x": -41,
+      "movement_y": 19
+    },
+    {
+      "original_timestamp": 76171,
+      "relative_timestamp": 11233,
+      "movement_x": -81,
+      "movement_y": 89
+    },
+    {
+      "original_timestamp": 76187,
+      "relative_timestamp": 11249,
+      "movement_x": -9,
+      "movement_y": 58
+    },
+    {
+      "original_timestamp": 76204.00000000001,
+      "relative_timestamp": 11266.000000000015,
+      "movement_x": 7,
+      "movement_y": 27
+    },
+    {
+      "original_timestamp": 76237,
+      "relative_timestamp": 11299,
+      "movement_x": 14,
+      "movement_y": 19
+    },
+    {
+      "original_timestamp": 76254,
+      "relative_timestamp": 11316,
+      "movement_x": 66,
+      "movement_y": 31
+    },
+    {
+      "original_timestamp": 76287,
+      "relative_timestamp": 11349,
+      "movement_x": 28,
+      "movement_y": 0
+    },
+    {
+      "original_timestamp": 76305,
+      "relative_timestamp": 11367,
+      "movement_x": 27,
+      "movement_y": -5
+    },
+    {
+      "original_timestamp": 76337,
+      "relative_timestamp": 11399,
+      "movement_x": 103,
+      "movement_y": -84
+    },
+    {
+      "original_timestamp": 76354,
+      "relative_timestamp": 11416,
+      "movement_x": 14,
+      "movement_y": -31
+    },
+    {
+      "original_timestamp": 76371,
+      "relative_timestamp": 11433,
+      "movement_x": 9,
+      "movement_y": -37
+    },
+    {
+      "original_timestamp": 76387,
+      "relative_timestamp": 11449,
+      "movement_x": 1,
+      "movement_y": -37
+    },
+    {
+      "original_timestamp": 76404,
+      "relative_timestamp": 11466,
+      "movement_x": -27,
+      "movement_y": -49
+    },
+    {
+      "original_timestamp": 76421,
+      "relative_timestamp": 11483,
+      "movement_x": -18,
+      "movement_y": -6
+    },
+    {
+      "original_timestamp": 76437,
+      "relative_timestamp": 11499,
+      "movement_x": -23,
+      "movement_y": -4
+    },
+    {
+      "original_timestamp": 76454.00000000001,
+      "relative_timestamp": 11516.000000000015,
+      "movement_x": -27,
+      "movement_y": 1
+    },
+    {
+      "original_timestamp": 76471,
+      "relative_timestamp": 11533,
+      "movement_x": -31,
+      "movement_y": 9
+    },
+    {
+      "original_timestamp": 76487,
+      "relative_timestamp": 11549,
+      "movement_x": -35,
+      "movement_y": 16
+    },
+    {
+      "original_timestamp": 76504,
+      "relative_timestamp": 11566,
+      "movement_x": -62,
+      "movement_y": 54
+    },
+    {
+      "original_timestamp": 76521,
+      "relative_timestamp": 11583,
+      "movement_x": -31,
+      "movement_y": 84
+    },
+    {
+      "original_timestamp": 76537,
+      "relative_timestamp": 11599,
+      "movement_x": 5,
+      "movement_y": 25
+    },
+    {
+      "original_timestamp": 76554,
+      "relative_timestamp": 11616,
+      "movement_x": 13,
+      "movement_y": 19
+    },
+    {
+      "original_timestamp": 76571,
+      "relative_timestamp": 11633,
+      "movement_x": 17,
+      "movement_y": 15
+    },
+    {
+      "original_timestamp": 76588.00000000001,
+      "relative_timestamp": 11650.000000000015,
+      "movement_x": 20,
+      "movement_y": 9
+    },
+    {
+      "original_timestamp": 76604,
+      "relative_timestamp": 11666,
+      "movement_x": 25,
+      "movement_y": 6
+    },
+    {
+      "original_timestamp": 76621,
+      "relative_timestamp": 11683,
+      "movement_x": 25,
+      "movement_y": 0
+    },
+    {
+      "original_timestamp": 76637,
+      "relative_timestamp": 11699,
+      "movement_x": 54,
+      "movement_y": -18
+    },
+    {
+      "original_timestamp": 76654,
+      "relative_timestamp": 11716,
+      "movement_x": 22,
+      "movement_y": -16
+    },
+    {
+      "original_timestamp": 76671,
+      "relative_timestamp": 11733,
+      "movement_x": 37,
+      "movement_y": -53
+    },
+    {
+      "original_timestamp": 76687,
+      "relative_timestamp": 11749,
+      "movement_x": 2,
+      "movement_y": -19
+    },
+    {
+      "original_timestamp": 76704.00000000001,
+      "relative_timestamp": 11766.000000000015,
+      "movement_x": -2,
+      "movement_y": -23
+    },
+    {
+      "original_timestamp": 76738,
+      "relative_timestamp": 11800,
+      "movement_x": -8,
+      "movement_y": -26
+    },
+    {
+      "original_timestamp": 76754,
+      "relative_timestamp": 11816,
+      "movement_x": -13,
+      "movement_y": -21
+    },
+    {
+      "original_timestamp": 76771,
+      "relative_timestamp": 11833,
+      "movement_x": -64,
+      "movement_y": -30
+    },
+    {
+      "original_timestamp": 76787,
+      "relative_timestamp": 11849,
+      "movement_x": -29,
+      "movement_y": 2
+    },
+    {
+      "original_timestamp": 76804,
+      "relative_timestamp": 11866,
+      "movement_x": -70,
+      "movement_y": 28
+    },
+    {
+      "original_timestamp": 76821,
+      "relative_timestamp": 11883,
+      "movement_x": -32,
+      "movement_y": 23
+    },
+    {
+      "original_timestamp": 76837,
+      "relative_timestamp": 11899,
+      "movement_x": -27,
+      "movement_y": 37
+    },
+    {
+      "original_timestamp": 76871,
+      "relative_timestamp": 11933,
+      "movement_x": -15,
+      "movement_y": 39
+    },
+    {
+      "original_timestamp": 76887,
+      "relative_timestamp": 11949,
+      "movement_x": 25,
+      "movement_y": 74
+    },
+    {
+      "original_timestamp": 76903,
+      "relative_timestamp": 11965,
+      "movement_x": 26,
+      "movement_y": 17
+    },
+    {
+      "original_timestamp": 76921,
+      "relative_timestamp": 11983,
+      "movement_x": 32,
+      "movement_y": 13
+    },
+    {
+      "original_timestamp": 76937,
+      "relative_timestamp": 11999,
+      "movement_x": 78,
+      "movement_y": 5
+    },
+    {
+      "original_timestamp": 76953,
+      "relative_timestamp": 12015,
+      "movement_x": 42,
+      "movement_y": -8
+    },
+    {
+      "original_timestamp": 76970,
+      "relative_timestamp": 12032,
+      "movement_x": 40,
+      "movement_y": -12
+    },
+    {
+      "original_timestamp": 76987,
+      "relative_timestamp": 12049,
+      "movement_x": 35,
+      "movement_y": -18
+    },
+    {
+      "original_timestamp": 77004,
+      "relative_timestamp": 12066,
+      "movement_x": 27,
+      "movement_y": -18
+    },
+    {
+      "original_timestamp": 77021,
+      "relative_timestamp": 12083,
+      "movement_x": 20,
+      "movement_y": -19
+    },
+    {
+      "original_timestamp": 77037,
+      "relative_timestamp": 12099,
+      "movement_x": 14,
+      "movement_y": -47
+    },
+    {
+      "original_timestamp": 77054,
+      "relative_timestamp": 12116,
+      "movement_x": -8,
+      "movement_y": -19
+    },
+    {
+      "original_timestamp": 77071,
+      "relative_timestamp": 12133,
+      "movement_x": -19,
+      "movement_y": -21
+    },
+    {
+      "original_timestamp": 77087,
+      "relative_timestamp": 12149,
+      "movement_x": -29,
+      "movement_y": -19
+    },
+    {
+      "original_timestamp": 77104,
+      "relative_timestamp": 12166,
+      "movement_x": -79,
+      "movement_y": -25
+    },
+    {
+      "original_timestamp": 77121,
+      "relative_timestamp": 12183,
+      "movement_x": -48,
+      "movement_y": -1
+    },
+    {
+      "original_timestamp": 77137,
+      "relative_timestamp": 12199,
+      "movement_x": -47,
+      "movement_y": 4
+    },
+    {
+      "original_timestamp": 77154,
+      "relative_timestamp": 12216,
+      "movement_x": -44,
+      "movement_y": 11
+    },
+    {
+      "original_timestamp": 77171,
+      "relative_timestamp": 12233,
+      "movement_x": -34,
+      "movement_y": 19
+    },
+    {
+      "original_timestamp": 77187,
+      "relative_timestamp": 12249,
+      "movement_x": -53,
+      "movement_y": 67
+    },
+    {
+      "original_timestamp": 77204.00000000001,
+      "relative_timestamp": 12266.000000000015,
+      "movement_x": -1,
+      "movement_y": 24
+    },
+    {
+      "original_timestamp": 77221,
+      "relative_timestamp": 12283,
+      "movement_x": 6,
+      "movement_y": 23
+    },
+    {
+      "original_timestamp": 77237,
+      "relative_timestamp": 12299,
+      "movement_x": 14,
+      "movement_y": 23
+    },
+    {
+      "original_timestamp": 77254,
+      "relative_timestamp": 12316,
+      "movement_x": 48,
+      "movement_y": 34
+    },
+    {
+      "original_timestamp": 77271,
+      "relative_timestamp": 12333,
+      "movement_x": 30,
+      "movement_y": 10
+    },
+    {
+      "original_timestamp": 77287,
+      "relative_timestamp": 12349,
+      "movement_x": 31,
+      "movement_y": 4
+    },
+    {
+      "original_timestamp": 77304,
+      "relative_timestamp": 12366,
+      "movement_x": 32,
+      "movement_y": -2
+    },
+    {
+      "original_timestamp": 77321,
+      "relative_timestamp": 12383,
+      "movement_x": 29,
+      "movement_y": -8
+    },
+    {
+      "original_timestamp": 77337,
+      "relative_timestamp": 12399,
+      "movement_x": 68,
+      "movement_y": -43
+    },
+    {
+      "original_timestamp": 77355,
+      "relative_timestamp": 12417,
+      "movement_x": 12,
+      "movement_y": -19
+    },
+    {
+      "original_timestamp": 77372,
+      "relative_timestamp": 12434,
+      "movement_x": 7,
+      "movement_y": -18
+    },
+    {
+      "original_timestamp": 77387,
+      "relative_timestamp": 12449,
+      "movement_x": 0,
+      "movement_y": -24
+    },
+    {
+      "original_timestamp": 77404,
+      "relative_timestamp": 12466,
+      "movement_x": -19,
+      "movement_y": -58
+    },
+    {
+      "original_timestamp": 77421,
+      "relative_timestamp": 12483,
+      "movement_x": -16,
+      "movement_y": -19
+    },
+    {
+      "original_timestamp": 77438,
+      "relative_timestamp": 12500,
+      "movement_x": -18,
+      "movement_y": -12
+    },
+    {
+      "original_timestamp": 77454.00000000001,
+      "relative_timestamp": 12516.000000000015,
+      "movement_x": -19,
+      "movement_y": -7
+    },
+    {
+      "original_timestamp": 77471,
+      "relative_timestamp": 12533,
+      "movement_x": -50,
+      "movement_y": -7
+    },
+    {
+      "original_timestamp": 77487,
+      "relative_timestamp": 12549,
+      "movement_x": -14,
+      "movement_y": 0
+    },
+    {
+      "original_timestamp": 77505,
+      "relative_timestamp": 12567,
+      "movement_x": -14,
+      "movement_y": 5
+    },
+    {
+      "original_timestamp": 77521,
+      "relative_timestamp": 12583,
+      "movement_x": -12,
+      "movement_y": 11
+    },
+    {
+      "original_timestamp": 77537,
+      "relative_timestamp": 12599,
+      "movement_x": -9,
+      "movement_y": 17
+    },
+    {
+      "original_timestamp": 77554,
+      "relative_timestamp": 12616,
+      "movement_x": -5,
+      "movement_y": 37
+    },
+    {
+      "original_timestamp": 77571,
+      "relative_timestamp": 12633,
+      "movement_x": 4,
+      "movement_y": 17
+    },
+    {
+      "original_timestamp": 77587,
+      "relative_timestamp": 12649,
+      "movement_x": 10,
+      "movement_y": 15
+    },
+    {
+      "original_timestamp": 77604,
+      "relative_timestamp": 12666,
+      "movement_x": 15,
+      "movement_y": 13
+    },
+    {
+      "original_timestamp": 77621,
+      "relative_timestamp": 12683,
+      "movement_x": 41,
+      "movement_y": 17
+    },
+    {
+      "original_timestamp": 77637,
+      "relative_timestamp": 12699,
+      "movement_x": 25,
+      "movement_y": 1
+    },
+    {
+      "original_timestamp": 77654,
+      "relative_timestamp": 12716,
+      "movement_x": 28,
+      "movement_y": -1
+    },
+    {
+      "original_timestamp": 77671,
+      "relative_timestamp": 12733,
+      "movement_x": 28,
+      "movement_y": -6
+    },
+    {
+      "original_timestamp": 77688,
+      "relative_timestamp": 12750,
+      "movement_x": 62,
+      "movement_y": -41
+    },
+    {
+      "original_timestamp": 77704.00000000001,
+      "relative_timestamp": 12766.000000000015,
+      "movement_x": 16,
+      "movement_y": -43
+    },
+    {
+      "original_timestamp": 77721,
+      "relative_timestamp": 12783,
+      "movement_x": 0,
+      "movement_y": -19
+    },
+    {
+      "original_timestamp": 77738,
+      "relative_timestamp": 12800,
+      "movement_x": -5,
+      "movement_y": -11
+    },
+    {
+      "original_timestamp": 77754,
+      "relative_timestamp": 12816,
+      "movement_x": -9,
+      "movement_y": -7
+    },
+    {
+      "original_timestamp": 77771,
+      "relative_timestamp": 12833,
+      "movement_x": -16,
+      "movement_y": -4
+    },
+    {
+      "original_timestamp": 77788,
+      "relative_timestamp": 12850,
+      "movement_x": -23,
+      "movement_y": -4
+    },
+    {
+      "original_timestamp": 77804,
+      "relative_timestamp": 12866,
+      "movement_x": -32,
+      "movement_y": -1
+    },
+    {
+      "original_timestamp": 77821,
+      "relative_timestamp": 12883,
+      "movement_x": -36,
+      "movement_y": -1
+    },
+    {
+      "original_timestamp": 77837,
+      "relative_timestamp": 12899,
+      "movement_x": -75,
+      "movement_y": 18
+    },
+    {
+      "original_timestamp": 77854,
+      "relative_timestamp": 12916,
+      "movement_x": -74,
+      "movement_y": 71
+    },
+    {
+      "original_timestamp": 77871,
+      "relative_timestamp": 12933,
+      "movement_x": -7,
+      "movement_y": 25
+    },
+    {
+      "original_timestamp": 77887,
+      "relative_timestamp": 12949,
+      "movement_x": 0,
+      "movement_y": 26
+    },
+    {
+      "original_timestamp": 77904,
+      "relative_timestamp": 12966,
+      "movement_x": 9,
+      "movement_y": 22
+    },
+    {
+      "original_timestamp": 77921,
+      "relative_timestamp": 12983,
+      "movement_x": 17,
+      "movement_y": 19
+    },
+    {
+      "original_timestamp": 77938,
+      "relative_timestamp": 13000,
+      "movement_x": 21,
+      "movement_y": 16
+    },
+    {
+      "original_timestamp": 77955,
+      "relative_timestamp": 13017,
+      "movement_x": 27,
+      "movement_y": 10
+    },
+    {
+      "original_timestamp": 77971,
+      "relative_timestamp": 13033,
+      "movement_x": 28,
+      "movement_y": 6
+    },
+    {
+      "original_timestamp": 77988,
+      "relative_timestamp": 13050,
+      "movement_x": 30,
+      "movement_y": -1
+    },
+    {
+      "original_timestamp": 78004,
+      "relative_timestamp": 13066,
+      "movement_x": 73,
+      "movement_y": -29
+    },
+    {
+      "original_timestamp": 78021,
+      "relative_timestamp": 13083,
+      "movement_x": 14,
+      "movement_y": -16
+    },
+    {
+      "original_timestamp": 78037,
+      "relative_timestamp": 13099,
+      "movement_x": 9,
+      "movement_y": -16
+    },
+    {
+      "original_timestamp": 78054,
+      "relative_timestamp": 13116,
+      "movement_x": -6,
+      "movement_y": -64
+    },
+    {
+      "original_timestamp": 78071,
+      "relative_timestamp": 13133,
+      "movement_x": -13,
+      "movement_y": -22
+    },
+    {
+      "original_timestamp": 78087,
+      "relative_timestamp": 13149,
+      "movement_x": -18,
+      "movement_y": -17
+    },
+    {
+      "original_timestamp": 78104,
+      "relative_timestamp": 13166,
+      "movement_x": -20,
+      "movement_y": -10
+    },
+    {
+      "original_timestamp": 78121,
+      "relative_timestamp": 13183,
+      "movement_x": -25,
+      "movement_y": -7
+    },
+    {
+      "original_timestamp": 78137,
+      "relative_timestamp": 13199,
+      "movement_x": -56,
+      "movement_y": -4
+    },
+    {
+      "original_timestamp": 78154,
+      "relative_timestamp": 13216,
+      "movement_x": -28,
+      "movement_y": 7
+    },
+    {
+      "original_timestamp": 78171,
+      "relative_timestamp": 13233,
+      "movement_x": -27,
+      "movement_y": 11
+    },
+    {
+      "original_timestamp": 78221,
+      "relative_timestamp": 13283,
+      "movement_x": -21,
+      "movement_y": 17
+    },
+    {
+      "original_timestamp": 78237,
+      "relative_timestamp": 13299,
+      "movement_x": -27,
+      "movement_y": 92
+    },
+    {
+      "original_timestamp": 78254,
+      "relative_timestamp": 13316,
+      "movement_x": 29,
+      "movement_y": 49
+    },
+    {
+      "original_timestamp": 78271,
+      "relative_timestamp": 13333,
+      "movement_x": 25,
+      "movement_y": 20
+    },
+    {
+      "original_timestamp": 78288,
+      "relative_timestamp": 13350,
+      "movement_x": 28,
+      "movement_y": 15
+    },
+    {
+      "original_timestamp": 78304,
+      "relative_timestamp": 13366,
+      "movement_x": 64,
+      "movement_y": 13
+    },
+    {
+      "original_timestamp": 78321,
+      "relative_timestamp": 13383,
+      "movement_x": 34,
+      "movement_y": -1
+    },
+    {
+      "original_timestamp": 78337,
+      "relative_timestamp": 13399,
+      "movement_x": 33,
+      "movement_y": -9
+    },
+    {
+      "original_timestamp": 78354,
+      "relative_timestamp": 13416,
+      "movement_x": 64,
+      "movement_y": -37
+    },
+    {
+      "original_timestamp": 78370,
+      "relative_timestamp": 13432,
+      "movement_x": 10,
+      "movement_y": -13
+    },
+    {
+      "original_timestamp": 78387,
+      "relative_timestamp": 13449,
+      "movement_x": 5,
+      "movement_y": -13
+    },
+    {
+      "original_timestamp": 78404,
+      "relative_timestamp": 13466,
+      "movement_x": 0,
+      "movement_y": -13
+    },
+    {
+      "original_timestamp": 78421,
+      "relative_timestamp": 13483,
+      "movement_x": -3,
+      "movement_y": -15
+    },
+    {
+      "original_timestamp": 78437,
+      "relative_timestamp": 13499,
+      "movement_x": -10,
+      "movement_y": -19
+    },
+    {
+      "original_timestamp": 78455,
+      "relative_timestamp": 13517,
+      "movement_x": -39,
+      "movement_y": -40
+    },
+    {
+      "original_timestamp": 78471,
+      "relative_timestamp": 13533,
+      "movement_x": -26,
+      "movement_y": -15
+    },
+    {
+      "original_timestamp": 78487,
+      "relative_timestamp": 13549,
+      "movement_x": -28,
+      "movement_y": -8
+    },
+    {
+      "original_timestamp": 78504,
+      "relative_timestamp": 13566,
+      "movement_x": -85,
+      "movement_y": 6
+    },
+    {
+      "original_timestamp": 78521,
+      "relative_timestamp": 13583,
+      "movement_x": -20,
+      "movement_y": 10
+    },
+    {
+      "original_timestamp": 78554,
+      "relative_timestamp": 13616,
+      "movement_x": -14,
+      "movement_y": 11
+    },
+    {
+      "original_timestamp": 78587,
+      "relative_timestamp": 13649,
+      "movement_x": -6,
+      "movement_y": 10
+    },
+    {
+      "original_timestamp": 78604,
+      "relative_timestamp": 13666,
+      "movement_x": 51,
+      "movement_y": 77
+    },
+    {
+      "original_timestamp": 78621,
+      "relative_timestamp": 13683,
+      "movement_x": 30,
+      "movement_y": 15
+    },
+    {
+      "original_timestamp": 78637,
+      "relative_timestamp": 13699,
+      "movement_x": 32,
+      "movement_y": 10
+    },
+    {
+      "original_timestamp": 78654,
+      "relative_timestamp": 13716,
+      "movement_x": 35,
+      "movement_y": 5
+    },
+    {
+      "original_timestamp": 78671,
+      "relative_timestamp": 13733,
+      "movement_x": 33,
+      "movement_y": 0
+    },
+    {
+      "original_timestamp": 78688,
+      "relative_timestamp": 13750,
+      "movement_x": 29,
+      "movement_y": -6
+    },
+    {
+      "original_timestamp": 78705,
+      "relative_timestamp": 13767,
+      "movement_x": 23,
+      "movement_y": -10
+    },
+    {
+      "original_timestamp": 78721,
+      "relative_timestamp": 13783,
+      "movement_x": 36,
+      "movement_y": -44
+    },
+    {
+      "original_timestamp": 78738,
+      "relative_timestamp": 13800,
+      "movement_x": 2,
+      "movement_y": -44
+    },
+    {
+      "original_timestamp": 78754,
+      "relative_timestamp": 13816,
+      "movement_x": -9,
+      "movement_y": -22
+    },
+    {
+      "original_timestamp": 78771,
+      "relative_timestamp": 13833,
+      "movement_x": -14,
+      "movement_y": -17
+    },
+    {
+      "original_timestamp": 78788,
+      "relative_timestamp": 13850,
+      "movement_x": -17,
+      "movement_y": -9
+    },
+    {
+      "original_timestamp": 78804,
+      "relative_timestamp": 13866,
+      "movement_x": -23,
+      "movement_y": -7
+    },
+    {
+      "original_timestamp": 78821,
+      "relative_timestamp": 13883,
+      "movement_x": -27,
+      "movement_y": -4
+    },
+    {
+      "original_timestamp": 78837,
+      "relative_timestamp": 13899,
+      "movement_x": -30,
+      "movement_y": -1
+    },
+    {
+      "original_timestamp": 78854,
+      "relative_timestamp": 13916,
+      "movement_x": -30,
+      "movement_y": 3
+    },
+    {
+      "original_timestamp": 78888,
+      "relative_timestamp": 13950,
+      "movement_x": -80,
+      "movement_y": 44
+    },
+    {
+      "original_timestamp": 78904,
+      "relative_timestamp": 13966,
+      "movement_x": -20,
+      "movement_y": 37
+    },
+    {
+      "original_timestamp": 78921,
+      "relative_timestamp": 13983,
+      "movement_x": 0,
+      "movement_y": 15
+    },
+    {
+      "original_timestamp": 78937,
+      "relative_timestamp": 13999,
+      "movement_x": 43,
+      "movement_y": 42
+    },
+    {
+      "original_timestamp": 78954.00000000001,
+      "relative_timestamp": 14016.000000000015,
+      "movement_x": 30,
+      "movement_y": 10
+    },
+    {
+      "original_timestamp": 78971,
+      "relative_timestamp": 14033,
+      "movement_x": 35,
+      "movement_y": 1
+    },
+    {
+      "original_timestamp": 78987,
+      "relative_timestamp": 14049,
+      "movement_x": 39,
+      "movement_y": -4
+    },
+    {
+      "original_timestamp": 79004,
+      "relative_timestamp": 14066,
+      "movement_x": 38,
+      "movement_y": -10
+    },
+    {
+      "original_timestamp": 79021,
+      "relative_timestamp": 14083,
+      "movement_x": 34,
+      "movement_y": -15
+    },
+    {
+      "original_timestamp": 79037,
+      "relative_timestamp": 14099,
+      "movement_x": 50,
+      "movement_y": -38
+    },
+    {
+      "original_timestamp": 79054,
+      "relative_timestamp": 14116,
+      "movement_x": 12,
+      "movement_y": -22
+    },
+    {
+      "original_timestamp": 79071,
+      "relative_timestamp": 14133,
+      "movement_x": 7,
+      "movement_y": -22
+    },
+    {
+      "original_timestamp": 79104,
+      "relative_timestamp": 14166,
+      "movement_x": -42,
+      "movement_y": -43
+    },
+    {
+      "original_timestamp": 79121,
+      "relative_timestamp": 14183,
+      "movement_x": -34,
+      "movement_y": -3
+    },
+    {
+      "original_timestamp": 79138,
+      "relative_timestamp": 14200,
+      "movement_x": -44,
+      "movement_y": -2
+    },
+    {
+      "original_timestamp": 79154,
+      "relative_timestamp": 14216,
+      "movement_x": -47,
+      "movement_y": 4
+    },
+    {
+      "original_timestamp": 79171,
+      "relative_timestamp": 14233,
+      "movement_x": -45,
+      "movement_y": 12
+    },
+    {
+      "original_timestamp": 79187,
+      "relative_timestamp": 14249,
+      "movement_x": -38,
+      "movement_y": 17
+    },
+    {
+      "original_timestamp": 79204.00000000001,
+      "relative_timestamp": 14266.000000000015,
+      "movement_x": -44,
+      "movement_y": 41
+    },
+    {
+      "original_timestamp": 79221,
+      "relative_timestamp": 14283,
+      "movement_x": -8,
+      "movement_y": 22
+    },
+    {
+      "original_timestamp": 79237,
+      "relative_timestamp": 14299,
+      "movement_x": 0,
+      "movement_y": 22
+    },
+    {
+      "original_timestamp": 79254,
+      "relative_timestamp": 14316,
+      "movement_x": 22,
+      "movement_y": 38
+    },
+    {
+      "original_timestamp": 79271,
+      "relative_timestamp": 14333,
+      "movement_x": 20,
+      "movement_y": 15
+    },
+    {
+      "original_timestamp": 79287,
+      "relative_timestamp": 14349,
+      "movement_x": 24,
+      "movement_y": 11
+    },
+    {
+      "original_timestamp": 79304,
+      "relative_timestamp": 14366,
+      "movement_x": 28,
+      "movement_y": 7
+    },
+    {
+      "original_timestamp": 79321,
+      "relative_timestamp": 14383,
+      "movement_x": 80,
+      "movement_y": -5
+    },
+    {
+      "original_timestamp": 79337,
+      "relative_timestamp": 14399,
+      "movement_x": 23,
+      "movement_y": -11
+    },
+    {
+      "original_timestamp": 79354,
+      "relative_timestamp": 14416,
+      "movement_x": 29,
+      "movement_y": -28
+    },
+    {
+      "original_timestamp": 79371,
+      "relative_timestamp": 14433,
+      "movement_x": 7,
+      "movement_y": -15
+    },
+    {
+      "original_timestamp": 79388,
+      "relative_timestamp": 14450,
+      "movement_x": 2,
+      "movement_y": -16
+    },
+    {
+      "original_timestamp": 79404,
+      "relative_timestamp": 14466,
+      "movement_x": -3,
+      "movement_y": -23
+    },
+    {
+      "original_timestamp": 79421,
+      "relative_timestamp": 14483,
+      "movement_x": -9,
+      "movement_y": -25
+    },
+    {
+      "original_timestamp": 79437,
+      "relative_timestamp": 14499,
+      "movement_x": -17,
+      "movement_y": -20
+    },
+    {
+      "original_timestamp": 79454.00000000001,
+      "relative_timestamp": 14516.000000000015,
+      "movement_x": -20,
+      "movement_y": -12
+    },
+    {
+      "original_timestamp": 79471,
+      "relative_timestamp": 14533,
+      "movement_x": -82,
+      "movement_y": -17
+    },
+    {
+      "original_timestamp": 79487,
+      "relative_timestamp": 14549,
+      "movement_x": -27,
+      "movement_y": -1
+    },
+    {
+      "original_timestamp": 79504,
+      "relative_timestamp": 14566,
+      "movement_x": -45,
+      "movement_y": 8
+    },
+    {
+      "original_timestamp": 79521,
+      "relative_timestamp": 14583,
+      "movement_x": -17,
+      "movement_y": 13
+    },
+    {
+      "original_timestamp": 79537,
+      "relative_timestamp": 14599,
+      "movement_x": -11,
+      "movement_y": 18
+    },
+    {
+      "original_timestamp": 79554,
+      "relative_timestamp": 14616,
+      "movement_x": -6,
+      "movement_y": 21
+    },
+    {
+      "original_timestamp": 79571,
+      "relative_timestamp": 14633,
+      "movement_x": 0,
+      "movement_y": 25
+    },
+    {
+      "original_timestamp": 79588.00000000001,
+      "relative_timestamp": 14650.000000000015,
+      "movement_x": 6,
+      "movement_y": 24
+    },
+    {
+      "original_timestamp": 79604,
+      "relative_timestamp": 14666,
+      "movement_x": 34,
+      "movement_y": 48
+    },
+    {
+      "original_timestamp": 79621,
+      "relative_timestamp": 14683,
+      "movement_x": 25,
+      "movement_y": 18
+    },
+    {
+      "original_timestamp": 79638,
+      "relative_timestamp": 14700,
+      "movement_x": 30,
+      "movement_y": 12
+    },
+    {
+      "original_timestamp": 79654,
+      "relative_timestamp": 14716,
+      "movement_x": 32,
+      "movement_y": 7
+    },
+    {
+      "original_timestamp": 79671,
+      "relative_timestamp": 14733,
+      "movement_x": 83,
+      "movement_y": -11
+    },
+    {
+      "original_timestamp": 79687,
+      "relative_timestamp": 14749,
+      "movement_x": 20,
+      "movement_y": -12
+    },
+    {
+      "original_timestamp": 79704.00000000001,
+      "relative_timestamp": 14766.000000000015,
+      "movement_x": 15,
+      "movement_y": -16
+    },
+    {
+      "original_timestamp": 79721,
+      "relative_timestamp": 14783,
+      "movement_x": 9,
+      "movement_y": -17
+    },
+    {
+      "original_timestamp": 79738,
+      "relative_timestamp": 14800,
+      "movement_x": -2,
+      "movement_y": -73
+    },
+    {
+      "original_timestamp": 79754,
+      "relative_timestamp": 14816,
+      "movement_x": -13,
+      "movement_y": -22
+    },
+    {
+      "original_timestamp": 79771,
+      "relative_timestamp": 14833,
+      "movement_x": -19,
+      "movement_y": -15
+    },
+    {
+      "original_timestamp": 79788,
+      "relative_timestamp": 14850,
+      "movement_x": -22,
+      "movement_y": -9
+    },
+    {
+      "original_timestamp": 79804,
+      "relative_timestamp": 14866,
+      "movement_x": -57,
+      "movement_y": -4
+    },
+    {
+      "original_timestamp": 79821,
+      "relative_timestamp": 14883,
+      "movement_x": -32,
+      "movement_y": 6
+    },
+    {
+      "original_timestamp": 79837,
+      "relative_timestamp": 14899,
+      "movement_x": -30,
+      "movement_y": 11
+    },
+    {
+      "original_timestamp": 79871,
+      "relative_timestamp": 14933,
+      "movement_x": -27,
+      "movement_y": 15
+    },
+    {
+      "original_timestamp": 79887,
+      "relative_timestamp": 14949,
+      "movement_x": -18,
+      "movement_y": 18
+    },
+    {
+      "original_timestamp": 79904,
+      "relative_timestamp": 14966,
+      "movement_x": -3,
+      "movement_y": 69
+    },
+    {
+      "original_timestamp": 79921,
+      "relative_timestamp": 14983,
+      "movement_x": 18,
+      "movement_y": 17
+    },
+    {
+      "original_timestamp": 79937,
+      "relative_timestamp": 14999,
+      "movement_x": 57,
+      "movement_y": 23
+    },
+    {
+      "original_timestamp": 79954.00000000001,
+      "relative_timestamp": 15016.000000000015,
+      "movement_x": 36,
+      "movement_y": 5
+    },
+    {
+      "original_timestamp": 79971,
+      "relative_timestamp": 15033,
+      "movement_x": 36,
+      "movement_y": -1
+    },
+    {
+      "original_timestamp": 79987,
+      "relative_timestamp": 15049,
+      "movement_x": 34,
+      "movement_y": -9
+    },
+    {
+      "original_timestamp": 80004,
+      "relative_timestamp": 15066,
+      "movement_x": 28,
+      "movement_y": -13
+    },
+    {
+      "original_timestamp": 80021,
+      "relative_timestamp": 15083,
+      "movement_x": 22,
+      "movement_y": -16
+    },
+    {
+      "original_timestamp": 80037,
+      "relative_timestamp": 15099,
+      "movement_x": 27,
+      "movement_y": -58
+    },
+    {
+      "original_timestamp": 80054,
+      "relative_timestamp": 15116,
+      "movement_x": -3,
+      "movement_y": -25
+    },
+    {
+      "original_timestamp": 80071,
+      "relative_timestamp": 15133,
+      "movement_x": -25,
+      "movement_y": -32
+    },
+    {
+      "original_timestamp": 80104,
+      "relative_timestamp": 15166,
+      "movement_x": -56,
+      "movement_y": -15
+    },
+    {
+      "original_timestamp": 80121,
+      "relative_timestamp": 15183,
+      "movement_x": -37,
+      "movement_y": -4
+    },
+    {
+      "original_timestamp": 80137,
+      "relative_timestamp": 15199,
+      "movement_x": -41,
+      "movement_y": -1
+    },
+    {
+      "original_timestamp": 80154,
+      "relative_timestamp": 15216,
+      "movement_x": -39,
+      "movement_y": 6
+    },
+    {
+      "original_timestamp": 80171,
+      "relative_timestamp": 15233,
+      "movement_x": -41,
+      "movement_y": 17
+    },
+    {
+      "original_timestamp": 80188,
+      "relative_timestamp": 15250,
+      "movement_x": -82,
+      "movement_y": 88
+    },
+    {
+      "original_timestamp": 80204.00000000001,
+      "relative_timestamp": 15266.000000000015,
+      "movement_x": -8,
+      "movement_y": 33
+    },
+    {
+      "original_timestamp": 80221,
+      "relative_timestamp": 15283,
+      "movement_x": 1,
+      "movement_y": 27
+    },
+    {
+      "original_timestamp": 80237,
+      "relative_timestamp": 15299,
+      "movement_x": 9,
+      "movement_y": 22
+    },
+    {
+      "original_timestamp": 80254,
+      "relative_timestamp": 15316,
+      "movement_x": 41,
+      "movement_y": 34
+    },
+    {
+      "original_timestamp": 80271,
+      "relative_timestamp": 15333,
+      "movement_x": 30,
+      "movement_y": 11
+    },
+    {
+      "original_timestamp": 80287,
+      "relative_timestamp": 15349,
+      "movement_x": 37,
+      "movement_y": 5
+    },
+    {
+      "original_timestamp": 80304,
+      "relative_timestamp": 15366,
+      "movement_x": 42,
+      "movement_y": -1
+    },
+    {
+      "original_timestamp": 80321,
+      "relative_timestamp": 15383,
+      "movement_x": 41,
+      "movement_y": -9
+    },
+    {
+      "original_timestamp": 80337,
+      "relative_timestamp": 15399,
+      "movement_x": 41,
+      "movement_y": -14
+    },
+    {
+      "original_timestamp": 80354,
+      "relative_timestamp": 15416,
+      "movement_x": 62,
+      "movement_y": -39
+    },
+    {
+      "original_timestamp": 80371,
+      "relative_timestamp": 15433,
+      "movement_x": 17,
+      "movement_y": -20
+    },
+    {
+      "original_timestamp": 80387,
+      "relative_timestamp": 15449,
+      "movement_x": 9,
+      "movement_y": -30
+    },
+    {
+      "original_timestamp": 80421,
+      "relative_timestamp": 15483,
+      "movement_x": -75,
+      "movement_y": -74
+    },
+    {
+      "original_timestamp": 80437,
+      "relative_timestamp": 15499,
+      "movement_x": -44,
+      "movement_y": -11
+    },
+    {
+      "original_timestamp": 80454.00000000001,
+      "relative_timestamp": 15516.000000000015,
+      "movement_x": -46,
+      "movement_y": -4
+    },
+    {
+      "original_timestamp": 80471,
+      "relative_timestamp": 15533,
+      "movement_x": -44,
+      "movement_y": 3
+    },
+    {
+      "original_timestamp": 80487,
+      "relative_timestamp": 15549,
+      "movement_x": -43,
+      "movement_y": 11
+    },
+    {
+      "original_timestamp": 80504,
+      "relative_timestamp": 15566,
+      "movement_x": -31,
+      "movement_y": 15
+    },
+    {
+      "original_timestamp": 80521,
+      "relative_timestamp": 15583,
+      "movement_x": -24,
+      "movement_y": 20
+    },
+    {
+      "original_timestamp": 80538,
+      "relative_timestamp": 15600,
+      "movement_x": -22,
+      "movement_y": 63
+    },
+    {
+      "original_timestamp": 80554,
+      "relative_timestamp": 15616,
+      "movement_x": 21,
+      "movement_y": 36
+    },
+    {
+      "original_timestamp": 80571,
+      "relative_timestamp": 15633,
+      "movement_x": 22,
+      "movement_y": 16
+    },
+    {
+      "original_timestamp": 80604,
+      "relative_timestamp": 15666,
+      "movement_x": 29,
+      "movement_y": 13
+    },
+    {
+      "original_timestamp": 80621,
+      "relative_timestamp": 15683,
+      "movement_x": 29,
+      "movement_y": 7
+    },
+    {
+      "original_timestamp": 80638,
+      "relative_timestamp": 15700,
+      "movement_x": 100,
+      "movement_y": -14
+    },
+    {
+      "original_timestamp": 80654,
+      "relative_timestamp": 15716,
+      "movement_x": 29,
+      "movement_y": -15
+    },
+    {
+      "original_timestamp": 80671,
+      "relative_timestamp": 15733,
+      "movement_x": 21,
+      "movement_y": -18
+    },
+    {
+      "original_timestamp": 80688,
+      "relative_timestamp": 15750,
+      "movement_x": 16,
+      "movement_y": -19
+    },
+    {
+      "original_timestamp": 80704.00000000001,
+      "relative_timestamp": 15766.000000000015,
+      "movement_x": 12,
+      "movement_y": -38
+    },
+    {
+      "original_timestamp": 80738,
+      "relative_timestamp": 15800,
+      "movement_x": -3,
+      "movement_y": -23
+    },
+    {
+      "original_timestamp": 80754,
+      "relative_timestamp": 15816,
+      "movement_x": -76,
+      "movement_y": -64
+    },
+    {
+      "original_timestamp": 80771,
+      "relative_timestamp": 15833,
+      "movement_x": -30,
+      "movement_y": 0
+    },
+    {
+      "original_timestamp": 80787,
+      "relative_timestamp": 15849,
+      "movement_x": -34,
+      "movement_y": 5
+    },
+    {
+      "original_timestamp": 80804,
+      "relative_timestamp": 15866,
+      "movement_x": -33,
+      "movement_y": 11
+    },
+    {
+      "original_timestamp": 80821,
+      "relative_timestamp": 15883,
+      "movement_x": -33,
+      "movement_y": 22
+    },
+    {
+      "original_timestamp": 80836,
+      "relative_timestamp": 15898,
+      "movement_x": -30,
+      "movement_y": 28
+    },
+    {
+      "original_timestamp": 80854,
+      "relative_timestamp": 15916,
+      "movement_x": -34,
+      "movement_y": 62
+    },
+    {
+      "original_timestamp": 80871,
+      "relative_timestamp": 15933,
+      "movement_x": -3,
+      "movement_y": 30
+    },
+    {
+      "original_timestamp": 80888,
+      "relative_timestamp": 15950,
+      "movement_x": 3,
+      "movement_y": 27
+    },
+    {
+      "original_timestamp": 80904,
+      "relative_timestamp": 15966,
+      "movement_x": 42,
+      "movement_y": 48
+    },
+    {
+      "original_timestamp": 80921,
+      "relative_timestamp": 15983,
+      "movement_x": 23,
+      "movement_y": 6
+    },
+    {
+      "original_timestamp": 80937,
+      "relative_timestamp": 15999,
+      "movement_x": 25,
+      "movement_y": 1
+    },
+    {
+      "original_timestamp": 80954.00000000001,
+      "relative_timestamp": 16016.000000000015,
+      "movement_x": 28,
+      "movement_y": -4
+    },
+    {
+      "original_timestamp": 80971,
+      "relative_timestamp": 16033,
+      "movement_x": 28,
+      "movement_y": -10
+    },
+    {
+      "original_timestamp": 81004,
+      "relative_timestamp": 16066,
+      "movement_x": 88,
+      "movement_y": -81
+    },
+    {
+      "original_timestamp": 81021,
+      "relative_timestamp": 16083,
+      "movement_x": 8,
+      "movement_y": -24
+    },
+    {
+      "original_timestamp": 81038,
+      "relative_timestamp": 16100,
+      "movement_x": 3,
+      "movement_y": -27
+    },
+    {
+      "original_timestamp": 81054,
+      "relative_timestamp": 16116,
+      "movement_x": -4,
+      "movement_y": -28
+    },
+    {
+      "original_timestamp": 81071,
+      "relative_timestamp": 16133,
+      "movement_x": -11,
+      "movement_y": -24
+    },
+    {
+      "original_timestamp": 81088.00000000001,
+      "relative_timestamp": 16150.000000000015,
+      "movement_x": -16,
+      "movement_y": -16
+    },
+    {
+      "original_timestamp": 81104,
+      "relative_timestamp": 16166,
+      "movement_x": -21,
+      "movement_y": -11
+    },
+    {
+      "original_timestamp": 81121,
+      "relative_timestamp": 16183,
+      "movement_x": -28,
+      "movement_y": -5
+    },
+    {
+      "original_timestamp": 81154,
+      "relative_timestamp": 16216,
+      "movement_x": -112,
+      "movement_y": 37
+    },
+    {
+      "original_timestamp": 81171,
+      "relative_timestamp": 16233,
+      "movement_x": -30,
+      "movement_y": 42
+    },
+    {
+      "original_timestamp": 81187,
+      "relative_timestamp": 16249,
+      "movement_x": -4,
+      "movement_y": 23
+    },
+    {
+      "original_timestamp": 81204.00000000001,
+      "relative_timestamp": 16266.000000000015,
+      "movement_x": 4,
+      "movement_y": 23
+    },
+    {
+      "original_timestamp": 81221,
+      "relative_timestamp": 16283,
+      "movement_x": 12,
+      "movement_y": 25
+    },
+    {
+      "original_timestamp": 81237,
+      "relative_timestamp": 16299,
+      "movement_x": 21,
+      "movement_y": 23
+    },
+    {
+      "original_timestamp": 81254,
+      "relative_timestamp": 16316,
+      "movement_x": 28,
+      "movement_y": 21
+    },
+    {
+      "original_timestamp": 81271,
+      "relative_timestamp": 16333,
+      "movement_x": 32,
+      "movement_y": 14
+    },
+    {
+      "original_timestamp": 81288,
+      "relative_timestamp": 16350,
+      "movement_x": 36,
+      "movement_y": 9
+    },
+    {
+      "original_timestamp": 81304,
+      "relative_timestamp": 16366,
+      "movement_x": 91,
+      "movement_y": -8
+    },
+    {
+      "original_timestamp": 81321,
+      "relative_timestamp": 16383,
+      "movement_x": 35,
+      "movement_y": -21
+    },
+    {
+      "original_timestamp": 81337,
+      "relative_timestamp": 16399,
+      "movement_x": 8,
+      "movement_y": -12
+    },
+    {
+      "original_timestamp": 81354,
+      "relative_timestamp": 16416,
+      "movement_x": 2,
+      "movement_y": -12
+    },
+    {
+      "original_timestamp": 81371,
+      "relative_timestamp": 16433,
+      "movement_x": -2,
+      "movement_y": -16
+    },
+    {
+      "original_timestamp": 81388,
+      "relative_timestamp": 16450,
+      "movement_x": -9,
+      "movement_y": -19
+    },
+    {
+      "original_timestamp": 81405,
+      "relative_timestamp": 16467,
+      "movement_x": -19,
+      "movement_y": -25
+    },
+    {
+      "original_timestamp": 81421,
+      "relative_timestamp": 16483,
+      "movement_x": -27,
+      "movement_y": -29
+    },
+    {
+      "original_timestamp": 81438,
+      "relative_timestamp": 16500,
+      "movement_x": -34,
+      "movement_y": -25
+    },
+    {
+      "original_timestamp": 81454.00000000001,
+      "relative_timestamp": 16516.000000000015,
+      "movement_x": -126,
+      "movement_y": -27
+    },
+    {
+      "original_timestamp": 81471,
+      "relative_timestamp": 16533,
+      "movement_x": -21,
+      "movement_y": 9
+    },
+    {
+      "original_timestamp": 81487,
+      "relative_timestamp": 16549,
+      "movement_x": -15,
+      "movement_y": 15
+    },
+    {
+      "original_timestamp": 81504,
+      "relative_timestamp": 16566,
+      "movement_x": -9,
+      "movement_y": 16
+    },
+    {
+      "original_timestamp": 81521,
+      "relative_timestamp": 16583,
+      "movement_x": -4,
+      "movement_y": 20
+    },
+    {
+      "original_timestamp": 81538,
+      "relative_timestamp": 16600,
+      "movement_x": 1,
+      "movement_y": 21
+    },
+    {
+      "original_timestamp": 81554,
+      "relative_timestamp": 16616,
+      "movement_x": 9,
+      "movement_y": 24
+    },
+    {
+      "original_timestamp": 81571,
+      "relative_timestamp": 16633,
+      "movement_x": 67,
+      "movement_y": 61
+    },
+    {
+      "original_timestamp": 81588.00000000001,
+      "relative_timestamp": 16650.000000000015,
+      "movement_x": 63,
+      "movement_y": 16
+    },
+    {
+      "original_timestamp": 81604,
+      "relative_timestamp": 16666,
+      "movement_x": 30,
+      "movement_y": 0
+    },
+    {
+      "original_timestamp": 81621,
+      "relative_timestamp": 16683,
+      "movement_x": 24,
+      "movement_y": -6
+    },
+    {
+      "original_timestamp": 81638,
+      "relative_timestamp": 16700,
+      "movement_x": 20,
+      "movement_y": -9
+    },
+    {
+      "original_timestamp": 81654,
+      "relative_timestamp": 16716,
+      "movement_x": 14,
+      "movement_y": -11
+    },
+    {
+      "original_timestamp": 81689,
+      "relative_timestamp": 16751,
+      "movement_x": 7,
+      "movement_y": -12
+    },
+    {
+      "original_timestamp": 81704.00000000001,
+      "relative_timestamp": 16766.000000000015,
+      "movement_x": 3,
+      "movement_y": -14
+    },
+    {
+      "original_timestamp": 81721,
+      "relative_timestamp": 16783,
+      "movement_x": -58,
+      "movement_y": -88
+    },
+    {
+      "original_timestamp": 81738,
+      "relative_timestamp": 16800,
+      "movement_x": -33,
+      "movement_y": -26
+    },
+    {
+      "original_timestamp": 81754,
+      "relative_timestamp": 16816,
+      "movement_x": -71,
+      "movement_y": -29
+    },
+    {
+      "original_timestamp": 81771,
+      "relative_timestamp": 16833,
+      "movement_x": -32,
+      "movement_y": -5
+    },
+    {
+      "original_timestamp": 81787,
+      "relative_timestamp": 16849,
+      "movement_x": -27,
+      "movement_y": 1
+    },
+    {
+      "original_timestamp": 81804,
+      "relative_timestamp": 16866,
+      "movement_x": -28,
+      "movement_y": 10
+    },
+    {
+      "original_timestamp": 81821,
+      "relative_timestamp": 16883,
+      "movement_x": -23,
+      "movement_y": 19
+    },
+    {
+      "original_timestamp": 81855,
+      "relative_timestamp": 16917,
+      "movement_x": -20,
+      "movement_y": 22
+    },
+    {
+      "original_timestamp": 81871,
+      "relative_timestamp": 16933,
+      "movement_x": -11,
+      "movement_y": 27
+    },
+    {
+      "original_timestamp": 81888,
+      "relative_timestamp": 16950,
+      "movement_x": 27,
+      "movement_y": 91
+    },
+    {
+      "original_timestamp": 81904,
+      "relative_timestamp": 16966,
+      "movement_x": 58,
+      "movement_y": 25
+    },
+    {
+      "original_timestamp": 81921,
+      "relative_timestamp": 16983,
+      "movement_x": 41,
+      "movement_y": 5
+    },
+    {
+      "original_timestamp": 81938,
+      "relative_timestamp": 17000,
+      "movement_x": 43,
+      "movement_y": -2
+    },
+    {
+      "original_timestamp": 81954.00000000001,
+      "relative_timestamp": 17016.000000000015,
+      "movement_x": 41,
+      "movement_y": -6
+    },
+    {
+      "original_timestamp": 81971,
+      "relative_timestamp": 17033,
+      "movement_x": 35,
+      "movement_y": -11
+    },
+    {
+      "original_timestamp": 81987,
+      "relative_timestamp": 17049,
+      "movement_x": 30,
+      "movement_y": -15
+    },
+    {
+      "original_timestamp": 82004,
+      "relative_timestamp": 17066,
+      "movement_x": 23,
+      "movement_y": -16
+    },
+    {
+      "original_timestamp": 82021,
+      "relative_timestamp": 17083,
+      "movement_x": 16,
+      "movement_y": -52
+    },
+    {
+      "original_timestamp": 82038,
+      "relative_timestamp": 17100,
+      "movement_x": -30,
+      "movement_y": -56
+    },
+    {
+      "original_timestamp": 82054,
+      "relative_timestamp": 17116,
+      "movement_x": -24,
+      "movement_y": -19
+    },
+    {
+      "original_timestamp": 82071,
+      "relative_timestamp": 17133,
+      "movement_x": -32,
+      "movement_y": -13
+    },
+    {
+      "original_timestamp": 82088.00000000001,
+      "relative_timestamp": 17150.000000000015,
+      "movement_x": -40,
+      "movement_y": -9
+    },
+    {
+      "original_timestamp": 82104,
+      "relative_timestamp": 17166,
+      "movement_x": -44,
+      "movement_y": -3
+    },
+    {
+      "original_timestamp": 82121,
+      "relative_timestamp": 17183,
+      "movement_x": -45,
+      "movement_y": 3
+    },
+    {
+      "original_timestamp": 82137,
+      "relative_timestamp": 17199,
+      "movement_x": -43,
+      "movement_y": 11
+    },
+    {
+      "original_timestamp": 82154,
+      "relative_timestamp": 17216,
+      "movement_x": -37,
+      "movement_y": 20
+    },
+    {
+      "original_timestamp": 82171,
+      "relative_timestamp": 17233,
+      "movement_x": -58,
+      "movement_y": 73
+    },
+    {
+      "original_timestamp": 82187,
+      "relative_timestamp": 17249,
+      "movement_x": -1,
+      "movement_y": 24
+    },
+    {
+      "original_timestamp": 82204.00000000001,
+      "relative_timestamp": 17266.000000000015,
+      "movement_x": 17,
+      "movement_y": 43
+    },
+    {
+      "original_timestamp": 82238,
+      "relative_timestamp": 17300,
+      "movement_x": 20,
+      "movement_y": 19
+    },
+    {
+      "original_timestamp": 82254,
+      "relative_timestamp": 17316,
+      "movement_x": 25,
+      "movement_y": 15
+    },
+    {
+      "original_timestamp": 82271,
+      "relative_timestamp": 17333,
+      "movement_x": 96,
+      "movement_y": 11
+    },
+    {
+      "original_timestamp": 82287,
+      "relative_timestamp": 17349,
+      "movement_x": 29,
+      "movement_y": -8
+    },
+    {
+      "original_timestamp": 82305,
+      "relative_timestamp": 17367,
+      "movement_x": 28,
+      "movement_y": -11
+    },
+    {
+      "original_timestamp": 82321,
+      "relative_timestamp": 17383,
+      "movement_x": 22,
+      "movement_y": -17
+    },
+    {
+      "original_timestamp": 82337,
+      "relative_timestamp": 17399,
+      "movement_x": 24,
+      "movement_y": -35
+    },
+    {
+      "original_timestamp": 82354,
+      "relative_timestamp": 17416,
+      "movement_x": 3,
+      "movement_y": -17
+    },
+    {
+      "original_timestamp": 82371,
+      "relative_timestamp": 17433,
+      "movement_x": -3,
+      "movement_y": -21
+    },
+    {
+      "original_timestamp": 82388,
+      "relative_timestamp": 17450,
+      "movement_x": -55,
+      "movement_y": -71
+    },
+    {
+      "original_timestamp": 82404,
+      "relative_timestamp": 17466,
+      "movement_x": -29,
+      "movement_y": -13
+    },
+    {
+      "original_timestamp": 82421,
+      "relative_timestamp": 17483,
+      "movement_x": -31,
+      "movement_y": -5
+    },
+    {
+      "original_timestamp": 82438,
+      "relative_timestamp": 17500,
+      "movement_x": -33,
+      "movement_y": 1
+    },
+    {
+      "original_timestamp": 82454.00000000001,
+      "relative_timestamp": 17516.000000000015,
+      "movement_x": -33,
+      "movement_y": 10
+    },
+    {
+      "original_timestamp": 82471,
+      "relative_timestamp": 17533,
+      "movement_x": -29,
+      "movement_y": 17
+    },
+    {
+      "original_timestamp": 82488,
+      "relative_timestamp": 17550,
+      "movement_x": -22,
+      "movement_y": 20
+    },
+    {
+      "original_timestamp": 82504,
+      "relative_timestamp": 17566,
+      "movement_x": -23,
+      "movement_y": 47
+    },
+    {
+      "original_timestamp": 82521,
+      "relative_timestamp": 17583,
+      "movement_x": 27,
+      "movement_y": 67
+    },
+    {
+      "original_timestamp": 82537,
+      "relative_timestamp": 17599,
+      "movement_x": 27,
+      "movement_y": 17
+    },
+    {
+      "original_timestamp": 82571,
+      "relative_timestamp": 17633,
+      "movement_x": 33,
+      "movement_y": 11
+    },
+    {
+      "original_timestamp": 82588.00000000001,
+      "relative_timestamp": 17650.000000000015,
+      "movement_x": 43,
+      "movement_y": 5
+    },
+    {
+      "original_timestamp": 82604,
+      "relative_timestamp": 17666,
+      "movement_x": 116,
+      "movement_y": -26
+    },
+    {
+      "original_timestamp": 82621,
+      "relative_timestamp": 17683,
+      "movement_x": 28,
+      "movement_y": -19
+    },
+    {
+      "original_timestamp": 82638,
+      "relative_timestamp": 17700,
+      "movement_x": 19,
+      "movement_y": -20
+    },
+    {
+      "original_timestamp": 82654,
+      "relative_timestamp": 17716,
+      "movement_x": 17,
+      "movement_y": -40
+    },
+    {
+      "original_timestamp": 82671,
+      "relative_timestamp": 17733,
+      "movement_x": -2,
+      "movement_y": -28
+    },
+    {
+      "original_timestamp": 82687,
+      "relative_timestamp": 17749,
+      "movement_x": -9,
+      "movement_y": -25
+    },
+    {
+      "original_timestamp": 82704.00000000001,
+      "relative_timestamp": 17766.000000000015,
+      "movement_x": -18,
+      "movement_y": -19
+    },
+    {
+      "original_timestamp": 82721,
+      "relative_timestamp": 17783,
+      "movement_x": -24,
+      "movement_y": -13
+    },
+    {
+      "original_timestamp": 82738,
+      "relative_timestamp": 17800,
+      "movement_x": -110,
+      "movement_y": -13
+    },
+    {
+      "original_timestamp": 82754,
+      "relative_timestamp": 17816,
+      "movement_x": -39,
+      "movement_y": 8
+    },
+    {
+      "original_timestamp": 82771,
+      "relative_timestamp": 17833,
+      "movement_x": -31,
+      "movement_y": 14
+    },
+    {
+      "original_timestamp": 82787,
+      "relative_timestamp": 17849,
+      "movement_x": -25,
+      "movement_y": 19
+    },
+    {
+      "original_timestamp": 82804,
+      "relative_timestamp": 17866,
+      "movement_x": -13,
+      "movement_y": 17
+    },
+    {
+      "original_timestamp": 82821,
+      "relative_timestamp": 17883,
+      "movement_x": 6,
+      "movement_y": 38
+    },
+    {
+      "original_timestamp": 82837,
+      "relative_timestamp": 17899,
+      "movement_x": 0,
+      "movement_y": 0
+    },
+    {
+      "original_timestamp": 82871,
+      "relative_timestamp": 17933,
+      "movement_x": 1,
+      "movement_y": 32
+    },
+    {
+      "original_timestamp": 82888,
+      "relative_timestamp": 17950,
+      "movement_x": 0,
+      "movement_y": 26
+    },
+    {
+      "original_timestamp": 82904,
+      "relative_timestamp": 17966,
+      "movement_x": 0,
+      "movement_y": 20
+    },
+    {
+      "original_timestamp": 82921,
+      "relative_timestamp": 17983,
+      "movement_x": 0,
+      "movement_y": 15
+    },
+    {
+      "original_timestamp": 82937,
+      "relative_timestamp": 17999,
+      "movement_x": 0,
+      "movement_y": 11
+    }
+  ]
+}

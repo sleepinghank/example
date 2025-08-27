@@ -29,6 +29,7 @@
 //#include "preset_gesture/preset_gesture.h"
 //#include "preset_gesture/mcs_gesture_test.h"
 #include "algorithmic/algorithmic_filtering.h"
+#include "touch/touch.h"
 // LOOP_FUNCTION(Main_Init){
 //     printf("main Module loop\n");
 // }
@@ -86,7 +87,13 @@ extern void test_filters(void);
 #define KEYBOARD_CNT_MS(interval)                      ((interval * 128) / 1000)
 int main(void)
 {
-    uint8_t  a = KEYBOARD_CNT_MS(1000);
-    printf("Keyboard count for 1 second: %d\n", a);
+    printf("star \r\n");
+//    double features[3] = {9,-29,119};
+//    double* predict_result = predictProba(features);
+//
+//    printf("predict_result[0] = %f\n", predict_result[0]);
+//    printf("predict_result[1] = %f\n", predict_result[1]);
+    test_touch();
+    printf("end \r\n");
     return 0;
 }
