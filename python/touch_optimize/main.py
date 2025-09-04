@@ -128,6 +128,7 @@ def analyze_touchpad_data_dev(data):
     
     # 3. 计算时间间隔和刷新率
     time_intervals = np.diff(relative_timestamps)
+    print("time_intervals:", time_intervals)
     avg_interval = np.mean(time_intervals)
     print(avg_interval)
     refresh_rate = 1000 / avg_interval if avg_interval > 0 else 0
