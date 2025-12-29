@@ -25,7 +25,7 @@
 //#include "touchpad_online_update/touchpad_update.h"
 //#include "timer_task/timer_task.h"
 //#include "battery/battery_level.h"
-//#include "cmd_uart/cmd_uart.h"
+#include "cmd_uart/cmd_uart.h"
 //#include "preset_gesture/preset_gesture.h"
 //#include "preset_gesture/mcs_gesture_test.h"
 #include "algorithmic/algorithmic_filtering.h"
@@ -93,7 +93,8 @@ int main(void)
 //
 //    printf("predict_result[0] = %f\n", predict_result[0]);
 //    printf("predict_result[1] = %f\n", predict_result[1]);
-    test_touch();
+//    test_touch();
+    cmd_uart_test();
     printf("end \r\n");
     return 0;
 }

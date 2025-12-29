@@ -199,38 +199,38 @@ void uart_timer(void)
 
 uint8_t debug_rx_buffer[2048];
 uint16_t debug_rx_index = 0;
-/**
- * @brief 串口接收中断回调 - 最小化内存和处理时间
- */
-void cmd_uart_receive_cb(uart_int_type type, uint8_t data)
-{
-    if (type == UART_RX_INT)
-    {
-        // MCU更新模式特殊处理
-        if (cmd_uart_event & CMD_UART_LCD_MCU_UPDATE)
-        {
-            mcu_update_result = 1;
-            mcu_update_result_cmd = data;
-            return;
-        }
-
-        // 检查缓冲区是否满 - 使用uint8_t运算
-        uint8_t next_write = (uart_rx_buf.write_index + 1) & UART_RX_BUFFER_MASK;
-        if (next_write == uart_rx_buf.read_index) {
-            // 缓冲区满，设置溢出标志
-            uart_rx_buf.overflow = 1;
-            return;
-        }
-
-        // 存储数据到环形缓冲区
-        uart_rx_buf.buffer[uart_rx_buf.write_index] = data;
-        uart_rx_buf.write_index = next_write;
-        uart_rx_buf.total_received++;
-        
-        // 重置解析超时
-        parse_timeout = 300;
-    }
-}
+///**
+// * @brief 串口接收中断回调 - 最小化内存和处理时间
+// */
+//void cmd_uart_receive_cb(uart_int_type type, uint8_t data)
+//{
+//    if (type == UART_RX_INT)
+//    {
+//        // MCU更新模式特殊处理
+//        if (cmd_uart_event & CMD_UART_LCD_MCU_UPDATE)
+//        {
+//            mcu_update_result = 1;
+//            mcu_update_result_cmd = data;
+//            return;
+//        }
+//
+//        // 检查缓冲区是否满 - 使用uint8_t运算
+//        uint8_t next_write = (uart_rx_buf.write_index + 1) & UART_RX_BUFFER_MASK;
+//        if (next_write == uart_rx_buf.read_index) {
+//            // 缓冲区满，设置溢出标志
+//            uart_rx_buf.overflow = 1;
+//            return;
+//        }
+//
+//        // 存储数据到环形缓冲区
+//        uart_rx_buf.buffer[uart_rx_buf.write_index] = data;
+//        uart_rx_buf.write_index = next_write;
+//        uart_rx_buf.total_received++;
+//
+//        // 重置解析超时
+//        parse_timeout = 300;
+//    }
+//}
 
 /**
  * @brief 从缓冲区读取一个字节
@@ -868,13 +868,153 @@ void cmd_uart_reset_parser(void)
     printf("UART: Parser and buffer reset\r\n");
 }
 
+
+static uint8_t rx_buffer[32];  // 用于存储接收到的数据
+static uint8_t rx_index = 0;   // 当前接收位置
+static uint8_t data_length = 0; // 数据包长度
+static uint8_t found_header = 0; // 是否找到包头
+
+#define UART_BUFFER_SIZE 128
+static uint8_t uart_rx_buffer[UART_BUFFER_SIZE];
+static uint8_t uart_rx_head = 0;
+static uint8_t uart_rx_tail = 0;
+static uint8_t uart_rx_count = 0;
+
+/**
+ * @brief cmd uart clear event
+ *
+ * @param evt
+ */
+void cmd_uart_receive_cb(uart_int_type type, uint8_t data)
+{
+    // static uint8_t last_byte = 0;  // 上一个接收到的字节
+    // static uint8_t retry_count = 0; // 重试计数器
+
+    if (type == UART_RX_INT)
+    {
+        // 快速接收，不延时，不处理
+        if (uart_rx_count < UART_BUFFER_SIZE)
+        {
+            uart_rx_buffer[uart_rx_head] = data;
+            uart_rx_head = (uart_rx_head + 1) % UART_BUFFER_SIZE;
+            uart_rx_count++;
+        }
+    }
+}
+void process_uart_data2(void)
+{
+    // // 如果接收完整个数据包
+
+
+    if (rx_index >= data_length + 2)  // 包头(1) + 长度(1) + 数据长度 + CRC(1)
+    {
+
+        for (int i = 0; i < rx_index; i++)
+        {
+            printf(" %02X", rx_buffer[i]);
+        }
+        printf("\n");
+        // 验证CRC
+        uint8_t crc = get_crc(rx_buffer, data_length + 1);
+        printf("calculated_crc:%d, received_crc:%d\r\n", crc, rx_buffer[data_length + 1]);
+        if (crc == rx_buffer[data_length + 1])
+        {
+            // CRC正确，处理数据
+            uart_buffer.pkt = rx_buffer[0];
+            uart_buffer.length = rx_buffer[1];
+            uart_buffer.evt = rx_buffer[2];
+            memcpy(uart_buffer.dat, &rx_buffer[3], data_length - 2);
+            uart_buffer.crc = rx_buffer[data_length + 2];
+
+            cmd_uart_rx_timeout = 0;
+            cmd_uart_set_evt(CMD_UART_EVENT_RX_DONE);
+
+//            if (uart_buffer.dat[0] == 5)
+//            {
+//                bat_info.current_bat = uart_buffer.dat[1];
+//            }
+
+            printf("---------------event: %d,data:%d\r\n", uart_buffer.evt,uart_buffer.dat[0]);
+        }
+        else
+        {
+            printf("crc------ receive cb cmd_uart_event is error");
+        }
+        rx_index = 0;
+        found_header = 0;
+        data_length = 0;
+    }
+}
+
+void process_uart_byte(uint8_t data)
+{
+    //DBG(" %02X", data);
+
+    // 如果找到包头，开始接收数据
+    if (data == 0xAA)
+    {
+        found_header = 1;
+        rx_index = 0;
+        rx_buffer[rx_index++] = data;
+        return;
+    }
+
+    // 如果还没找到包头，继续等待
+    if (!found_header)
+    {
+        return;
+    }
+
+    // 存储接收到的数据
+    rx_buffer[rx_index++] = data;
+
+    // 如果收到长度字节
+    if (rx_index == 2)
+    {
+        data_length = data;
+        if (data_length > 20 || data_length < 2)
+        {
+            found_header = 0;
+            rx_index = 0;
+            return;
+        }
+    }
+
+    // 检查是否接收完整个数据包
+    if (rx_index >= data_length + 2)
+    {
+        process_uart_data2();
+    }
+}
+
+// 定时器处理函数 - 在主循环或定时器中断中调用
+void uart_process_timer(void)
+{
+    static uint32_t last_process_time = 0;
+    // 处理缓冲区中的数据
+    while (uart_rx_count > 0)
+    {
+        uint8_t data = uart_rx_buffer[uart_rx_tail];
+        uart_rx_tail = (uart_rx_tail + 1) % UART_BUFFER_SIZE;
+        uart_rx_count--;
+
+        // 这里可以加延时，因为不在中断中
+        //pxi_delay_ms(1);
+
+        // 处理数据
+        process_uart_byte(data);
+    }
+}
+
+
 void cmd_uart_test(void)
 {
   // 测试串口解析
   // 测试数据 包1：0x00 0xAA 0x02 0x02 0xAA 包2：0x00 0xAA 0x04 0x02 0x05 0x10 0xB9
   // 数据包组成为 包头(2) + 长度(1) + 事件(1) + 数据(n) + CRC(1)
 //  uint8_t data1[] = {0x00, 0xAA, 0x02, 0x02, 0xAA,0x00, 0xAA, 0x04, 0x02, 0x05, 0x10, 0xB9};
-  uint8_t data1[] = { 0x00,0xAA,0x03,0x05,0x0F,0xA3,0x00,0xAA,0x02,0x02,0xAA,0x00,0xAA,0x03,0x05,0x0F,0xA3,0x00,0xAA,0x02,0x02,0xAA,0x00,0xAA,0x02,0x02,0x00,0x02,0x02,0x00,0x02,0x02};
+  uint8_t data1[] = { 0x00,0xAA,0x03,0x05,0x1e,0xA3,0xb9,0x00, 0xaa ,0x00,0xAA,0x02,0x02,0xAA,0x00,0xAA,0x03,0x05,0x1e,0xb2,0x00,0xAA,0x02,0x02,0xAA,0x00,0xAA,0x02,0x02,0x00,0x02,0x02,0x00,0x02,0x02,0x00, 0xaa , 0x03 , 0x11 , 0x01 , 0xb9,0x00, 0xaa , 0x03 , 0x11 , 0x01 , 0xb9,0x00, 0xaa , 0x03 , 0x11 , 0x01 , 0xb9,0x00, 0xaa , 0x03 , 0x11 , 0x01 , 0xb9,0x00, 0xaa , 0x03 , 0x11 , 0x01 , 0xb9,0x00, 0xb9,0x00, 0x00, 0xaa , 0xaa , 0x03 , 0x11 , 0x00 , 0xb8};
+//  uint8_t data1[] = {  0x00, 0xaa , 0x03 , 0x11 , 0x01 , 0xb9,0xaa , 0x03 , 0x11 , 0x01 , 0xb9};
 
   // 调用cmd_uart_receive_cb 依次入栈
   for (uint8_t i = 0; i < sizeof(data1); i++)
@@ -884,7 +1024,7 @@ void cmd_uart_test(void)
   // 调用cmd_uart_event_run 解析
   while (1)
   {
-    cmd_uart_event_run();
+      uart_process_timer();
     //  延迟操作
 //    for (uint8_t i = 0; i < 1000; i++)
 //    {

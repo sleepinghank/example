@@ -289,7 +289,18 @@ def calculate_performance_score(time_data, movement_x, movement_y):
     time_intervals = np.diff(time_data)  # 时间间隔
     dx = np.diff(movement_x)  # X轴位移
     dy = np.diff(movement_y)  # Y轴位移
-    
+
+    min_interval = np.min(time_intervals)
+    min_interval_count = np.sum(time_intervals == min_interval)
+    print(f"BLE最小间隔: {min_interval:.2f} 毫秒, 次数: {min_interval_count}")
+    # 最大间隔，以及最大间隔次数
+    max_interval = np.max(time_intervals)
+    max_interval_count = np.sum(time_intervals == max_interval)
+    print(f"BLE最大间隔: {max_interval:.2f} 毫秒, 次数: {max_interval_count}")
+    # 间隔标准差
+    ble_interval_stddev = np.std(time_intervals)
+    print(f"BLE间隔标准差: {ble_interval_stddev:.2f} 毫秒")
+
     # 计算位移和速度
     displacements = np.sqrt(dx**2 + dy**2)  # 位移大小
     velocities = np.where(time_intervals > 0, displacements / time_intervals, 0)  # 速度
@@ -483,16 +494,16 @@ def handle_touch():
 
 
 if __name__ == '__main__':
-    print('start')
-    app.run(host='0.0.0.0', port=5000, debug=True)
+    # print('start')
+    # app.run(host='0.0.0.0', port=5000, debug=True)
 
     # 使用默认范围（中间60%的数据）
     # results = plot_pressure_data("movement_plot_20250513_183932.png",0.7,0.8)
     # print(results)
     #
     #
-    # result = analysis_pressure_data("movement_plot_20250513_183932.png",0.7,3000)
-    # print(result)
+    result = analysis_pressure_data("baseus",0.68,3000)
+    print(result)
 
     # 解析触控板原始数据
     # result = parse_raw_touch_data(r"D:\Code\VScode\example\python\touch\touch_raw_data\record_20250804_143434\trackData.txt")

@@ -83,8 +83,7 @@ def detect_anomalies(timestamps, coords, threshold=3.0):
     
     print(f"检测到 {len(anomalies)} 个异常点，其中时间异常点{len(time_anomalies)},位置异常点{len(pos_anomalies)}")
     return valid_mask
-
-def analyze_touchpad_data_dev(data):
+def analyze_touchpad_data_dev(data, filename=""):
     """
     分析开发板采集的触控板测试数据(增强版)
     
@@ -95,6 +94,7 @@ def analyze_touchpad_data_dev(data):
         'timestamp': 时间戳(微秒)
         'valid': 数据有效性标志 (布尔值)
         'confidence': 置信度标志 (布尔值)
+    filename - 文件名，用于判断坐标归一化参数
     
     返回:
     包含分析结果的字典
@@ -110,15 +110,30 @@ def analyze_touchpad_data_dev(data):
     y_coords = np.array([d['y'] for d in valid_data])
     timestamps = np.array([d['timestamp'] for d in valid_data])
     
-    # 2. 时间戳校正和异常检测
+    # 2. 坐标归一化处理
+    # 轨迹统一换算 文件名包含beisi的 x_max:2578 y_max:1395。其他 x_max:2048 y_max:1104
+    if "beisi" in filename:
+        x_max, y_max = 2578, 1395
+    else:
+        x_max, y_max = 2048, 1104
+    
+    # 将坐标归一化到0-1范围，然后映射到统一标准坐标系（以2048x1104为标准）
+    x_coords = x_coords * 2048 / x_max
+    y_coords = y_coords * 1104 / y_max
+    
+    # 确保归一化后的坐标不会超出标准范围（由于浮点数精度问题）
+    x_coords = np.clip(x_coords, 0, 2048)
+    y_coords = np.clip(y_coords, 0, 1104)
+    
+    # 3. 时间戳校正和异常检测
     corrected_timestamps = correct_timestamps(timestamps)
     coords = np.column_stack((x_coords, y_coords))
     valid_mask = detect_anomalies(corrected_timestamps, coords)
     
     # 应用异常检测结果
     final_data = [d for i, d in enumerate(valid_data) if valid_mask[i]]
-    x_coords = np.array([d['x'] for d in final_data])
-    y_coords = np.array([d['y'] for d in final_data])
+    x_coords = np.array([x_coords[i] for i, d in enumerate(valid_data) if valid_mask[i]])
+    y_coords = np.array([y_coords[i] for i, d in enumerate(valid_data) if valid_mask[i]])
     corrected_timestamps = corrected_timestamps[valid_mask]
     
     print(f"最终有效数据点: {len(final_data)}")
@@ -126,20 +141,26 @@ def analyze_touchpad_data_dev(data):
     # 转换为相对时间(毫秒)
     relative_timestamps = (corrected_timestamps - corrected_timestamps[0]) / 1000.0
     
-    # 3. 计算时间间隔和刷新率
+    # 4. 计算时间间隔和刷新率
     time_intervals = np.diff(relative_timestamps)
-    print("time_intervals:", time_intervals)
+    # print("time_intervals:", time_intervals)
+    min_time_interval = np.min(time_intervals)
+    max_time_interval = np.max(time_intervals)
+    print(f"间隔最小值：{min_time_interval},间隔最大值：{max_time_interval}")
+    # 间隔时间标准差
+    time_interval_stddev = (sum((x - min_time_interval) ** 2 for x in time_intervals) / len(time_intervals)) ** 0.5
+    print(f"间隔时间标准差：{time_interval_stddev}")
+
     avg_interval = np.mean(time_intervals)
-    print(avg_interval)
     refresh_rate = 1000 / avg_interval if avg_interval > 0 else 0
     
-    # 4. 丢包检测
+    # 5. 丢包检测
     std_interval = np.std(time_intervals)
     packet_loss_threshold = avg_interval + 2 * std_interval
     packet_loss_points = np.where(time_intervals > packet_loss_threshold)[0]
     packet_loss_rate = len(packet_loss_points) / len(time_intervals) * 100
     
-    # 5. 轨迹平滑度分析
+    # 6. 轨迹平滑度分析
     distances = np.sqrt(np.diff(x_coords)**2 + np.diff(y_coords)**2)
     velocities = distances / time_intervals
     
@@ -148,7 +169,7 @@ def analyze_touchpad_data_dev(data):
     velocity_std = np.std(velocities) if len(velocities) > 0 else 0
     acceleration_std = np.std(accels) if len(accels) > 0 else 0
     
-    # 6. 轨迹线性度分析
+    # 7. 轨迹线性度分析
     slopes = []
     for i in range(1, len(x_coords)):
         dx = x_coords[i] - x_coords[i-1]
@@ -158,7 +179,7 @@ def analyze_touchpad_data_dev(data):
     
     linearity_error = np.std(np.abs(slopes)) if slopes else 0
     
-    # 7. 圆形轨迹分析
+    # 8. 圆形轨迹分析
     circle_error = 0
     circle_params = None
     try:
@@ -180,7 +201,7 @@ def analyze_touchpad_data_dev(data):
     except RuntimeError:
         circle_error = -1
     
-    # 8. 压力数据分析
+    # 9. 压力数据分析
     force_analysis = {}
     if 'force' in final_data[0]:
         forces = np.array([d['force'] for d in final_data])
@@ -193,12 +214,18 @@ def analyze_touchpad_data_dev(data):
             'force_variation': np.ptp(forces)
         }
     
-    # 9. 结果汇总
+    # 10. 结果汇总
     results = {
         # 刷新率
         'refresh_rate': refresh_rate,
         # 丢包率
         'packet_loss_rate': packet_loss_rate,
+        # 最小间隔
+        'min_time_interval': min_time_interval,
+        # 最大间隔
+        'max_time_interval': max_time_interval,
+        # 间隔时间标准差
+        'time_interval_std': time_interval_stddev,
         # 速度波动
         'velocity_std': velocity_std,
         # 加速度波动
@@ -442,19 +469,25 @@ def batch_analyze_touchpad_data(base_path="./captuer_data/devboard_100Hz", outpu
                     # 解析数据
                     data = parse_raw_touch_data(str(data_file))
                     
+                    # 轨迹统一换算 文件名包含beisi的 x_max:2578 y_max:1395。其他 x_max:2048 y_max:1104
+                    # 需要将距离都换算成统一值，不然会导致后面轨迹等计算时分辨率误差导致计算值不统一
+
                     # 分析数据
-                    results = analyze_touchpad_data_dev(data)
+                    results = analyze_touchpad_data_dev(data, folder.name)
                     
                     # 提取关键指标
                     summary = {
                         '文件夹名称': folder.name,
                         '平均刷新率(Hz)': round(results['refresh_rate'], 2),
                         '丢包率(%)': round(results['packet_loss_rate'], 2),
+                        '平均时间间隔(ms)': round(results['avg_interval'], 3),
+                        '最小时间间隔': round(results['min_time_interval'], 3),
+                        '最大时间间隔': round(results['max_time_interval'], 3),
+                        '间隔时间标准差': round(results['time_interval_std'], 3),
                         '速度波动(units/ms)': round(results['velocity_std'], 4),
                         '加速度波动(units/ms²)': round(results['acceleration_std'], 6),
                         '线性度误差': round(results['linearity_error'], 4),
                         '圆形轨迹误差(units)': round(results['circle_fit_error'], 2) if results['circle_fit_error'] >= 0 else None,
-                        '平均时间间隔(ms)': round(results['avg_interval'], 3),
                         '总数据点数': results['total_points'],
                         '移除异常点数': results['anomaly_info']['removed_points']
                     }
